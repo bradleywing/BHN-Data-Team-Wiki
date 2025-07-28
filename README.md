@@ -90,7 +90,7 @@ Topics include:
 Suggested entry points:
 
 - [Landing Page](index.md): Main landing page for documentation navigation
-- [Reporting Standards](docs/reporting/standards.md): SQL style guide and reporting workflows
+- [Reporting Standards](docs/reporting/reporting-standards.md): SQL style guide and reporting workflows
 - [Workflow Template](docs/data-team-processes/program-workflow-template.md): Core templates for documenting logic
 - [Reports Request Tracker](docs/reporting/reports-request-tracker.md): Planned SQL-based Quick Reports in development or awaiting specification  
 - [SQL Comment Style Guide](https://github.com/BHN/FAMCare-SQL-Toolkit/blob/main/comment-style-guide.md): Guide that defines the canonical Markdown documentation structure for all SQL assets in the `FAMCare-SQL-Toolkit` repository.
