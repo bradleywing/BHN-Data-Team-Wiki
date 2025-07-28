@@ -1,0 +1,45 @@
+# This is mainly placeholder content for the navigation structure of the BHN Data Team Wiki.
+# It will be used to generate the sidebar and navigation links in the Jekyll site once it is updated and built.
+- title: Home
+  url: /docs/
+
+- title: Data Team Processes
+  children:
+    - title: Change Control Process
+      url: /docs/data-team-processes/change-control-process.md
+    - title: Program Workflow Template
+      url: /docs/data-team-processes/program-workflow-template.md
+
+- title: Reporting Documentation
+  children:
+    - title: Reports Request Tracker
+      url: /docs/reporting/reports-request-tracker.md
+    - title: Quick Reports Overview
+      url: /docs/reporting/quick-reports-overview.md
+    - title: Reporting Standards
+      url: /docs/reporting/reporting-standards.md
+
+- title: Program-Specific Docs
+  children:
+    - title: EPICC Dismissals Workflow
+      url: /docs/programs/epicc/dismissal.md
+    - title: EPICC Enrollment Workflow
+      url: /docs/programs/epicc/enrollment.md
+    - title: EPICC Cohorts
+      url: /docs/programs/epicc/cohorts.md
+
+- title: Data Dictionaries
+  children:
+    - title: Field Definitions
+      url: /docs/data-dictionaries/fields
+    - title: Power BI Assets
+      url: /docs/data-dictionaries/powerbi
+
+- title: Tag Index
+  url: /tags.md
+
+- title: Repo Overview
+  url: /README.md
+
+- title: Contributors Guide
+  url: /CONTRIBUTING.md
