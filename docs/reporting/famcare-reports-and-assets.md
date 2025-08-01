@@ -4,11 +4,14 @@ This page documents Quick Reports used within BHN’s FAMCare implementation. It
 
 ---
 
-This matrix catalogs all named reports relevant to BHN’s FAMCare implementation, whether published in FAMCare or maintained for internal analysis. It includes Quick Reports, SSMS logic assets, and staging logic intended for reuse or publication. Assets link to SQL code and paired documentation (where available).
+These matrices catalog all named reports relevant to BHN’s FAMCare implementation, whether published in FAMCare or maintained for internal analysis. It includes Quick Reports, SSMS logic assets, and staging logic intended for reuse or publication. Assets link to SQL code and paired documentation (where available).
+
+<details>
+<summary><strong>Exception Reports</strong></summary>
 
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
-| Exception Reports | BCR Client Active 90 Days or Longer | | System Administrator, GVT, BCR Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/bcr-client-active-90-days-or-longer.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/bcr-client-active-90-days-or-longer.md) |
+| Exception Reports | BCR Client Active 90 Days or Longer | Identifies BCR clients who have been actively enrolled for 90 days or more to support reviewing client sfor timely dismissal. | System Administrator, GVT, BCR Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/bcr-client-active-90-days-or-longer.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/bcr-client-active-90-days-or-longer.md) |
 | Exception Reports | BCR Duplicate PWY Forms Per Enrollment | | System Administrator, GVT, BCR Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/bcr-duplicate-pwy-forms_per_enrollment.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/bcr-duplicate-pwy-forms-per-enrollment.md) |
 | Exception Reports | BCR Grant Missing | | System Administrator, GVT, BCR Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/bcr-grant-missing.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/bcr-grant-missing.md) |
 | Exception Reports | BCR Imports Miss Date Accomplished Enrolled July to Dec | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/bcr-imports-miss-date-accomplished-enrolled-july-to-dec.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/bcr-imports-miss-date-accomplished-enrolled-july-to-dec.md) |
@@ -34,9 +37,48 @@ This matrix catalogs all named reports relevant to BHN’s FAMCare implementatio
 | Exception Reports | YERE Hospital Visit Note Hidden Fields Null | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/yere-hospital-visit-note-hidden-fields-null.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/yere-hospital-visit-note-hidden-fields-null.md) |
 | Exception Reports | YERE IA Hidden Fields Null | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/yere-ia-hidden-fields-null.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/yere-ia-hidden-fields-null.md) |
 | Exception Reports | YERE Youth Needs Hidden Fields Null | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/yere-youth-needs-hidden-fields-null.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/yere-youth-needs-hidden-fields-null.md) |
-| Program Management | EPICC Candidates for Dismissal | This report identifies EPICC program clients who are candidates for dismissal due to lack of engagement, program participation indicating dismissal, or program completion. | System Administrator, GVT, EPICC Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/program-management-reports/epicc-candidates-for-dismissal.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/program-management-reports/epicc-candidates-for-dismissal.md) |
 
-> This table can be expanded as additional reports are developed or published. Folder paths point to files within the `FAMCare-SQL-Toolkit` repository.
+</details>
+
+<br>
+
+<details>
+<summary><strong>Program Management Reports</strong></summary>
+
+| Category | Report Name | Description | Security Groups | Run Environment | Assets |
+|----------|-------------|-------------|------------------|------------------|--------|
+| Program Management | EPICC Candidates for Dismissal | This report identifies EPICC program clients who are candidates for dismissal due to lack of engagement, program participation indicating dismissal, or program completion. | System Administrator, GVT, EPICC Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/program-management-reports/epicc-candidates-for-dismissal.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/program-management-reports/epicc-candidates-for-dismissal.md) |
+| Program Management | YERE Caseload Report | This report summarizes YERE program client caseloads, including enrollment details, worker assignment, agency, milestone completion status, payor information, and suicide attempt history. | System Administrator, GVT, YERE Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/program-management-reports/yere-caseload-report.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/program-management-reports/yere-caseload-report.md) |
+
+</details>
+
+<br>
+
+<details>
+<summary><strong>Audit Reports</strong></summary>
+| Category | Report Name | Description | Security Groups | Run Environment | Assets |
+|----------|-------------|-------------|------------------|------------------|--------|
+</details>
+
+<br>
+
+<details>
+<summary><strong>Compliance Reports</strong></summary>
+| Category | Report Name | Description | Security Groups | Run Environment | Assets |
+|----------|-------------|-------------|------------------|------------------|--------|
+</details>
+
+<br>
+
+<details>
+<summary><strong>External Data Sharing Reports</strong></summary>
+| Category | Report Name | Description | Security Groups | Run Environment | Assets |
+|----------|-------------|-------------|------------------|------------------|--------|
+</details>
+
+---
+
+> These tables can be expanded as additional reports are developed or published. Folder paths point to files within the `FAMCare-SQL-Toolkit` repository.
 
 ---
 
