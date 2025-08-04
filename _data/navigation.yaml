@@ -1,4 +1,4 @@
-# This is mainly placeholder content for the navigation structure of the BHN Data Team Wiki.
+# This is work in progress content for the navigation structure of the BHN Data Team Wiki.
 # It will be used to generate the sidebar and navigation links in the Jekyll site once it is updated and built.
 - title: Home
   url: /docs/
@@ -7,11 +7,15 @@
   children:
     - title: Change Control Process
       url: /docs/data-team-processes/change-control-process.md
+    - title: Documentation Standards
+      url: /docs/data-team-processes/documentation-standards.md
     - title: Program Workflow Template
       url: /docs/data-team-processes/program-workflow-template.md
 
 - title: Reporting Documentation
   children:
+    - title: Reports and Assets Overview
+      url: /docs/reporting/famcare-reports-and-assets.md
     - title: Reports Request Tracker
       url: /docs/reporting/reports-request-tracker.md
     - title: Quick Reports Overview
@@ -25,15 +29,21 @@
       url: /docs/programs/epicc/dismissal.md
     - title: EPICC Enrollment Workflow
       url: /docs/programs/epicc/enrollment.md
-    - title: EPICC Cohorts
-      url: /docs/programs/epicc/cohorts.md
 
 - title: Data Dictionaries
   children:
-    - title: Field Definitions
-      url: /docs/data-dictionaries/fields
-    - title: Power BI Assets
-      url: /docs/data-dictionaries/powerbi
+    - title: Shared Field Definitions
+      url: /docs/data-dictionaries/shared-fields.md
+    - title: BCR Data Dictionaries
+      url: /docs/data-dictionaries/bcr
+    - title: EPICC Data Dictionaries
+      url: /docs/data-dictionaries/epicc
+    - title: ERE Data Dictionaries
+      url: /docs/data-dictionaries/ere
+    - title: Complex Care Data Dictionaries
+      url: /docs/data-dictionaries/complex-care
+    - title: YERE Data Dictionaries
+      url: /docs/data-dictionaries/yere
 
 - title: Tag Index
   url: /tags.md
