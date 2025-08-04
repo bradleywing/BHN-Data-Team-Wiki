@@ -12,7 +12,67 @@ status: Active
 
 ---
 
-## INSERT Section HERE
+## Markdown Documentation Style Guide
+
+### Purpose
+
+This guide standardizes formatting across Markdown-based documentation, including field references, logic descriptions, changelogs, and contributor notes. It complements the SQL comment style guide and changelog standards.
+
+### Field Names and Table Names
+
+Use backticks for inline monospace formatting of schema elements.
+
+| Type         | Format Example             | Notes |
+|--------------|----------------------------|-------|
+| Field name   | `Pathway_Date`             | Always monospace when referenced |
+| Table name   | `PWEPICCInitialContact`    | Same convention as field names |
+
+### Logic and Function References
+
+Use backticks for inline references to functions or logic snippets.
+
+| Type              | Format Example              | Notes |
+|-------------------|-----------------------------|-------|
+| Function name     | `checkhide()`               | Inline monospace |
+| Exception logic   | `if field == ""`            | Inline for short logic |
+| Diagnostic tags   | `Missing Pathway_Date`      | Monospace if used programmatically |
+
+Use fenced code blocks for longer logic:
+
+```javascript
+if (field.value === "") {
+  showWarning("Missing required field");
+}
+```
+
+### Documentation Structure
+
+Use consistent heading levels and formatting for clarity.
+
+| Element        | Format Example                     | Notes |
+|----------------|------------------------------------|-------|
+| Section header | ## Form Parsing Utilities          | H2 for major sections |
+| Subsection     | ### Input Requirements             | H3 for nested details |
+| Code block     | Triple backticks + language tag    | Use bash, r, python, sql, etc. |
+| Links          | [scripts/README.md](scripts/README.md) | Prefer relative links |
+
+### Contributor Notes and Comments
+
+Use HTML comments for internal notes and blockquotes for guidance.
+
+| Type            | Format Example                          | Notes |
+|-----------------|------------------------------------------|-------|
+| TODOs           | `<!-- TODO: Add logic for pivoted fields -->` | Not rendered in output |
+| Contributor tips| > This logic assumes no duplicate enrollments. | Use blockquotes for context or warnings |
+
+### Optional Enhancements
+
+Use sparingly and only when clarity is improved.
+
+| Feature         | Format Example                          | Notes |
+|-----------------|------------------------------------------|-------|
+| Collapsible sections | `<details><summary>Advanced Logic</summary>...</details>` | Use for long logic or edge cases |
+| Bold monospace  | ``**`FieldName`**``                         | Use for emphasis in tables or headings |
 
 ---
 
