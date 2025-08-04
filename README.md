@@ -23,8 +23,10 @@ This repository serves as the centralized, version-controlled documentation hub 
 ├── assets/
     └── images/                          # Screenshots, diagrams (e.g., workflow visuals)
     └── mermaid/                         # Mermaid source files
+    └── scripts/                         # Automation scripts
 ├── docs/
     └── audit-tracking/                  # wiki-audit-tracker.md and related tools
+    └── data-dictionaries/               # Modular data dictionary pages for forms and other assets
     └── data-team-processes/             # Workflow templates, style guides, change control process
     └── famcare-form-development/        # Form creation, validation, and promotion workflows
     └── famcare-master-tables/           # Standards for dropdown tables, auditing, and view updates
@@ -57,6 +59,8 @@ Markdown content in this wiki uses:
 - Tables for technical mappings or standards
 - Code blocks for examples in SQL, R, JS, or LaTeX
 - Clean formatting—emojis, decorative icons, and Markdown auto-formatting are avoided unless intentionally added
+
+See also [Documentation Standards](./docs/data-team-processes/documentation-standards.md).
 
 ## Contents
 
