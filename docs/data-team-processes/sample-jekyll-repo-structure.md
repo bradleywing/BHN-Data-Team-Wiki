@@ -1,3 +1,6 @@
+# Sample Jekyll Repo Structure
+
+```bash
 famcare-wiki/
 ├── _config.yml                 # Required
 |                               # Jekyll site settings (title, theme, baseurl, plugins, permalink style)
@@ -58,3 +61,4 @@ famcare-wiki/
 │   │   ├── program-dictionary.md
 │   │   ├── lookup-tables.md
 │   │   └── beacn-power-bi-assets.md
+```
