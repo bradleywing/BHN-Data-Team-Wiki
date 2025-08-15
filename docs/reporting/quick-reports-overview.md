@@ -1,3 +1,14 @@
+---
+front-matter-title: FAMCare Quick Reports & Query Categories  
+maintainer: Data Team  
+last_updated: 2025-08-14  
+categories: []  
+schema_version: 1.0  
+tags: []  
+permalink: /docs/reporting/quick-reports-overview.md
+status: Active  
+---
+
 # FAMCare Quick Reports Overview & Query Categories
 
 This document defines the primary categories used for classifying Quick Reports and SQL queries authored by the Data Team. Each category has a matching comment block format defined in `sql-asset-doc-standards.md`, supporting consistent documentation and usage across the `FAMCare-SQL-Toolkit`.
