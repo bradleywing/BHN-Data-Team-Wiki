@@ -1,7 +1,7 @@
 ---
-title: Documentation Standards
+front-matter-title: Documentation Standards
 maintainer: Data Team
-last_updated: 2025-07-31
+last_updated: 2025-08-14
 categories: [style, changelog, audit, reporting]
 schema_version: 1.0
 tags: [standards, markdown, versioning, changelogs]
@@ -134,7 +134,7 @@ While formal semantic versioning isn’t required, you may wish to:
 - Keep a separate CHANGELOG.md at root level for global project changes
 
 ```yaml
-title: Documentation Standards
+front-matter-title: Documentation Standards
 maintainer: Data Team
 last_updated: 2025-07-31
 categories: [style, changelog, audit, reporting]
