@@ -5,6 +5,7 @@ last_updated: 2025-08-14
 categories: [Governance, Process Standards, Data Operations]  
 schema_version: 1.0  
 tags: [change-management, approvals, implementation, rollback, documentation, stakeholder-review, testing, production-deployment, form-changes, report-updates, data-integrity]  
+permalink: /docs/data-team-processes/change-control-process.md
 status: Active  
 ---
 
