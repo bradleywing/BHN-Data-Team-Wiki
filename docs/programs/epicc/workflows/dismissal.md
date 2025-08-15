@@ -20,3 +20,21 @@
 |                                                     |                                                     |                                                         |     New Referral Received                               |     New Referral Received                               |                                                     |
 |                                                     |                                                     |                                                         |                                                         |                                                         |     Completed EPICC Program                         |
 |                                                     |                                                     |                                                         |                                                         |                                                         |     Re-Enrolled In EPICC   Program                  |
+
+## Dismissal Reasons
+
+- Administrative
+- Client Deceased
+- Client Declined
+- Client in Jail/Incarcerated
+- Client Refused Services
+- CMHC Determined Ineligible
+- Dismissed Pending Final Status
+- Ineligible, Does Not Meet Project Criteria
+- Ineligible, Not Clinically Appropriate
+- New Referral Received
+- Program Completion
+- Referral Received Within 30 Days
+- Regional Transfer
+- Transitioned to Higher-Acuity Care with ERE
+- Unable to Contact
