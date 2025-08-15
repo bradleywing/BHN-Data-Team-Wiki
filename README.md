@@ -15,7 +15,7 @@ This repository serves as the centralized, version-controlled documentation hub 
 
 ## Repo Structure
 
-```plaintext
+```bash
 ├── index.md                             # Landing page (visible via GitHub Pages)
 ├── CONTRIBUTING.md                      # Guidance for contributors on versioning and documentation philosphy
 ├── README.md                            # GitHub-side contributor guide and repo overview
@@ -97,7 +97,7 @@ Suggested entry points:
 - [Reporting Standards](docs/reporting/reporting-standards.md): SQL style guide and reporting workflows
 - [Workflow Template](docs/data-team-processes/program-workflow-template.md): Core templates for documenting logic
 - [Reports Request Tracker](docs/reporting/reports-request-tracker.md): Planned SQL-based Quick Reports in development or awaiting specification  
-- [SQL Comment Style Guide](https://github.com/BHN/FAMCare-SQL-Toolkit/blob/main/comment-style-guide.md): Guide that defines the canonical Markdown documentation structure for all SQL assets in the `FAMCare-SQL-Toolkit` repository.
+- [SQL Asset Style Guide](https://github.com/BHN/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md): Guide that defines the canonical Markdown documentation structure for all SQL assets in the `FAMCare-SQL-Toolkit` repository.
 
 For additional guidance, view the [index.md](index.md) or contact the Data Team.
 
