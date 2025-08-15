@@ -1,3 +1,14 @@
+---
+front-matter-title: FAMCare Reports & SQL Assets  
+maintainer: Data Team  
+last_updated: 2025-08-14  
+categories: []  
+schema_version: 1.0  
+tags: []  
+permalink: /docs/reporting/famcare-reports-and-assets.md
+status: Active  
+---
+
 # FAMCare Reports & SQL Assets
 
 This page documents Quick Reports used within BHN’s FAMCare implementation. It includes report descriptions, access permissions by role, publication status, and notes regarding their location, design, and maintenance.
