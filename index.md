@@ -1,5 +1,5 @@
 ---
-title: BHN Data Team Wiki
+front-matter-title: BHN Data Team Wiki
 description: Documentation hub for reporting logic, program workflows, guides, templates, and data team standards
 layout: default
 permalink: /docs/
@@ -20,7 +20,7 @@ Reusable templates, style guides, workflow references, and change control proces
 
 ### Reporting Documentation
 
-Report tracker, Quick Reports overview, and comment standards  
+Report tracker, Quick Reports overview, and reporting standards  
 → [View Reporting Docs](./docs/reporting/)
 
 ### Program-Specific Documentation
@@ -28,7 +28,7 @@ Report tracker, Quick Reports overview, and comment standards
 Workflows, policies, and shared logic by program  
 → [Explore Program Docs](./docs/programs/)
 
-### Data Dictionaries (unsure about this - how to do well? The data-dictionaries/ folder does not currently exist.)
+### Data Dictionaries
 
 Field definitions, lookup tables, Power BI assets  
 → [View Dictionaries](./docs/data-dictionaries/)
