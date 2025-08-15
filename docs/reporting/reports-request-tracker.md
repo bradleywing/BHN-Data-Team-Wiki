@@ -1,3 +1,14 @@
+---
+front-matter-title: SQL Reports Requests Tracker  
+maintainer: Data Team  
+last_updated: 2025-08-14  
+categories: []  
+schema_version: 1.0  
+tags: []  
+permalink: /docs/reporting/reports-request-tracker.md
+status: Active  
+---
+
 # SQL Report Requests Tracker
 
 This page documents current and planned SQL-based Quick Reports in development or awaiting specification. Reports may originate from stakeholder requests or be initiated internally by the Data Team to support program monitoring, data validation, or exception remediation.
