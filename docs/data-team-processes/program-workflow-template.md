@@ -1,9 +1,13 @@
 ---
-title: Program Workflow Template
-description: Standard scaffold for documenting program-specific workflows
+front-matter-title: Program Workflow Template
+maintainer: Data Team
+last_updated: 2025-08-14
+description: Standard template for documenting program-specific workflows
+categories: []
+schema_version: 1.0
 tags: [template, workflows, documentation]
-layout: default
-permalink: /docs/data-team-processes/program-workflow-template
+permalink: /docs/data-team-processes/program-workflow-template.md
+status: Active
 ---
 
 # Program Workflow Template
@@ -46,7 +50,7 @@ _Use this template to document core workflows such as Enrollment, Dismissal, Tra
 - Required Fields:  
 - Notes:
 
-_Repeat as needed_
+>_Repeat as needed_
 
 ---
 
