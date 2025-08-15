@@ -1,6 +1,6 @@
 # FAMCare Quick Reports Overview & Query Categories
 
-This document defines the primary categories used for classifying Quick Reports and SQL queries authored by the Data Team. Each category has a matching comment block format defined in `comment-style-guide.md`, supporting consistent documentation and usage across the `FAMCare-SQL-Toolkit`.
+This document defines the primary categories used for classifying Quick Reports and SQL queries authored by the Data Team. Each category has a matching comment block format defined in `sql-asset-doc-standards.md`, supporting consistent documentation and usage across the `FAMCare-SQL-Toolkit`.
 
 ---
 
@@ -13,7 +13,7 @@ Reports designed to interrogate data for specific business or operational questi
 - Often used to prepare for broader reporting or evaluation
 - May examine user activity, form submission rates, or configuration usage
 
-➡️ See [`Audit Reports` in comment-style-guide.md](comment-style-guide.md#audit-reports)
+➡️ See [`Audit Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#audit-reports)
 
 ---
 
@@ -26,7 +26,7 @@ Reports focused on flagging data inconsistencies or absences based on defined lo
 - Drive data hygiene and integrity improvements
 - May inform Maintenance Scripts or audit reviews
 
-➡️ See [`Exception Reports` in comment-style-guide.md](comment-style-guide.md#exception-reports)
+➡️ See [`Exception Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#exception-reports)
 
 ---
 
@@ -38,7 +38,7 @@ Queries used to pull raw or structured data out of the database for various anal
 - Fulfill internal or BHN program staff requests
 - Provide datasets for review or sharing
 
-➡️ See [`Extract Queries` in comment-style-guide.md](comment-style-guide.md#extract-queries)
+➡️ See [`Extract Queries` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#extract-queries)
 
 ---
 
@@ -50,7 +50,7 @@ Reports authored with program directors and managers as the target audience, ena
 - Track enrollment trends, service delivery, or form completion
 - Tailored to match program goals and indicators
 
-➡️ See [`Program Management Reports` in comment-style-guide.md](comment-style-guide.md#program-management-reports)
+➡️ See [`Program Management Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#program-management-reports)
 
 ---
 
@@ -62,7 +62,7 @@ Utility queries for examining system-level objects or logs—supporting database
 - Investigate query definitions and metadata
 - Typically read-only and used in development or diagnostics
 
-➡️ See [`Maintenance Queries` in comment-style-guide.md](comment-style-guide.md#maintenance-queries)
+➡️ See [`Maintenance Queries` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#maintenance-queries)
 
 ---
 
@@ -74,7 +74,7 @@ Actionable scripts that apply direct changes to the database (INSERT, UPDATE, DE
 - Often informed by Exception Reports or audit queries
 - Should contain detailed top-level comments describing scope and impact
 
-➡️ See [`Maintenance Scripts` in comment-style-guide.md](comment-style-guide.md#maintentance-scripts-eg-update-delete-insert)
+➡️ See [`Maintenance Scripts` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#maintentance-scripts-eg-update-delete-insert)
 
 ---
 
@@ -86,7 +86,7 @@ Logic modules stored as views, reused across multiple reports or forms.
 - Used to normalize logic and support consistent reporting
 - Version control and documentation essential
 
-➡️ See [`View Definitions` in comment-style-guide.md](comment-style-guide.md#view-definitions)
+➡️ See [`View Definitions` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#view-definitions)
 
 ---
 
@@ -98,7 +98,7 @@ Reports generated for approved non-contractual external entities—supporting co
 - Not governed by standing contractual obligations
 - Typically exported in structured format
 
-➡️ See [`External Data Sharing Reports` in comment-style-guide.md](comment-style-guide.md#external-data-sharing-reports)
+➡️ See [`External Data Sharing Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#external-data-sharing-reports)
 
 ---
 
@@ -110,7 +110,7 @@ Reports required to meet contractual, regulatory, or policy mandates.
 - Often follow prescribed formats and submission schedules
 - May include enrollment exports, milestone summaries, or service statistics
 
-➡️ See [`Compliance Reports` in comment-style-guide.md](comment-style-guide.md#compliance-reports)
+➡️ See [`Compliance Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#compliance-reports)
 
 ---
 
