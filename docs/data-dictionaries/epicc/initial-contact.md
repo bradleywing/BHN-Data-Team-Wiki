@@ -3,11 +3,12 @@ title: EPICC Initial Contact – Data Dictionary
 program: EPICC
 form_id: Initial Contact
 maintainer: Data Team
-last_updated: 2025-07-30
+last_updated: 2025-08-14
 status: In Development
 tags: [form, EPICC, initial_contact, data_dictionary]
 schema_version: 1.0
 master_tables: [epicc_program_participation]
+permalink: /docs/data-dictionaries/initial-contact.md
 ---
 
 # Initial Contact - Data Dictionary
