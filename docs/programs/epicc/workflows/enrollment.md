@@ -1,3 +1,14 @@
+---
+front-matter-title: EPICC Enrollment Workflow  
+maintainer: Data Team  
+last_updated: 2025-08-14  
+categories: []  
+schema_version: 1.0  
+tags: []  
+permalink: /docs/epicc/workflows/enrollment.md
+status: Active  
+---
+
 # EPICC Enrollment Workflow
 
 This document outlines the enrollment responsibilities and logic for the EPICC program.  
