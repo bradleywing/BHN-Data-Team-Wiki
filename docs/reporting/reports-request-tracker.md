@@ -26,6 +26,9 @@ This page documents current and planned SQL-based Quick Reports in development o
 
 ## Requested Reports Table
 
+<details>
+<summary><strong>Requests</strong></summary>
+
 | Report Name                                           | Request Type | Report Category     | Program / Requestor     | Description / Purpose                                       | Priority | Status   | Format |
 |-------------------------------------------------------|--------------|----------------------|--------------------------|-------------------------------------------------------------|----------|----------|--------|
 | BCR Dismissed Enrollment to Accept EPICC Referral     | New Report   | Program Management    | BCR / Data Team          | Analyze transitions from BCR dismissals into EPICC enrollment | Medium   | Backlog  | SQL    |
@@ -39,6 +42,8 @@ This page documents current and planned SQL-based Quick Reports in development o
 | Enrollment Dismissed, Pathway Closed, Program Worker Not Ended | New Report | Exception Reports     | Multi-Program / Data Team | Spot logic mismatches in enrollment lifecycle               | Medium   | Backlog  | SQL    |
 | ERE Duplicate PWY Forms Per Enrollment                | New Report   | Exception Reports     | ERE / Data Team          | Identify duplication errors in ERE pathway assignment        | Medium   | Backlog  | SQL    |
 | EPICC Client on Formal Treatment Path But No Referred SU Tx Agency Summation Record | New Report | Exception Reports | EPICC / Data Team | Identifies clients on formal treatment path (Mat or Non-MAT) that lack records in the SU Treatment Agency summation table for that enrollment | Medium | Blocked | SQL |
+
+</details>
 
 ---
 

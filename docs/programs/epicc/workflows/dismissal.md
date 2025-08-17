@@ -1,6 +1,20 @@
+---
+front-matter-title: EPICC Dismissal Workflow  
+maintainer: Data Team  
+last_updated: 2025-08-14  
+categories: []  
+schema_version: 1.0  
+tags: []  
+permalink: /docs/epicc/workflows/dismissal.md
+status: Active  
+---
+
 # EPICC Dismissal Workflow
 
 ## Dismissal Reasons Across Milestones
+
+<details>
+<summary><strong>Dismissal Reasons Matrix</strong></summary>
 
 |     Referral                                        |     Initial Contact                                 |     Two Week                                            |     Thirty Day                                          |     Three Month                                         |     Six Month                                       |
 |-----------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|
@@ -20,6 +34,10 @@
 |                                                     |                                                     |                                                         |     New Referral Received                               |     New Referral Received                               |                                                     |
 |                                                     |                                                     |                                                         |                                                         |                                                         |     Completed EPICC Program                         |
 |                                                     |                                                     |                                                         |                                                         |                                                         |     Re-Enrolled In EPICC   Program                  |
+
+</details>
+
+---
 
 ## Dismissal Reasons
 
