@@ -15,7 +15,7 @@ Contributors may include members of the BHN Data Team, program leadership, and o
 - **DRY Compliance**: Don’t repeat documentation across files. Reference shared sources when possible.
 - **Modularity**: Use clear folder structures and titles that isolate distinct logic, workflows, or standards.
 - **Minimalist Comments**: SQL and code comments should be brief and point to corresponding markdown documentation. See `FAMCare-SQL-Toolkit` repo for this implementation.
-- **Program vs Data Team Logic**: Place program-specific documentation under `docs/programs/`. Data Team logic, templates, and standards belong in `docs/data-team-processes/`.
+- **Program vs Data Team Logic**: Place program-specific documentation under [`docs/programs/`](docs/programs/). Data Team logic, templates, and standards belong in [`docs/data-team-processes/`](docs/data-team-processes/).
 
 ---
 
@@ -31,13 +31,61 @@ If you're adding a new program folder, template, or reporting asset, coordinate 
 
 ---
 
+## Frontmatter Standards
+
+All documentation pages should begin with YAML frontmatter to support metadata, auditability, and navigation. Use the following conventions:
+
+- Use `front-matter-title` instead of `title` to avoid Markdown linter conflicts.
+- Include `maintainer`, `last_updated`, `categories`, `tags`, `schema_version`, and `status` nodes.
+- Use `permalink` only when customizing the page URL or supporting theme navigation (e.g., GitHub Pages routing).
+
+See [`documentation-standards.md`](docs/data-team-processes/documentation-standards.md) for full schema and examples.
+
+---
+
+## Changelog Requirements
+
+Each documentation file must include a changelog section to track edits, refactors, and enhancements. Follow these standards:
+
+- Use reverse chronological order.
+- Start each entry with a standardized verb (e.g., Adds, Fixes, Refactors).
+- Prefer present tense for clarity.
+- Use GitHub-flavored diff syntax for optional clarity.
+- Include a "Forthcoming Changes" section if relevant.
+
+Refer to [`documentation-standards.md`](docs/data-team-processes/documentation-standards.md) for formatting rules and tag definitions.
+
+---
+
+## Markdown Formatting Standards
+
+Follow the Markdown style guide outlined in [`documentation-standards.md`](docs/data-team-processes/documentation-standards.md). Key conventions include:
+
+- Use backticks for field names, table names, and logic references.
+- Use fenced code blocks for longer logic snippets.
+- Use HTML comments for internal contributor notes.
+- Use blockquotes for guidance or assumptions.
+- Use collapsible `<details>` sections for long tables and sparingly in other cases.
+
+Tables, headings, and links should follow consistent formatting for readability and auditability.
+
+---
+
+## Review & Merge
+
+All contributions are reviewed by the Data Team for clarity, consistency, and alignment with documentation standards. Once approved, changes are merged into `main`.
+
+If edits affect shared templates, YAML schemas, or SQL logic, reviewers may request additional context or changelog notes.
+
+---
+
 ## Writing Standards
 
 - Keep paragraphs short and scannable.
 - Use headings (`##`, `###`) to break up content.
 - Use bullet lists or tables where they support understanding.
-- Avoid embedding images unless essential. Use `assets/images/` for uploads.
-- Mermaid diagrams can be placed inline or saved in `assets/mermaid/`.
+- Avoid embedding images unless essential. Use [`assets/images/`](assets/images/) for uploads.
+- Mermaid diagrams can be placed inline or saved in [`assets/mermaid/`](assets/mermaid/).
 
 ---
 
