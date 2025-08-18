@@ -14,7 +14,7 @@ status: Active
 
 ## Markdown Documentation Style Guide
 
-### Purpose
+### Purpose - Markdown
 
 This guide standardizes formatting across Markdown-based documentation, including field references, logic descriptions, changelogs, and contributor notes. It complements the SQL comment style guide and changelog standards.
 
@@ -80,7 +80,7 @@ Use sparingly and only when clarity is improved.
 
 ---
 
-### Purpose
+### Purpose - Changelogs
 
 Changelogs provide a human-readable record of edits, enhancements, and refactors to SQL, documentation, and logic artifacts. They facilitate auditability, review, and staff handoffs. Each .md documentation file should contain a changelog to track file evolution over time.
 
@@ -134,14 +134,15 @@ While formal semantic versioning isn’t required, you may wish to:
 - Keep a separate CHANGELOG.md at root level for global project changes
 
 ```yaml
-front-matter-title: Documentation Standards
+---
+front-matter-title: "Page Title Here"
 maintainer: Data Team
-last_updated: 2025-07-31
-categories: [style, changelog, audit, reporting]
-schema_version: 1.0
-tags: [standards, markdown, versioning, changelogs]
+last_updated: YYYY-MM-DD
+categories: [Category1, Category2]
+tags: [tag1, tag2]
 status: Active
+schema_version: 1.0
+---
 ```
 
 ---
-
