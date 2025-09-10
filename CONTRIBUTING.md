@@ -36,7 +36,7 @@ If you're adding a new program folder, template, or reporting asset, coordinate 
 All documentation pages should begin with YAML frontmatter to support metadata, auditability, and navigation. Use the following conventions:
 
 - Use `front-matter-title` instead of `title` to avoid Markdown linter conflicts.
-- Include `maintainer`, `last_updated`, `categories`, `tags`, `schema_version`, and `status` nodes.
+- Include `author`, `category`, `category-lable`, `change-control`, `dependencies`, `last_reviewed`, `last_updated`, `lifecycle`, `program-scope`, `programs`, `reviewed_by`, `schema_version`, `status`, and `tags` nodes.
 - Use `permalink` only when customizing the page URL or supporting theme navigation (e.g., GitHub Pages routing).
 
 See [`documentation-standards.md`](docs/data-team-processes/documentation-standards.md) for full schema and examples.
