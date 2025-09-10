@@ -118,4 +118,11 @@ This wiki links to and summarizes the logic, workflows, and standards that span 
 
 ## License & Access
 
-This repository is private and intended for internal use by authorized BHN personnel. Contact the Data Team for access requests or contribution guidance.
+This repository is now publicly visible to support transparency, shared learning, and cross-sector collaboration. While the documentation reflects BHN-specific workflows and standards, external contributors are welcome to explore the structure and logic for inspiration or adaptation.
+
+- **License**: Content is shared under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/), unless otherwise noted.
+- **Intended Audience**: BHN staff, contributors, and collaborators working within the FAMCare ecosystem or similar data environments.
+- **Contribution Scope**: External contributions are not currently accepted. For questions or collaboration inquiries, contact the BHN Data Team.
+- **Internal Editing**: All edits must follow our contributor workflow and documentation standards. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+> This wiki is part of BHN’s broader effort to build sustainable, auditable, and teachable documentation ecosystems. We welcome feedback and dialogue around these practices.

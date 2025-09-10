@@ -103,6 +103,7 @@ The following matrix defines standardized aliases for all commonly used tables a
 | EPICC          | Q_EPICC_LATEST_SU_TX_AGENCY      | ESUTX        | 0                    | 1                        |                        |
 | EPICC          | Q_EPICC_PATHCLIENT_ENROLLMENTS   | EENROLL      | 0                    | 1                        |                        |
 | EPICC          | Q_EPICC_PATHWAY_FORM_DOCSERNOS   | EPF          | 0                    | 1                        |                        |
+| EPICC          | Q_EPICC_REENGAGE                 | REENGAGE     | 0                    | 1                        |                        |
 | ERE            | PWERECLIENTNEEDS                 | ERENEEDS     | 0                    | 0                        |                        |
 | ERE            | Q_ERE_BHS                        | EREBHS       | 0                    | 1                        |                        |
 | ERE            | Q_ERE_CLIENT                     | ERECLIENT    | 0                    | 1                        |                        |

@@ -14,9 +14,9 @@ status: Active
 
 ## Markdown Documentation Style Guide
 
-### Purpose
+### Purpose - Markdown
 
-This guide standardizes formatting across Markdown-based documentation, including field references, logic descriptions, changelogs, and contributor notes. It complements the SQL comment style guide and changelog standards.
+This guide standardizes formatting across Markdown-based documentation, including field references, logic descriptions, changelogs, and contributor notes. It complements the SQL asset documentation standards and changelog standards.
 
 ### Field Names and Table Names
 
@@ -76,11 +76,58 @@ Use sparingly and only when clarity is improved.
 
 ---
 
+## Schema Versioning in Documentation
+
+The `schema_version:` field tracks the version of the YAML frontmatter schema used in documentation files. It ensures consistency across assets and supports future automation, validation, and contributor onboarding.
+
+### Purpose
+
+- Signals which fields and conventions are expected in the frontmatter.
+- Enables scripts or linters to validate structure based on version.
+- Supports backward compatibility when publishing or sharing documentation externally.
+
+### When to Increment
+
+Update `schema_version:` when:
+
+- New fields are added to the frontmatter.
+- Field names or formats change.
+- Contributor guidance is updated.
+
+Do **not** increment for:
+
+- Changes to SQL logic or table structure.
+- Cosmetic edits to documentation content.
+
+### Optional: `asset_schema_version`
+
+If you wish to track changes to the underlying table or view structure, an `asset_schema_version:` field may be added to the YAML. This would reflect changes to columns, data types, constraints, or logic and _not_ the documentation schema.
+
+> **Example:**
+
+```yaml
+asset_schema_version: 2.0
+```
+
+This field is optional and may be adopted for audit dashboards or schema evolution tracking.
+
+### Summary
+
+| Field                | Purpose                                      |
+|---------------------|----------------------------------------------|
+| `schema_version:`    | Tracks version of the documentation frontmatter schema |
+| `asset_schema_version:` | (Optional) Tracks version of the underlying data structure |
+
+For implementation examples, see [`sql-asset-doc-standards.md`](https://github.com/BHN/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md).
+
+
+---
+
 ## Changelog Standards
 
 ---
 
-### Purpose
+### Purpose - Changelogs
 
 Changelogs provide a human-readable record of edits, enhancements, and refactors to SQL, documentation, and logic artifacts. They facilitate auditability, review, and staff handoffs. Each .md documentation file should contain a changelog to track file evolution over time.
 
@@ -118,12 +165,14 @@ Move confirmed items from this section into the main changelog once applied.
 
 ### Diff-Style Syntax (Optional Enhancer)
 
-Use GitHub-flavored diff syntax to indicate adds vs. removals:
+It is possible to use GitHub-flavored diff syntax to indicate adds vs. removals:
 
 ```diff
 + Adds filter to exclude inactive enrollments from report
 - Removes outdated logic for treatment plan status
 ```
+
+Each line must begin with `+` or `-` for the GitHub-flavored diff fenced code block syntax to work. Therefore, this is not compatible with the established changelogs. However, there may be instances where tracking diffs may be useful and desired.
 
 ### Versioning Guidance (Optional)
 
@@ -134,14 +183,15 @@ While formal semantic versioning isn’t required, you may wish to:
 - Keep a separate CHANGELOG.md at root level for global project changes
 
 ```yaml
-front-matter-title: Documentation Standards
+---
+front-matter-title: "Page Title Here"
 maintainer: Data Team
-last_updated: 2025-07-31
-categories: [style, changelog, audit, reporting]
-schema_version: 1.0
-tags: [standards, markdown, versioning, changelogs]
+last_updated: YYYY-MM-DD
+categories: [Category1, Category2]
+tags: [tag1, tag2]
 status: Active
+schema_version: 1.0
+---
 ```
 
 ---
-

@@ -1,5 +1,5 @@
 ---
-title: EPICC Initial Contact – Data Dictionary
+front-matter-title: EPICC Initial Contact – Data Dictionary
 program: EPICC
 form_id: Initial Contact
 maintainer: Data Team
