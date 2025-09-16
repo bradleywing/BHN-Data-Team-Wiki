@@ -1,3 +1,20 @@
+---
+front-matter-title: Tags Index  
+author: Bradley Wing
+last_updated: 2025-09-16  
+status: active  
+tags:
+  - tag-governance
+  - taxonomy-reference
+  - contributor-guidance
+permalink: /tags/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-16
+last_reviewed: 2025-09-16
+schema_version: 1.0  
+---
+
 # Tags Index
 
 This file outlines current and potential tags used across the wiki. Tagging conventions are subject to revision based on team feedback and content needs.
@@ -9,38 +26,6 @@ This file outlines current and potential tags used across the wiki. Tagging conv
 - **Use kebab-case for consistency**
 - **Cross-reference program-specific vs. universal tags in relevant content**
 
-## Program Scope
-
-Assets may apply to one program, several, or all. To support auditability and aggregation, use the `program_scope:` field alongside the `programs:` list.
-
-### `program-scope: single`
-
-Use when the asset is relevant to exactly one program.
-
-```yaml
-program_scope: single
-programs:
-  - epicc
-```
-
-> Required: `programs:` must include exactly one program when `program-scope` is single.
-
-### `program_scope: multi`
-
-Use when the asset applies to multiple programs, including when it applies to all of them.
-
-```yaml
-program_scope: multi
-programs:
-  - bcr
-  - complex-care
-  - epicc
-  - ere
-  - yere
-```
-
-> Tip: This enables easy counting of multi-program assets without parsing individual tags.
-
 ## Content Domains
 
 | Tag               | Description                                 |
@@ -49,6 +34,34 @@ programs:
 | `insurance-data` | Payor source, coverage periods, provider info |
 | `behavioral-health`  | Behavioral health documentation or reporting |
 | `referral-logic` | Referral workflows, filters, and validation |
+
+## Program Logic & Goals
+
+| Tag               | Description                                 |
+|------------------|---------------------------------------------|
+| `program-goals`| Documents intended outcomes or benchmarks for a program |
+| `workflow-logic` | Describes step-by-step program processes or decision trees |
+| `milestone-tracking`  | Tracks time-based or event-based progress markers |
+| `cohort-definition` | Defines inclusion/exclusion logic for program cohorts |
+| `outcome-metrics` | Specifies how success is measured (e.g., housing stability, treatment completion) |
+
+## Program Design & Strategy
+
+| Tag               | Description                                 |
+|------------------|---------------------------------------------|
+| `program-structure`| Describes how the program is organized (e.g., referral-process, outreach milestones) |
+| `reporting-logic` | Describes how program data is surfaced in reports or dashboards |
+
+## Operational Workflows
+
+| Tag               | Description                                 |
+|------------------|---------------------------------------------|
+| `enrollment-dismissal`| Logic and documentation related to ending a client’s enrollment |
+| `reconnection`| Logic and documentation related to reconnecting a client with an agency |
+| `client-transfer` | Workflow for reassigning clients between outreach workers or teams |
+| `re-engagement` | Workflow for reconnection with clients after a lapse in participation |
+
+_Tip: use the operational workflow tags alongside `workflow-logic` and `program-docs` to support filtering and audit dashboards._
 
 ## Asset Function
 
@@ -81,13 +94,17 @@ programs:
 
 | Tag               | Description                                 |
 |------------------|---------------------------------------------|
+| `program-docs`| General tag for program-specific documentation pages    |
 | `program-staff-facing`| Intended for non-technical users       |
 | `data-team-only` | Internal documentation or logic             |
 | `external-sharing`| Structured for outside partners            |
 | `scheduled-report`| Part of recurring reporting cycle          |
 
+_Tip: use `program-docs` alongisde `program_scope:` and `programs:` to support cross-program indexing and filtering._
+
 ## Tag Evolution Log
 
+- **2025-09-11**: Adds tags for program-specific documentation.
 - **2025-07-26**: Adds initial template to support future tagging conventions
 
 ---
