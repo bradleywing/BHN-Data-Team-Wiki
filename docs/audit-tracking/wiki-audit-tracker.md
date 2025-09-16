@@ -1,3 +1,18 @@
+---
+front-matter-title: Wiki Audit Tracker
+author: Bradley Wing
+last_updated: 2025-09-12
+status: active
+tags:
+  - documentation-audit
+permalink: /wiki-audit-tracker/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-12
+last_reviewed: 2025-09-12
+schema_version: 1.0
+---
+
 # Wiki Audit Tracker
 
 ## **Option One**: Table Format – Updated 2025-07-26
