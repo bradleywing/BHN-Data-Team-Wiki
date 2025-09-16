@@ -1,3 +1,20 @@
+---
+front-matter-title: Contributing to the BHN Data Team Wiki  
+author: Bradley Wing
+last_updated: 2025-08-14  
+status: active  
+tags:
+  - contributor-guide
+  - onboarding
+  - documentation-standards
+permalink: /contributing/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-11
+last_reviewed: 2025-09-11
+schema_version: 1.0  
+---
+
 # Contributing to the BHN Data Team Wiki
 
 Thank you for supporting the documentation that powers our reporting systems and program logic. This wiki is version-controlled to preserve clarity, teachability, and continuity across platforms and contributors.
