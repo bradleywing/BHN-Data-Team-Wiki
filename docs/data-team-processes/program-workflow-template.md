@@ -1,13 +1,18 @@
 ---
 front-matter-title: Program Workflow Template
-maintainer: Data Team
+author: Bradley Wing
 last_updated: 2025-08-14
-description: Standard template for documenting program-specific workflows
-categories: []
+status: active
+tags: 
+  - template
+  - workflows
+  - documentation
+permalink: /program-workflow-template/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-12
+last_reviewed: 2025-09-12
 schema_version: 1.0
-tags: [template, workflows, documentation]
-permalink: /docs/data-team-processes/program-workflow-template.md
-status: Active
 ---
 
 # Program Workflow Template
@@ -20,7 +25,6 @@ _Use this template to document core workflows such as Enrollment, Dismissal, Tra
 
 - **Program Name**:  
 - **Workflow Type** (e.g., Enrollment, Dismissal):  
-- **Last Updated By**:  
 - **Related Forms**:  
 
 ---
@@ -73,12 +77,9 @@ _Use this template to document core workflows such as Enrollment, Dismissal, Tra
 
 ---
 
-## Revision History
+## Changelog
 
-| Date       | Change Description                       | Author     |
-|------------|------------------------------------------|------------|
-| YYYY-MM-DD | Initial creation                         | Bradley    |
-| YYYY-MM-DD | Split Dismissal logic into separate doc  | Katy       |
+- **YYYY-MM-DD**: Adds initial Markdown documentation.
 
 ---
 
