@@ -1,3 +1,22 @@
+---
+front-matter-title: Change Scope Form
+author: Bradley Wing
+last_updated: 2025-09-12
+status: active
+tags:
+  - change-scope-form
+  - impact-assessment
+  - asset-coordination
+  - implementation-planning
+  - internal-review
+permalink: /change-scope-form/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-12
+last_reviewed: 2025-09-12
+schema_version: 1.0
+---
+
 # Change Scope Form
 
 ## Linked Request
