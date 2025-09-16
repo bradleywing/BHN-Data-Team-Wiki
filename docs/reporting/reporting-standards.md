@@ -1,12 +1,16 @@
 ---
 front-matter-title: Reporting Standards  
-maintainer: Data Team  
-last_updated: 2025-08-14  
-categories: []  
+author: Bradley Wing  
+last_updated: 2025-08-14
+status: active  
+tags:
+  - tag 
+permalink: /reporting-standards/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-11
+last_reviewed: 2025-09-11
 schema_version: 1.0  
-tags: []  
-permalink: /docs/reporting/reporting-standards.md
-status: Active  
 ---
 
 # Reporting Standards
@@ -109,6 +113,7 @@ The following matrix defines standardized aliases for all commonly used tables a
 | ERE            | Q_ERE_CLIENT                     | ERECLIENT    | 0                    | 1                        |                        |
 | ERE            | Q_ERE_CLIENT_NEEDS               | ERENEEDS     | 0                    | 1                        |                        |
 | ERE            | Q_ERE_IHNA                       | EREIHNA      | 0                    | 1                        |                        |
+| ERE            | Q_ERE_HOSPITAL_VISIT_NOTE        | EREHOSP      | 0                    | 1                        |                        |
 | ERE            | Q_ERE_PATHCLIENT_ENROLLMENTS     | EREENROLL    | 0                    | 1                        |                        |
 | ERE            | Q_ERE_PATHWAY_FORM_DOCSERNOS     | EREPF        | 0                    | 1                        |                        |
 | ERE            | Q_ERE_REFERRAL                   | EREREF       | 0                    | 1                        |                        |
@@ -125,6 +130,8 @@ The following matrix defines standardized aliases for all commonly used tables a
 | YERE           | Q_YERE_ACTIVE_HOUSING_STATUS     | YHOUSE       | 0                    | 1                        |                        |
 | YERE           | Q_YERE_ACTIVE_PAYOR_SOURCE       | YPAY         | 0                    | 1                        |                        |
 | YERE           | Q_YERE_CLIENT                    | YCLIENT      | 0                    | 1                        |                        |
+| YERE           | Q_YERE_CLIENT_NEEDS              | YCLIENTNEEDS   | 0                    | 1                        |                        |
+| YERE           | Q_YERE_CAREGIVER_NEEDS           | YCARENEEDS  | 0                    | 1                        |                        |
 | YERE           | Q_YERE_PATHCLIENT_ENROLLMENTS    | YENROLL      | 0                    | 1                        |                        |
 | YERE           | Q_YERE_PATHWAY_FORM_DOCSERNOS    | YPF          | 0                    | 1                        |                        |
 | YERE           | YERE_TYPE_OF_SCHOOL_DISCIPLINE   | YTSD         | 1                    | 0                        |                        |

@@ -1,12 +1,16 @@
 ---
 front-matter-title: FAMCare Reports & SQL Assets  
-maintainer: Data Team  
-last_updated: 2025-08-14  
-categories: []  
-schema_version: 1.0  
-tags: []  
-permalink: /docs/reporting/famcare-reports-and-assets.md
+author: Bradley Wing  
+last_updated: 2025-08-14
 status: Active  
+tags:
+  - tag
+permalink: /famcare-reports-and-assets/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-11
+last_reviewed: 2025-09-11
+schema_version: 1.0  
 ---
 
 # FAMCare Reports & SQL Assets
@@ -105,7 +109,7 @@ These matrices catalog all named reports relevant to BHN’s FAMCare implementat
 - **Program Managers**: Group-specific access; assigned based on report scope.
 - **LINCS Managers**, **YERE Managers**, **EPICC Managers**, etc.: Restricted access based on role relevance.
 
-For role-specific guidance, refer to [Saving & Securing Quick Reports](saving-and-securing-quick-reports.md.md).
+For role-specific guidance, refer to [Saving & Securing Quick Reports](saving-and-securing-quick-reports.md).
 
 ---
 

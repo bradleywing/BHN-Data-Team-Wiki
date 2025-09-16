@@ -1,12 +1,16 @@
 ---
 front-matter-title: SQL Reports Requests Tracker  
-maintainer: Data Team  
+author: Bradley Wing
 last_updated: 2025-08-14  
-categories: []  
+status: active  
+tags:
+  - tag
+permalink: /reports-request-tracker/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-11
+last_reviewed: 2025-09-11
 schema_version: 1.0  
-tags: []  
-permalink: /docs/reporting/reports-request-tracker.md
-status: Active  
 ---
 
 # SQL Report Requests Tracker
@@ -41,7 +45,10 @@ This page documents current and planned SQL-based Quick Reports in development o
 | EPICC Re-Engagement Caseload                          | New Report   | Program Management    | EPICC / Data Team        | Identify EPICC clients eligible for re-engagement efforts    | High     | Backlog  | SQL    |
 | Enrollment Dismissed, Pathway Closed, Program Worker Not Ended | New Report | Exception Reports     | Multi-Program / Data Team | Spot logic mismatches in enrollment lifecycle               | Medium   | Backlog  | SQL    |
 | ERE Duplicate PWY Forms Per Enrollment                | New Report   | Exception Reports     | ERE / Data Team          | Identify duplication errors in ERE pathway assignment        | Medium   | Backlog  | SQL    |
-| EPICC Client on Formal Treatment Path But No Referred SU Tx Agency Summation Record | New Report | Exception Reports | EPICC / Data Team | Identifies clients on formal treatment path (Mat or Non-MAT) that lack records in the SU Treatment Agency summation table for that enrollment | Medium | Blocked | SQL |
+| ERE Hospital Visit Note Report               | New Report   | Program Management     | ERE          | Document hospital visits conducted to enable program leadership to oversee client contacts        | High   | Scoping  | SQL    |
+| ERE Transfer Report                | New Report   | Program Management     | ERE          | Document client transfers across Outreach Liaisons and agencies to enable program leadership to manage workloads        | Medium   | Backlog  | SQL    |
+| ERE Dismissals Report                | New Report   | Program Management     | ERE          | Document ERE enrollment dismissals to enable program leadership to assess program outcomes        | Medium   | Backlog  | SQL    |
+| EPICC Client on Formal Treatment Path But Not Referred SU Tx Agency Summation Record | New Report | Exception Reports | EPICC / Data Team | Identifies clients on formal treatment path (Mat or Non-MAT) that lack records in the SU Treatment Agency summation table for that enrollment | Medium | Blocked | SQL |
 
 </details>
 

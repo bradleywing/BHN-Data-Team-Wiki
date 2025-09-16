@@ -1,12 +1,26 @@
 ---
 front-matter-title: Change Control Process  
-maintainer: Data Team  
-last_updated: 2025-08-14  
-categories: [Governance, Process Standards, Data Operations]  
+author: Bradley Wing  
+last_updated: 2025-08-14 
+status: active  
+tags:
+  - change-management
+  - approvals
+  - implementation
+  - rollback
+  - documentation
+  - stakeholder-review
+  - testing
+  - production-deployment
+  - form-changes
+  - report-updates
+  - data-integrity 
+permalink: /change-control-process/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-12
+last_reviewed: 2025-09-12
 schema_version: 1.0  
-tags: [change-management, approvals, implementation, rollback, documentation, stakeholder-review, testing, production-deployment, form-changes, report-updates, data-integrity]  
-permalink: /docs/data-team-processes/change-control-process.md
-status: Active  
 ---
 
 # Change Control Process

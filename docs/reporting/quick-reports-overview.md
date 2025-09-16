@@ -1,12 +1,16 @@
 ---
 front-matter-title: FAMCare Quick Reports & Query Categories  
-maintainer: Data Team  
+author: Bradley Wing
 last_updated: 2025-08-14  
-categories: []  
-schema_version: 1.0  
-tags: []  
-permalink: /docs/reporting/quick-reports-overview.md
-status: Active  
+status: active  
+tags:
+  - tag
+permalink: /quick-reports-overview/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-11
+last_reviewed: 2025-09-11
+schema_version: 1.0
 ---
 
 # FAMCare Quick Reports Overview & Query Categories

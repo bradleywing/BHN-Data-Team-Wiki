@@ -1,4 +1,32 @@
-# YERE Dismissal Workflow
+---
+front-matter-title: YERE Enrollment Dismissal Process  
+author: Bradley Wing
+last_updated: 2025-09-11
+category: program-documentation
+category_label: Program Documentation
+status: active  
+lifecycle: production
+program_scope: single
+programs:
+  - yere
+tags:
+  - program-docs
+  - workflow-logic
+  - program-structure
+  - enrollment-dismissal
+change-control: internal-review-required
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-11
+last_reviewed: 2025-09-11
+schema_version: 1.0
+---
+
+# YERE Enrollment Dismissal Process
+
+## Description
+
+Documents the process for dismissing ERE program enrollments.
 
 ## Outreach Process Pre-Dismissal
 

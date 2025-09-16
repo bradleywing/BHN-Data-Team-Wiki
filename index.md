@@ -1,8 +1,11 @@
 ---
 front-matter-title: BHN Data Team Wiki
+author: Bradley Wing
+last_updated: 2025-09-12
+status: active
 description: Documentation hub for reporting logic, program workflows, guides, templates, and data team standards
 layout: default
-permalink: /docs/
+permalink: /
 ---
 
 # Welcome to the BHN Data Team Wiki

@@ -1,7 +1,8 @@
 title: BHN Data Team Wiki
 description: Documentation for reporting systems, team workflows, and program logic.
+url: "https://behavioral-health-network.github.io"
 baseurl: "/BHN-Data-Team-Wiki"  # Base URL for GitHub Pages
-permalink: /docs/:path/
+permalink: /:path/
 theme: jekyll-theme-git-wiki
 markdown: kramdown
 highlighter: rouge
@@ -10,7 +11,7 @@ highlighter: rouge
 collections:
   docs:
     output: true
-    permalink: /docs/:path/
+    permalink: /:path/
 
 defaults:
   - scope:

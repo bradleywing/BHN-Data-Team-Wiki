@@ -1,12 +1,19 @@
 ---
 front-matter-title: Pathways Maintenance
-maintainer: Data Team
+author: Bradley Wing
 last_updated: 2025-08-14
-categories: [Pathways, FAMCare Configuration, Reporting, data-team-processes]
+status: active
+tags:
+  - pathway-creation
+  - pathway-events
+  - event-metadata
+  - master-pathway-dashboard
+permalink: /pathways-maintenance/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-12
+last_reviewed: 2025-09-12
 schema_version: 1.0
-tags: [pathway-creation, pathway-events, event-metadata, master-pathway-dashboard]
-permalink: /docs/data-team-processes/pathways-maintenance.md
-status: Active
 ---
 
 # Pathways Module
