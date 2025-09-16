@@ -1,12 +1,16 @@
 ---
 front-matter-title: FAMCare Directive Library  
-maintainer: Data Team  
+author: Bradley Wing
 last_updated: 2025-08-14  
-categories: []  
+status: active  
+tags:
+  - tag
+permalink: /directive-library/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-12
+last_reviewed: 2025-09-12
 schema_version: 1.0  
-tags: []  
-permalink: /docs/famcare-session-vars-directives/directive-library.md
-status: Active  
 ---
 
 # FAMCare Directive Library
