@@ -95,19 +95,19 @@ Used only in documentation for HTML forms.
 form_title: string
 form_file: path/to/file.html
 table_name: string
-form_type: pathways-governed | standalone
+form_type: pathways-governed | pathways-standalone | vendor-controlled
 client_form: true | false
-date_field: string
 quick_submit_enabled: true | false
 ```
 
 > **Note**: These fields are not required for SQL views or wiki pages.
 
-### Pathway Metadata
+### Pathways-Governed Forms Metadata
 
 Used only for pathway-governed forms.
 
 ```yaml
+form_type: pathways-governed
 pathway_name: string
 pathway_id: string
 pathway_event: string
@@ -121,6 +121,7 @@ pathway_event_logic:
   number_occurrences: int
   depends_on: string
   completion_check_table: string
+date_field: Pathways_Date
 parent_linkage: string | null
 join_logic:
   targets:
@@ -131,7 +132,53 @@ join_logic:
           target: string
 ```
 
-> **Note: These fields support form-to-pathway alignment and are not used outside form documentation.
+> **Note**: These fields support form-to-pathway alignment and are not used outside form documentation.
+
+### Standalone Pathways Forms Metadata
+
+Used only for Pathway forms that do not have a Pathway Event, which means that they are not pathways-governed, will not appear on the Pathways Master Dashboard, and must be accessed as standalone forms using menus.
+
+```yaml
+form_type: pathways-standalone
+pathway_name: string
+pathway_id: string
+pathway_event: null
+pathway_event_logic: null
+date_field: Pathways_Date
+parent_linkage: string | null
+join_logic:
+  targets:
+    - table: string
+      join_type: inner | left
+      on:
+        - source: string
+          target: string
+```
+
+> **Note**: These fields support form-to-pathway alignment and are not used outside form documentation.
+
+### Vendor-Controlled Forms Metadata
+
+Used for forms like CLIENT, PROVIDERPLACEMENT, and others that are managed by the vendor and not governed by Pathway logic. These may be surfaced via system menus or embedded in workflows.
+
+```yaml
+form_type: vendor-controlled
+pathway_name: null
+pathway_id: null
+pathway_event: null
+pathway_event_logic: null
+date_field: null
+parent_linkage: string | null
+join_logic:
+  targets:
+    - table: string
+      join_type: inner | left
+      on:
+        - source: string
+          target: string
+```
+
+> **Note**: The pathways fields are retained for schema consistency but are always `null` for vendor-controlled forms that are not developed and governed by the Pathways module.
 
 ### Schema Versioning in Documentation
 

@@ -20,6 +20,7 @@ This repository serves as the centralized, version-controlled documentation hub 
 ├── CONTRIBUTING.md                      # Guidance for contributors on versioning and documentation philosphy
 ├── README.md                            # GitHub-side contributor guide and repo overview
 ├── tags.md                              # Index of proposed tagging conventions
+├── LICENSE                              # Creative Commons Public License for the site
 ├── assets/
     └── images/                          # Screenshots, diagrams (e.g., workflow visuals)
     └── mermaid/                         # Mermaid source files
