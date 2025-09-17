@@ -97,7 +97,6 @@ form_file: path/to/file.html
 table_name: string
 form_type: pathways-governed | pathways-standalone | vendor-controlled
 client_form: true | false
-date_field: string
 quick_submit_enabled: true | false
 ```
 
@@ -122,6 +121,7 @@ pathway_event_logic:
   number_occurrences: int
   depends_on: string
   completion_check_table: string
+date_field: Pathways_Date
 parent_linkage: string | null
 join_logic:
   targets:
@@ -144,6 +144,7 @@ pathway_name: string
 pathway_id: string
 pathway_event: null
 pathway_event_logic: null
+date_field: Pathways_Date
 parent_linkage: string | null
 join_logic:
   targets:
@@ -166,6 +167,7 @@ pathway_name: null
 pathway_id: null
 pathway_event: null
 pathway_event_logic: null
+date_field: null
 parent_linkage: string | null
 join_logic:
   targets:
