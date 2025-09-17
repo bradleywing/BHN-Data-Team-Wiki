@@ -69,7 +69,7 @@ schema_version: 1.0
 **PROS**: Natural fit for commenting, audit logs, and readable history  
 **CONS**: Harder to sort alphabetically or by date
 
-## _Supplemental_ **Option Four**: Add Last Reviewed Metadata to Frontmatter 
+## _Supplemental_ **Option Four**: Add Last Reviewed Metadata to Frontmatter  
 
 ### Last Reviewed Metadata
 
