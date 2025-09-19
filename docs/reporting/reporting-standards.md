@@ -159,3 +159,15 @@ The following matrix defines standardized aliases for all commonly used tables a
 - Add primary join fields (e.g. `DOCSERNO`, `CLIENT_NUMBER`)
 - Link to sample queries using standardized aliases
 - Automate alias validation in SQL linting tools
+
+## Changelog
+
+- **2025-09-18**: Adds `Q_PLACEMENT_PROGRAM_WORKER_HISTORY | WORKER_HISTORY` table alias.
+- **2025-09-16**: Updates frontmatter; adds table aliases for `Q_YERE_CLIENT_NEEDS` and `Q_YERE_CAREGIVER_NEEDS`.
+- **2025-09-12**: Adds `Q_ERE_HOSPITAL_VISIT_NOTE` table alias.
+- **2025-09-10**: Adds `Q_EPICC_REENGAGE` table alias.
+- **2025-08-15**: Adds initial commmit; adds frontmatter.
+- **2025-08-14**: Adds collapsible <details> around `Table Aliases` matrix.
+- **2025-08-10**: Reformats sections and the `Table Aliases` matrix.
+- **2025-08-09**: Adds substantial content, including a Markdown table for the table aliases.
+- **2025-07-28**: Adds Markdown file.
