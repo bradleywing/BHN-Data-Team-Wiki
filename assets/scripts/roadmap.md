@@ -1,3 +1,10 @@
+---
+front-matter-title: BHN Data Team R Script Roadmap
+author: Bradley Wing
+last_updated: 2025-09-18
+permalink: /roadmap/
+---
+
 # BHN Data Team R Scripts Roadmap
 
 ## Phase 1: Script Tagging & Indexing
@@ -62,3 +69,9 @@
 - Use tag blocks to explain logic decisions, edge case handling, or audit hooks
 - Treat `Description:` as a mini-narrative for onboarding new analysts
 - Surface scripts with `Status: Pilot` in onboarding docs to invite collaboration
+
+## Changelog
+
+- **2025-09-18**: Adds frontmatter.
+- **2025-08-03**: Adds `scripts/` folder to `assets/` and begins the process of adding content, including a draft of an R parser script. This content may grow to include Python scripts as well. This is very much under construction and subject to change.
+- **2025-08-01**: Adds Markdown file.

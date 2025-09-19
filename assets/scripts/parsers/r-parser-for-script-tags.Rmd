@@ -1,3 +1,18 @@
+---
+front-matter-title: R Parser for Script Tags
+status: Draft
+tags: 
+  - parser
+last_updated: 2025-09-18
+author: Bradley Wing
+permalink: /r-parser-for-script-tags/
+---
+
+# R Parser for Script Tags
+
+## Parser Script
+
+```r
 library(tidyverse)
 
 # Function to extract tag block from a single file
@@ -43,3 +58,10 @@ parse_script_tags <- function(folder = "assets/r-scripts/") {
 # Example usage
 script_index <- parse_script_tags()
 print(script_index)
+```
+
+## Changelog
+
+- **2025-09-18**: Adds frontmatter; converts to R Markdown format to allow for the yaml header.
+- **2025-08-03**: Initial draft of R parser for script tags.
+- **2025-08-01**: Created file with initial code snippet.

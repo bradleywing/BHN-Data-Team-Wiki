@@ -1,12 +1,22 @@
-# ---
-# Title: Pivot Field Grouping Parser
-# Status: Draft
-# Tags: [parser, markdown, yaml, data dictionary]
-# Last Updated: 2025-08-01
-# Author: BHN Data Team
-# Description: Parses YAML field groupings from Markdown documentation and returns a tidy tibble.
-# ---
+---
+front-matter-title: Pivot Field Grouping Parser
+status: Draft
+tags: 
+  - parser
+  - markdown
+  - yaml
+  - data dictionary
+last_updated: 2025-09-18
+author: Bradley Wing
+permalink: /r-parser-for-field-groupings/
+description: Parses YAML field groupings from Markdown documentation and returns a tidy tibble.
+---
 
+# R Parser for Field Groupings
+
+## Parser Script
+
+```r
 # Load necessary libraries
 library(yaml)
 library(dplyr)
@@ -37,3 +47,10 @@ groupings_df <- groupings_df |>
   select(field_id = field, group_label = label, pivot_count = pivots)
 
 print(groupings_df)
+```
+
+## Changelog
+
+- **2025-09-18**: Adds frontmatter; converts to R Markdown format to allow for the yaml header.
+- **2025-08-03**: Initial draft of R parser for field groupings.
+- **2025-08-01**: Created file with initial code snippet.

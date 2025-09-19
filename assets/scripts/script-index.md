@@ -1,3 +1,10 @@
+---
+front-matter-title: Script Index
+author: Bradley Wing
+last_updated: 2025-09-18
+permalink: /script-index/
+---
+
 # Script Index
 
 This index is auto-generated from script tag blocks in `assets/r-scripts/`. It surfaces metadata for audit, onboarding, and refinement. Scripts are grouped by status and include tags, descriptions, and last updated timestamps.
@@ -67,3 +74,9 @@ This index is auto-generated from script tag blocks in `assets/r-scripts/`. It s
 ---
 
 _Last generated: `r format(Sys.Date(), "%Y-%m-%d")`_
+
+## Changelog
+
+- **2025-09-18**: Adds frontmatter.
+- **2025-08-03**: Adds `scripts/` folder to `assets/` and begins the process of adding content, including a draft of an R parser script. This content may grow to include Python scripts as well. This is very much under construction and subject to change.
+- **2025-08-01**: Adds Markdown file.

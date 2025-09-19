@@ -100,3 +100,9 @@ To ensure consistency, data integrity, and effective collaboration, a formal cha
 - **Program Leadership:** Provides feedback and ensures changes align with program goals.
 
 - **Requesters:** Submit detailed change requests and assist in validating updates.
+
+## Changelog
+
+- **2025-09-16**: Updates frontmatter to align with `schema_version` 1.0.
+- **2025-08-15**: Adds initial commit of `change-control-process.md`, which is a conversion of the LaTeX version of this section from the Handbook to Markdown with a newly added front-matter yaml and cross-references added. This is still subject to change as we develop the `change-request-form.md` and the `change-scope-form.md`. Adds permalink to frontmatter.
+- **2025-07-28**: Adds Markdown file.

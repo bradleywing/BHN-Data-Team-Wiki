@@ -1,23 +1,20 @@
 ---
 front-matter-title: EPICC Initial Contact – Data Dictionary
-program: EPICC
-form_id: Initial Contact
-maintainer: Data Team
-last_updated: 2025-08-14
+program_scope: single
+programs: 
+  - epicc
+Author: Bradley Wing
+last_updated: 2025-09-18
 status: In Development
-tags: [form, EPICC, initial_contact, data_dictionary]
+tags:
+  - epicc-initial-contact
+  - data-dictionary
 schema_version: 1.0
 master_tables: [epicc_program_participation]
-permalink: /docs/data-dictionaries/initial-contact.md
+permalink: /initial-contact/
 ---
 
 # Initial Contact - Data Dictionary
-
-## Changelog
-
-- **2025-08-01:** Adds initial content to this page.
-
----
 
 ## Core Fields
 
@@ -829,3 +826,12 @@ Deprecated values:
 | 0206.7        | Other                   | heard_about_from_other            | Yes    | No       | Renamed 11/18/2024 |
 
 </details>
+
+## Changelog
+
+- **2025-09-18**: Renames file to `epicc-initial-contact.md` to eliminate ambiguity in permalinks.
+- **2025-08-21**: Reformats and tweaks content.
+- **2025-08-15**: Adds substantial content.
+- **2025-08-03**: Renames file to `table-initial-contact.md`. Removes the `Changelog` and transfers it to the HTML file in `FAMCare-HTML-Form-Code` repo because the content centered on changes to the form and table; adds substantial content, mostly consisting of `LOV` sections; updates the frontmatter.
+- **2025-08-02**: Adds collapsible <details> elements; reformats significant amounts of the file; adds more `LOV` sections.
+- **2025-08-01**: Adds Markdown file, adds frontmatter, adds most content, including a `Core Fields` matrix and various `LOV` sections.

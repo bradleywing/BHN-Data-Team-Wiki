@@ -77,3 +77,9 @@ schema_version: 1.0
   *(e.g., deployed to PROD on `YYYY-MM-DD`, pending UAT)*
 - **Rollback Plan**:  
   *(e.g., revert to `PWEPICCIC` to commit [5a146d5](https://github.com/bradleywing/FAMCare-HTML-Form-Code/commit/5a146d5fee676cc33c8a183905e106cda6eb6740)`)*
+
+## Changelog
+
+- **2025-09-16**: Adds frontmatter.
+- **2025-08-15**: Adds initial commit of the `Change Scope Form` doc, intended to pair with the `Change Request Form` in FAMCare. This is also pending review by the Data Team.
+- **2025-08-14**: Adds Markdown file.

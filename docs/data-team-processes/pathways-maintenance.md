@@ -5,7 +5,7 @@ last_updated: 2025-08-14
 status: active
 tags:
   - pathway-creation
-  - pathway-events
+  - pathway-event
   - event-metadata
   - master-pathway-dashboard
 permalink: /pathways-maintenance/
@@ -70,4 +70,10 @@ Location: Configure>Pathway Event
 
 When creating or modifying Pathway Events, do the following:
 
-- Update Pathway 
+- Update Pathway  
+
+## Changelog
+
+- **2025-09-16**: Updates frontmatter to bring closer into alignment with `schema_version` 1.0.
+- **2025-08-15**: Adds initial commit to repo.
+- **2025-08-04**: Adds Markdown file.

@@ -1,7 +1,16 @@
 ---
-title: "Script Index"
+front-matter-title: "Script Index"
+author: Bradley Wing
+last_updated: 2025-09-18
 output: md_document
+permalink: /generate-script-index/
 ---
+
+# Script Index
+
+This index is auto-generated from script tag blocks in assets/r-scripts/. Last generated: r format(Sys.Date(), "%Y-%m-%d")
+
+## Script
 
 ```{r setup, include=FALSE}
 library(tidyverse)
@@ -40,9 +49,6 @@ parse_script_tags <- function(folder = "assets/r-scripts/") {
 script_index <- parse_script_tags()
 ```
 
-# Script Index
-This index is auto-generated from script tag blocks in assets/r-scripts/. Last generated: r format(Sys.Date(), "%Y-%m-%d")
-
 ```{R Status-sections, Results='asis'}
 statuses <- unique(script_index$Status)
 
@@ -60,3 +66,9 @@ for (status in statuses) {
   cat("\n</details>\n\n---\n")
 }
 ```
+
+## Changelog
+
+- **2025-09-18**: Adds frontmatter.
+- **2025-08-03**: Initial draft of script index generator.
+- **2025-08-01**: Created file with initial code snippet.
