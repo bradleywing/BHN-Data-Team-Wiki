@@ -123,7 +123,7 @@ _Tip: use `program-docs` alongisde `program_scope:` and `programs:` to support c
 
 ## Tag Evolution Log
 
-- **2025-09-18**: Adds tags for needs, slowly changing dimensions, various view types, and a couple content domains. Reformats the Markdown for the tables to make them a little more readable to contributors.
+- **2025-09-18**: Adds `substance-use-tx-referral`, `client-needs`, `caregiver needs`, `pathway-creation`, `event-metadata`, `master-pathway-dashboard`, `active-record-view`, `historical-record-view`, `summation-view`, `client-view`, `needs-view`, `referral-out-view`, `pathway-join-view`, `pathway-event`, `data-dictionary`, `documentation`,  and `template` tags. Reformats the Markdown for the tables to make them a little more readable to contributors.
 - **2025-09-11**: Adds tags for program-specific documentation.
 - **2025-07-26**: Adds initial template to support future tagging conventions
 
