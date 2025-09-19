@@ -330,3 +330,14 @@ It is possible to use GitHub-flavored diff syntax to indicate adds vs. removals:
 ```
 
 > **Note**: Each line must begin with `+` or `-` for the GitHub-flavored diff fenced code block syntax to work. Therefore, this is not compatible with the established changelogs. However, there may be instances where tracking diffs may be useful and desired.
+
+## Changelog
+
+- **2025-09-17**: Updates the `Form-Specific Metadata`, `Pathways-Goverened Forms Metadata` sections and adds the `Standalone Pathways Forms Metadata` and `Vendor-Controlled Forms Metadata` sections to clarify how to handle the pathways fields in the frontmatter based on the form type. Moves the `date_field` field from the `Form-Specific Metadata` subsection to the subsections `Pathways-Governed Forms Metadata`, `Standalone Pathways Forms Metadata`, and `Vendor-Controlled Forms Metadata` to be explicit about how the `date_field` field is to be handled across the form types.
+- **2025-09-16**: Updates frontmatter. Adds explicit `Frontmatter Schema Reference` section to better guide frontmatter composition and maintenance. This replaces the inadequate `Schema Versioning in Documentation` section that had only addressed the schema version and didn't explain frontmatters in general. Removes `Versioning Guidance` subsection entirely.
+- **2025-09-10**: Updates the `Purpose` subsection to reflect the renaming of the SQL asset documentation standards document; adds Schema Versioning in Documentation subsection to explain the usage of schema_version in the frontmatter yaml.
+- **2025-08-18**: Renames the two `Purpose` sections so that they are distinct. Updates sample yaml at the bottom of the file.
+- **2025-08-15**: Updates frontmatter.
+- **2025-08-03**: Adds `Markdown Standards` section.
+- **2025-08-01**: Adds `Changelog Standards` section and frontmatter.
+- **2025-07-28**: Adds Markdown file.
