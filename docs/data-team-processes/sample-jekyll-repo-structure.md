@@ -1,3 +1,18 @@
+---
+front-matter-title: Sample Jekyll Repo Structure
+author: Bradley Wing
+last_updated: 2025-09-18
+status: active
+tags: 
+  - template
+permalink: /sample-jekyll-repo-structure/
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2025-09-18
+last_reviewed: 2025-09-18
+schema_version: 1.0
+---
+
 # Sample Jekyll Repo Structure
 
 ```bash
