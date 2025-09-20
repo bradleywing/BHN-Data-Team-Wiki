@@ -1,0 +1,63 @@
+###########################################
+# Jekyll + GitHub Pages .gitignore
+# Purpose: Ignore build artifacts, caches, and local tooling files
+###########################################
+
+# Ignore the generated _site directory
+# This is where Jekyll outputs the built site locally.
+# GitHub Pages builds the site itself, so you don't need to commit this.
+_site/
+
+# Ignore Jekyll's cache directory
+# Speeds up local builds but shouldn't be tracked.
+.jekyll-cache/
+
+# Ignore Jekyll's build metadata since this contains timestamps and other 
+# metadata that are created during local builds and that are not needed by 
+# GitHub Pages.
+.jekyll-metadata
+
+# Ignore Sass cache files (if using Sass/SCSS)
+.sass-cache/
+
+# Ignore temporary files created by editors or OS
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Ignore Ruby bundler and environment files
+# These are useful locally but not needed in the repo.
+vendor/
+.bundle/
+Gemfile.lock
+
+# Ignore log files and temp files
+*.log
+*.tmp
+
+# Ignore node_modules if using npm for frontend tooling
+node_modules/
+
+# Ignore compiled assets (if you're building JS/CSS locally)
+assets/js/*.min.js
+assets/css/*.min.css
+
+# Ignore dotenv files (if using environment variables locally)
+.env
+.env.*
+
+# Ignore system-specific files
+.idea/
+.vscode/
+
+# Optional: Ignore drafts if you don’t want them versioned
+# _drafts/
+
+# Optional: Ignore custom build scripts or output folders
+# build/
+# dist/
+
+###########################################
+# End of .gitignore
+###########################################
