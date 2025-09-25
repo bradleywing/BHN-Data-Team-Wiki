@@ -1,11 +1,20 @@
 ---
 front-matter-title: FAMCare Quick Reports & Query Categories  
 author: Bradley Wing
-last_updated: 2025-08-14  
+last_updated: 2025-09-22 
 status: active  
+program_scope: none
+programs:
+  - none
 tags:
-  - tag
+  - change-management
+  - data-team-facing
+  - docummentation
+  - governance
 permalink: /quick-reports-overview/
+layout: home
+nav_order: 3
+parent: Reporting Documentation
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -15,7 +24,7 @@ schema_version: 1.0
 
 # FAMCare Quick Reports Overview & Query Categories
 
-This document defines the primary categories used for classifying Quick Reports and SQL queries authored by the Data Team. Each category has a matching comment block format defined in `sql-asset-doc-standards.md`, supporting consistent documentation and usage across the `FAMCare-SQL-Toolkit`.
+This document defines the primary categories used for classifying Quick Reports and SQL queries authored by the Data Team. Each category has a matching comment block format defined in [SQL Asset Style Guide](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/bf470e4ffc7111091c5274e73c26556e21809cbc/sql-asset-doc-standards.md), supporting consistent documentation and usage across the [FAMCare-SQL-Toolkit](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit.git).
 
 ---
 
@@ -28,7 +37,7 @@ Reports designed to interrogate data for specific business or operational questi
 - Often used to prepare for broader reporting or evaluation
 - May examine user activity, form submission rates, or configuration usage
 
-➡️ See [`Audit Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#audit-reports)
+➡️ See [`Audit Reports`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#audit-reports)
 
 ---
 
@@ -41,7 +50,7 @@ Reports focused on flagging data inconsistencies or absences based on defined lo
 - Drive data hygiene and integrity improvements
 - May inform Maintenance Scripts or audit reviews
 
-➡️ See [`Exception Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#exception-reports)
+➡️ See [`Exception Reports`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#exception-reports)
 
 ---
 
@@ -53,7 +62,7 @@ Queries used to pull raw or structured data out of the database for various anal
 - Fulfill internal or BHN program staff requests
 - Provide datasets for review or sharing
 
-➡️ See [`Extract Queries` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#extract-queries)
+➡️ See [`Extract Queries`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#extract-queries)
 
 ---
 
@@ -65,7 +74,7 @@ Reports authored with program directors and managers as the target audience, ena
 - Track enrollment trends, service delivery, or form completion
 - Tailored to match program goals and indicators
 
-➡️ See [`Program Management Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#program-management-reports)
+➡️ See [`Program Management Reports`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#program-management-reports)
 
 ---
 
@@ -77,7 +86,7 @@ Utility queries for examining system-level objects or logs—supporting database
 - Investigate query definitions and metadata
 - Typically read-only and used in development or diagnostics
 
-➡️ See [`Maintenance Queries` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#maintenance-queries)
+➡️ See [`Maintenance Queries`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#maintenance-queries)
 
 ---
 
@@ -89,7 +98,7 @@ Actionable scripts that apply direct changes to the database (INSERT, UPDATE, DE
 - Often informed by Exception Reports or audit queries
 - Should contain detailed top-level comments describing scope and impact
 
-➡️ See [`Maintenance Scripts` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#maintentance-scripts-eg-update-delete-insert)
+➡️ See [`Maintenance Scripts`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#maintentance-scripts-eg-update-delete-insert)
 
 ---
 
@@ -101,7 +110,7 @@ Logic modules stored as views, reused across multiple reports or forms.
 - Used to normalize logic and support consistent reporting
 - Version control and documentation essential
 
-➡️ See [`View Definitions` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#view-definitions)
+➡️ See [`View Definitions`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#view-definitions)
 
 ---
 
@@ -113,7 +122,7 @@ Reports generated for approved non-contractual external entities—supporting co
 - Not governed by standing contractual obligations
 - Typically exported in structured format
 
-➡️ See [`External Data Sharing Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#external-data-sharing-reports)
+➡️ See [`External Data Sharing Reports`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#external-data-sharing-reports)
 
 ---
 
@@ -125,7 +134,7 @@ Reports required to meet contractual, regulatory, or policy mandates.
 - Often follow prescribed formats and submission schedules
 - May include enrollment exports, milestone summaries, or service statistics
 
-➡️ See [`Compliance Reports` in sql-asset-doc-standards.md](sql-asset-doc-standards.md#compliance-reports)
+➡️ See [`Compliance Reports`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md#compliance-reports)
 
 ---
 
@@ -134,3 +143,13 @@ Reports required to meet contractual, regulatory, or policy mandates.
 - Categories are assigned based on logic, audience, and usage—not solely on folder location.
 - Reports may occasionally span multiple categories (e.g. a Program Management report with exception logic).
 - All reports should be documented with matching comment block structure to aid onboarding and review.
+
+---
+
+## Changelog
+
+- **2025-09-22**: Fixes links to `FAMCare-SQL-Toolkit` GitHub main landing page. Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `change-management`, `data-team-facing`, `docummentation`, and `governance` tags to frontmatter. Adds link to `sql-asset-doc-standards.md`.
+- **2025-09-19**: Adds `permalink:` and `layout:` fields to the frontmatter. Fixes the URLs so that they point to various sections in the `sql-asset-doc-standard.md` in the remote BHN [FAMCare-SQL-Toolkit](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit.git)` repo. Cleans up the links by removing the file name from all of them to enhance clarity and reduce mental load on the user.
+- **2025-09-16**: Updates frontmatter to align with `schema_version:` 1.0.
+- **2025-08-15**: Updates the cross-references to the renamed sql-asset-doc-standards.md throughout. Adds front-matter yaml.
+- **2025-07-21**: Adds Markdown file.
