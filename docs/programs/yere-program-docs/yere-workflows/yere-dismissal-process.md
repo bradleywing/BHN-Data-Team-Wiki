@@ -1,19 +1,23 @@
 ---
-front-matter-title: YERE Enrollment Dismissal Process  
+front-matter-title: YERE Dismissal Process  
 author: Bradley Wing
-last_updated: 2025-09-11
+last_updated: 2025-09-21
 category: program-documentation
 category_label: Program Documentation
 status: active  
-lifecycle: production
+lifecycle: in-development
 program_scope: single
 programs:
   - yere
 tags:
   - program-docs
-  - workflow-logic
+  - dismissal
   - program-structure
-  - enrollment-dismissal
+  - workflow-logic
+permalink: /yere-dismissal-process/
+layout: home
+nav_order: 2
+parent: YERE Program Workflows
 change-control: internal-review-required
 reviewed-by:
   - name: Bradley Wing
@@ -46,6 +50,11 @@ When you are ready to dismiss a client:
 
 ## Dismissal Reasons
 
+<details>
+<summary><strong>Dismissal Reasons Matrix</strong></summary>
+
+<div markdown="1">
+
 | Dismissal   Reason                                   | Rationale                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Unable to locate/make contact post-referral          | Dismissal reason used only in the case of a youth who we get a referral for and are never able to connect with caregiver or youth in the community post-discharge. We may or may not have met with the youth in the hospital, but the determining factor is whether   we were ever able to contact/schedule an initial contact meeting with the family. We usually dismiss at 4-6 weeks post-discharge if unable to locate after 30 days of intensive outreach and an attempt-to-contact letter is sent.                                                                               |
@@ -58,3 +67,13 @@ When you are ready to dismiss a client:
 | CMHC determined ineligible                           | Dismissal reason for when a youth’s status changes such that they cease to meet program eligibility criteria. This usually happens when a youth moves out of our program catchment area, ages out and is more appropriate for adult services, or goes to residential or detention indefinitely.                                                                                                                                                                                                                                                                                        |
 | Administrative                                       | Dismissal reason utilized primarily for closing out program enrollment on a new referral within the 6 month program enrollment for an already-active youth.                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Youth entered residential facility                   | We use this dismissal touchpoint when a youth is not able to engage in YERE services to get connected to care in the community because they have entered residential services.                                                                                                                                                                                                                                                                                                                                                                                                         |
+
+</div>
+</details>
+
+## Changelog
+
+- **2025-09-21**: Adds `nav_order:` and `parent:` to frontmatter.
+- **2025-09-19**: Adds collapsible `<details>` tag to the `Dismissal Reasons Matrix`. Adds `permalink:` and `layout:` fields to frontmatter.
+- **2025-09-16**: Renames dismissal.md as the name was ambiguous. Adds frontmatter, renames page to YERE Enrollment Dismissal Process, and adds description subsection.
+- **2025-09-10**: Adds the Markdown file named as dismissals.md.
