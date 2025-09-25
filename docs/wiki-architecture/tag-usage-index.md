@@ -11,7 +11,7 @@ tags:
   - taxonomy-reference
   - tag-governance
   - documentation-standards
-permalink: /tag-index/
+permalink: /tag-usage-index/
 layout: home
 nav_order: 2
 parent: Wiki Architecture
@@ -41,5 +41,6 @@ This index helps contributors find documentation by topic, scope, or contributor
 
 ## Changelog
 
+- **2025-09-25**: Updates `permalink:` field to align with the link added to index.md in /wiki-architecture/.
 - **2025-09-21**: Adds `tag-governance` tag. Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-20**: Adds initial Markdown file.

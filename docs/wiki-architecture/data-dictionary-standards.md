@@ -11,6 +11,7 @@ tags:
   - metadata
   - data-dictionaries
   - contributor-guidance
+permalink: data-dictionary-standards
 layout: home
 nav_order: 1
 parent: Wiki Architecture
@@ -139,4 +140,5 @@ Future automation may support validation, changelog generation, and schema versi
 
 ## Changelog
 
+- **2025-09-25**: Adds the missing `permalink:` field to frontmatter.
 - **2025-09-23**: Adds initial Markdown file.
