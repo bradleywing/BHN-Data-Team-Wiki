@@ -1,11 +1,20 @@
 ---
 front-matter-title: Wiki Audit Tracker
 author: Bradley Wing
-last_updated: 2025-09-12
-status: active
+last_updated: 2025-09-19
+status: draft
+program_scope: none
+programs:
+  - none
 tags:
-  - documentation-audit
+  - data-team-facing
+  - documentation
+  - governance
+  - template
 permalink: /wiki-audit-tracker/
+layout: home
+nav_order: 1
+parent: BHN Wiki Audit Tracking
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -90,5 +99,8 @@ reviewer: Laura
 
 ## Changelog
 
+- **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
+- **2025-09-22**: Adds `nav_order:` and `parent:` fields to frontmatter. Adds `data-team-facing`, `governance`, and `template` tags to frontmatter. Changes `documentation-audit` tag to `documentation` as the former tag does not exist. Changes `status:` to `draft`.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-16**: Adds frontmatter.
 - **2025-07-28**: Adds Markdown file.
