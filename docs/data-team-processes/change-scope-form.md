@@ -1,15 +1,24 @@
 ---
 front-matter-title: Change Scope Form
 author: Bradley Wing
-last_updated: 2025-09-12
+last_updated: 2025-09-21
 status: active
+program_scope: none
+programs:
+  - none
 tags:
-  - change-scope-form
-  - impact-assessment
   - asset-coordination
+  - change-management
+  - change-scope-form
+  - contributor-guidance
+  - governance
+  - impact-assessment
   - implementation-planning
   - internal-review
 permalink: /change-scope-form/
+layout: home
+nav_order: 4
+parent: Data Team Processes
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -80,6 +89,9 @@ schema_version: 1.0
 
 ## Changelog
 
+- **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
+- **2025-09-21**: Updates tags in frontmatter. Adds `nav_order:` and `parent:` fields to frontmatter.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-16**: Adds frontmatter.
 - **2025-08-15**: Adds initial commit of the `Change Scope Form` doc, intended to pair with the `Change Request Form` in FAMCare. This is also pending review by the Data Team.
 - **2025-08-14**: Adds Markdown file.
