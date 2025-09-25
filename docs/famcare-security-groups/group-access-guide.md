@@ -1,11 +1,19 @@
 ---
 front-matter-title: FAMCare Group Access Guide  
 author: Bradley Wing 
-last_updated: 2025-08-14
+last_updated: 2025-09-22
 status: active  
+program_scope: none
+programs:
+  - none
 tags:
-  - tag1
+  - database-features
+  - data-team-facing
+  - documentation
 permalink: /group-access-guide/
+layout: home
+nav_order: 1
+parent: FAMCare Security Groups
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -17,6 +25,8 @@ schema_version: 1.0
 
 ## Changelog
 
+- **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
+- **2025-09-22**: Adds `layout:`, `nav_order:`, and `parent:` fields to frontmatter. Adds `database-features`, `data-team-facing`, and `documentation` tags to frontmatter.
 - **2025-09-16**: Updates frontmatter to bring closer into alignment with `schema_version` 1.0.
 - **2025-08-17**: Adds frontmatter.
 - **2025-07-28**: Adds Markdown file.
