@@ -1,13 +1,28 @@
 ---
 front-matter-title: Change Request Forms
 author: Bradley Wing
-last_updated: 2025-09-12
+last_updated: 2025-09-21
 status: active
+program_scope: none
+programs:
+  - none
 tags:
-  - change-request-form
-  - contributor-facing
-  - impact-assessment
+ - change-request-form
+  - change-management
+  - data-integrity
+  - documentation
+  - form-driven-logic
+  - form-update
+  - implementation-planning
+  - needs-review
+  - needs-stakeholder-review
+  - program-staff-facing
+  - report-change
+  - rollback
 permalink: /change-request-form/
+layout: home
+nav_order: 3
+parent: Data Team Processes
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -124,6 +139,9 @@ _Use this space for anything not captured above._
 
 ## Changelog
 
+- **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
+- **2025-09-21**: Updates tags in frontmatter. Adds `parent:` and `nav_order:` to frontmatter.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-16**: Adds frontmatter.
 - **2025-08-15**: Adds initial commit of the change request form. This is pending review by the Data Team and the leadership team.
 - **2025-08-14**: Adds Markdown file.
