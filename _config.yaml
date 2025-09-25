@@ -3,7 +3,8 @@ description: Documentation for reporting systems, team workflows, and program lo
 url: "https://behavioral-health-network.github.io"
 baseurl: "/BHN-Data-Team-Wiki"  # Base URL for GitHub Pages
 permalink: /:path/
-theme: jekyll-theme-git-wiki
+repository: Behavioral-Health-Network/BHN-Data-Team-Wiki
+remote_theme: Behavioral-Health-Network/git-wiki-theme
 markdown: kramdown
 highlighter: rouge
 
@@ -15,15 +16,16 @@ collections:
 
 defaults:
   - scope:
-      path: ""
+      path: "docs"
       type: docs
     values:
-      layout: default
+      layout: home
 
 # Plugins (optional; depends on GitHub Pages support)
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 exclude:
   - README.md
