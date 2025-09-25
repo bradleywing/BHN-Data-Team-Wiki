@@ -1,20 +1,22 @@
 ---
 front-matter-title: ERE Client Transfer Process  
 author: Bradley Wing
-last_updated: 2025-09-11
+last_updated: 2025-09-21
 category: program-documentation
 category_label: Program Documentation
 status: active  
-lifecycle: production
 program_scope: single
 programs:
   - ere
 tags:
-  - program-docs
-  - workflow-logic
-  - program-structure
   - client-transfer
-change-control: internal-review-required
+  - program-docs
+  - program-structure
+  - workflow-logic
+permalink: /ere-client-transfer-process/
+layout: home
+nav_order: 2
+parent: ERE Workflows
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -90,4 +92,6 @@ This process is to be followed when a transfer need for a client is identified a
 
 ## Changelog
 
+- **2025-09-21**: Removes `lifecycle:` and `change-control:` fields from frontmatter as they are more appropriate for assets outside of the context of the wiki and since they overlap with tags such as `archived`, `needs-review`, `production-ready`, `change-management`, `implementation-planning`, and `stakeholder-approval`. Adds `nav_order:` and `parent:` fields to frontmatter.
+- **2025-09-19**: Adds `permalink:` and `layout:` fields to frontmatter.
 - **2025-08-27-25**: Adds initial client transfer documentation.
