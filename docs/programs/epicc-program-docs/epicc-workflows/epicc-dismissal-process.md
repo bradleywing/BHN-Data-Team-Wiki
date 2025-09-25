@@ -1,14 +1,20 @@
 ---
 front-matter-title: EPICC Dismissal Workflow  
 author: Bradley Wing
-last_updated: 2025-08-14
+last_updated: 2025-09-21
+status: active
 program_scope: single
 programs:
   - epicc
-status: active
 tags:
-  - tag1
+  - dismissal
+  - program-docs
+  - program-structure
+  - workflow-logic
 permalink: /epicc-dismissal-process/
+layout: home
+nav_order: 4
+parent: EPICC Program Workflows
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -22,6 +28,8 @@ schema_version: 1.0
 
 <details>
 <summary><strong>Dismissal Reasons Matrix</strong></summary>
+
+<div markdown="1">
 
 |     Referral                                        |     Initial Contact                                 |     Two Week                                            |     Thirty Day                                          |     Three Month                                         |     Six Month                                       |
 |-----------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|
@@ -42,6 +50,7 @@ schema_version: 1.0
 |                                                     |                                                     |                                                         |                                                         |                                                         |     Completed EPICC Program                         |
 |                                                     |                                                     |                                                         |                                                         |                                                         |     Re-Enrolled In EPICC   Program                  |
 
+</div>
 </details>
 
 ---
@@ -66,9 +75,11 @@ schema_version: 1.0
 
 ## Changelog
 
+- **2025-09-21**: Adds `dismissal`, `program-docs`, `program-structure`, and `workflow-logic` tags to frontmatter. Adds `nav_order:` and `parent:` fields to frontmatter.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-18**: Adds `program_scope:` and `programs:` fields to frontmatter.
 - **2025-09-16**: Renames file to eliminate ambiguity about content.
-- **2025-08-17**: Adds frontmatter. Adds collapsible <details> tag to the `Dismissal Reasons Matrix`.
+- **2025-08-17**: Adds frontmatter. Adds collapsible `<details>` tag to the `Dismissal Reasons Matrix`.
 - **2025-08-15**: Adds list of dismissal reasons.
 - **2025-08-01**: Adds `Dismissal Reasons Across Milestones` section.
 - **2025-07-28**: Adds Markdown file.  
