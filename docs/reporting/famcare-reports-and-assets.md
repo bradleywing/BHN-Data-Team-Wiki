@@ -1,11 +1,19 @@
 ---
 front-matter-title: FAMCare Reports & SQL Assets  
 author: Bradley Wing  
-last_updated: 2025-08-14
-status: Active  
+last_updated: 2025-09-22
+status: active  
+program_scope: none
+programs:
+  - none
 tags:
-  - tag
+  - database-features
+  - data-team-facing
+  - documentation
 permalink: /famcare-reports-and-assets/
+layout: home
+nav_order: 2
+parent: Reporting Documentation
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -23,6 +31,8 @@ These matrices catalog all named reports relevant to BHN’s FAMCare implementat
 
 <details>
 <summary><strong>Exception Reports</strong></summary>
+
+<div markdown="1">
 
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
@@ -54,6 +64,7 @@ These matrices catalog all named reports relevant to BHN’s FAMCare implementat
 | Exception Reports | YERE IA Hidden Fields Null | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/yere-ia-hidden-fields-null.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/yere-ia-hidden-fields-null.md) |
 | Exception Reports | YERE Youth Needs Hidden Fields Null | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/yere-youth-needs-hidden-fields-null.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/yere-youth-needs-hidden-fields-null.md) |
 
+</div>
 </details>
 
 <br>
@@ -70,35 +81,51 @@ These matrices catalog all named reports relevant to BHN’s FAMCare implementat
 | Program Management | ERE Caseload Report | Summarizes YERE program client caseloads, including enrollment details, worker assignment, agency, milestone completion status, payor information, and suicide attempt history. Supports program managers in tracking milestone compliance, identifying overdue forms, and reviewing worker caseloads. | System Administrator, GVT, BCR Managers | SSMS, Quick Report, ERE Managers | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/program-management-reports/ere-caseload-report.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/program-management-reports/ere-caseload-report.md) |
 | Program Management | YERE Caseload Report | Summarizes YERE program client caseloads, including enrollment details, worker assignment, agency, milestone completion status, payor information, and suicide attempt history. | System Administrator, GVT, YERE Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/program-management-reports/yere-caseload-report.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/program-management-reports/yere-caseload-report.md) |
 
+</div>
 </details>
 
 <br>
 
 <details>
 <summary><strong>Audit Reports</strong></summary>
+
+<div markdown="1">
+
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
+
+</div>
 </details>
 
 <br>
 
 <details>
 <summary><strong>Compliance Reports</strong></summary>
+
+<div markdown="1">
+
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
+
+</div>
 </details>
 
 <br>
 
 <details>
 <summary><strong>External Data Sharing Reports</strong></summary>
+
+<div markdown="1">
+
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
+
+</div>
 </details>
 
 ---
 
-> These tables can be expanded as additional reports are developed or published. Folder paths point to files within the `FAMCare-SQL-Toolkit` repository.
+> These tables can be expanded as additional reports are developed or published. Folder paths point to files within the [FAMCare-SQL-Toolkit](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit.git) repository.
 
 ---
 
@@ -115,7 +142,7 @@ For role-specific guidance, refer to [Saving & Securing Quick Reports](saving-an
 
 ## File Naming & Folder Structure
 
-All SQL logic referenced above lives in `FAMCare-SQL-Toolkit`, aligned to the following structure:
+All SQL logic referenced above lives in [FAMCare-SQL-Toolkit](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit.git), aligned to the following structure:
 
 Each file contains multi-line top-level comment blocks per the shared style guide. See: [SQL Asset Style Guide](https://github.com/BHN/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md)
 
@@ -123,7 +150,21 @@ Each file contains multi-line top-level comment blocks per the shared style guid
 
 ## Links & Resources
 
+- [Reporting Standards](reporting-standards.md)
 - [Report Request Tracker](reports-request-tracker.md)
-- [Quick Reports Roadmap](quick-reports-roadmap.md)
+- [Quick Reports Roadmap](quick-reports-overview.md)
 - [Saving & Securing Quick Reports](saving-and-securing-quick-reports.md)
 - [SQL Asset Style Guide](https://github.com/BHN/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md)
+
+---
+
+## Changelog
+
+- **2025-09-23**: Adds link to `reporting-standards.md`.
+- **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Adds `database-features`, `data-team-facing`, and `documentation` tags to frontmatter. Adds links to `FAMCARE-SQL-Toolkit` repo.
+- **2025-09-19**: Adds `permalink:` and `layout:` fields to frontmatter.
+- **2025-09-16**: Updates frontmatter. Fixes cross-reference to saving-and-securing-quick-reports.md.
+- **2025-08-15**: Continues the process of adding descriptions to exception reports. Adds one new exception report and several program management reports to the respective matrices. Updates the cross-reference to the renamed sql-asset-doc-standards.md. Adds front-matter yaml.
+- **2025-08-01**: Adds substantial updates to famcare-reports-and-assets.md. Adds some missing descriptions. Splits up the reports matrix into one matrix per report/query category. Adds collapsible sections around each table to increase scanability of the page for users. Adds two program management report rows to the Program Management Reports matrix.
+- **2025-07-30**: Adds a few additional reports to the reports matrix.
+- **2025-07-28**: Adds initial Markdown file. Fixes all URLs to use kebab-case.

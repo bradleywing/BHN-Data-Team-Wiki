@@ -1,11 +1,20 @@
 ---
 front-matter-title: SQL Reports Requests Tracker  
 author: Bradley Wing
-last_updated: 2025-08-14  
+last_updated: 2025-09-22
 status: active  
+program_scope: none
+programs:
+  - none
 tags:
-  - tag
+  - change-management
+  - data-team-facing
+  - docummentation
+  - governance
 permalink: /reports-request-tracker/
+layout: home
+nav_order: 4
+parent: Reporting Documentation
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -33,6 +42,8 @@ This page documents current and planned SQL-based Quick Reports in development o
 <details>
 <summary><strong>Requests</strong></summary>
 
+<div markdown="1">
+
 | Report Name                                           | Request Type | Report Category     | Program / Requestor     | Description / Purpose                                       | Priority | Status   | Format |
 |-------------------------------------------------------|--------------|----------------------|--------------------------|-------------------------------------------------------------|----------|----------|--------|
 | BCR Dismissed Enrollment to Accept EPICC Referral     | New Report   | Program Management    | BCR / Data Team          | Analyze transitions from BCR dismissals into EPICC enrollment | Medium   | Backlog  | SQL    |
@@ -45,11 +56,16 @@ This page documents current and planned SQL-based Quick Reports in development o
 | EPICC Re-Engagement Caseload                          | New Report   | Program Management    | EPICC / Data Team        | Identify EPICC clients eligible for re-engagement efforts    | High     | Backlog  | SQL    |
 | Enrollment Dismissed, Pathway Closed, Program Worker Not Ended | New Report | Exception Reports     | Multi-Program / Data Team | Spot logic mismatches in enrollment lifecycle               | Medium   | Backlog  | SQL    |
 | ERE Duplicate PWY Forms Per Enrollment                | New Report   | Exception Reports     | ERE / Data Team          | Identify duplication errors in ERE pathway assignment        | Medium   | Backlog  | SQL    |
-| ERE Hospital Visit Note Report               | New Report   | Program Management     | ERE          | Document hospital visits conducted to enable program leadership to oversee client contacts        | High   | Scoping  | SQL    |
 | ERE Transfer Report                | New Report   | Program Management     | ERE          | Document client transfers across Outreach Liaisons and agencies to enable program leadership to manage workloads        | Medium   | Backlog  | SQL    |
 | ERE Dismissals Report                | New Report   | Program Management     | ERE          | Document ERE enrollment dismissals to enable program leadership to assess program outcomes        | Medium   | Backlog  | SQL    |
 | EPICC Client on Formal Treatment Path But Not Referred SU Tx Agency Summation Record | New Report | Exception Reports | EPICC / Data Team | Identifies clients on formal treatment path (Mat or Non-MAT) that lack records in the SU Treatment Agency summation table for that enrollment | Medium | Blocked | SQL |
+| EPICC Casenotes Report | New Report | Program Management | EPICC / Data Team | BLANK | Medium | Backlog | SQL |
+| ERE Casenotes Report | New Report | Program Management | ERE / Data Team | BLANK | Medium | Backlog | SQL |
+| YERE Casenotes Report | New Report | Program Management | YERE / Data Team | BLANK | Medium | Backlog | SQL |
+| EPICC Hospital Referrals Report | New Report | Program Management | EPICC / Data Team | BLANK | Medium | Backlog | SQL |
+| EPICC Community Referrals Report | New Report | Program Management | EPICC / Data Team | BLANK | Medium | Backlog | SQL |
 
+</div>
 </details>
 
 ---
@@ -81,9 +97,19 @@ Format may shift over time as tools evolve and vendor capabilities expand.
 
 ## Related Wiki Pages
 
-- [FAMCare Reports & Assets](../famcare-reports-and-assets.md)
-- [Quick Reports Overview](../quick-reports-overview.md)
-- [Report Roadmap](../quick-reports-roadmap.md)
-- [Saving & Securing Quick Reports](../saving-and-securing-quick-reports.md)
+- [Reporting Standards]({{site.baseurl}}/reporting-standards/)
+- [FAMCare Reports & Assets]({{site.baseurl}}/famcare-reports-and-assets/)
+- [Quick Reports Overview]({{site.baseurl}}/quick-reports-overview/)
+- [Report Roadmap]({{site.baseurl}}/quick-reports-roadmap/)
+- [Saving & Securing Quick Reports]({{site.baseurl}/saving-and-securing-quick-reports/)
 
 ---
+
+## Changelog
+
+- **2025-09-23**: Adds link to `reporting-standards.md`. Adds `EPICC Casenotes Report`, `ERE Casenotes Report`, `YERE Casenotes Report`, `EPICC Hospital Referrals Report`, and `EPICC Community Referrals Report` to the list of requested reports. Removes the `ERE Hospital Visit Note Report` because the program manager indicated that it was no longer needed after adding a column for hospital visit on the `ERE Caseload Report`.
+- **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Fixes links to the related wiki pages. Adds `change-management`, `data-team-facing`, `docummentation`, and `governance` tags to frontmatter.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
+- **2025-09-16**: Updates frontmatter to align with `schema_version` 1.0. Adds `ERE Hospital Visit Note Report`, `ERE Transfer Report`, and `ERE Dismissals Report` to the list of requested reports. Fixes typo in row for `EPICC Client on Formal Treatment Path But Not Referred SU Tx Agency Summation Record`.
+- **2025-08-17**: Adds collapsible `<details>` tag around the `Requests` matrix.
+- **2025-08-15**: Adds Markdown file. Adds frontmatter.

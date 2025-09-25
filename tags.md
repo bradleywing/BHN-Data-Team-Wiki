@@ -1,13 +1,14 @@
 ---
-front-matter-title: Tags Index  
+front-matter-title: Tag Reference
 author: Bradley Wing
-last_updated: 2025-09-16  
+last_updated: 2025-09-20 
 status: active  
 tags:
   - tag-governance
-  - taxonomy-reference
   - contributor-guidance
-permalink: /tags/
+  - documentation-standards
+permalink: /tag-reference/
+layout: home
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-16
@@ -15,114 +16,140 @@ last_reviewed: 2025-09-16
 schema_version: 1.0  
 ---
 
-# Tags Index
+# Tag Reference
 
 This file outlines current and potential tags used across the wiki. Tagging conventions are subject to revision based on team feedback and content needs.
 
 ## Tag Structure Guidelines
 
-- **Tags should be action-oriented or thematic** (e.g., `data-modeling`, `exception-logic`, `training-notes`)
-- **Avoid ambiguity** — prefer `cohort-tracking` over `tracking`
+- **Tags should be action-oriented or thematic** (e.g., `contributor-guidance`, `exception-reporting`, `needs-review`)
+- **Avoid ambiguity** — prefer `milestone-tracking` over `tracking`
 - **Use kebab-case for consistency**
 - **Cross-reference program-specific vs. universal tags in relevant content**
+- **Multiple Categories** - Tags may belong to more than one category, which allows for them to have more than one purpose.
 
-## Content Domains
+## Tag Categories
 
-| Tag                    | Description                                    |
-|------------------------|------------------------------------------------|
-| `housing-status-data`  | Logic related to housing programs or fields           |
-| `insurance-data`       | Payor source, coverage periods, provider info         |
-| `substance-use-tx-referral` | Referrals to substance use treatement agencies   |
-| `client-needs`         | Data on the non-behavioral health needs of clients    |
-| `caregiver-needs`     | Data on the non-behavioral health needs of caregivers  |
-| `referral-logic`       | Referral workflows, filters, and validation           |
+| Category | Description |
+|----------|-------------|
+| **Asset Function** | Tags describing the role the asset plays in reporting, program management, or contributor workflows (exception-report, program-management-report, Mermaid diagrams, reports, SQL queries, etc.) |
+| **Asset Type** | Tags describing the types of assets (html-form, markdown-template, sql-view, mermaid-diagram, etc.) |
+| **Audience & Usage** | Tags indicating who the documentation is for or how it’s used |
+| **Contributor Standards** | Tags supporting onboarding, documentation practices, and contributor workflows |
+| **Content Domain** | Tags tied to specific data fields or programmatic domains |
+| **Data Modeling** | Tags describing how data behaves or is structured over time |
+| **Database Features** | Tags referencing FAMCare modules, forms, and vendor-specific architecture |
+| **Front-End Behavior** | Tags tied to form logic, dropdowns, and UI constraints |
+| **Governance & Lifecycle** | Tags reflecting review status, deployment, or cross-repo logic |
+| **Operational Workflow** | Tags describing Data Team processes or program-specific processes and workflows |
+| **Program Design** | Tags describing program structure, goals, policies, and logic |
 
-## Program Logic & Goals
+## Tag Reference Matrix
 
-| Tag                    | Description                                    |
-|------------------------|------------------------------------------------|
-| `program-goals`        | Documents intended outcomes or benchmarks for a program |
-| `workflow-logic`       | Describes step-by-step program processes or decision trees |
-| `milestone-tracking`   | Tracks time-based or event-based progress markers |
-| `cohort-definition`    | Defines inclusion/exclusion logic for program cohorts |
-| `outcome-metrics`      | Specifies how success is measured (e.g., housing stability, treatment completion) |
+This table consolidates all tags used across the wiki. Tags are alphabetized and categorized to support contributor clarity and future automation.
 
-## Program Design & Strategy
+<details style="margin-top: 1rem; border: 1px solid #ccc; padding: 0.5rem;">
+<summary><strong>Tag Reference Matrix</strong></summary>
 
-| Tag                    | Description                                    |
-|------------------------|------------------------------------------------|
-| `program-structure`    | Describes how the program is organized (e.g., referral-process, outreach milestones) |
-| `reporting-logic`      | Describes how program data is surfaced in reports or dashboards |
+<div markdown="1">
 
-## Operational Workflows
+| Tag | Description | Category |
+|-----|-------------|----------|
+| `active-record-view` | Most recent or current record | Asset Type, Data Modeling |
+| `archived` | Retained for historical reference | Governance & Lifecycle |
+| `asset-coordination` | Indicates that multiple assets (e.g., forms, views, templates) must be updated together to maintain consistency or support a shared change | Governance & Lifecycle |
+| `audit-trail` | Tracks user actions or compliance | Contributor Standards |
+| `caregiver-needs` | Behavioral and/or non-behavioral health needs of caregivers | Content Domain |
+| `change-management` | Tracks review, approval, and deployment of forms, documentation, logic updates, reports, etc. | Governance & Lifecycle, Operational Workflow |
+| `change-request-form` | Structured form used to propose documentation or logic changes, including rationale and impact | Asset Type, Governance & Lifecycle |
+| `change-scope-form` | Form used to define the boundaries, dependencies, and coordination needs of a proposed change | Asset Type, Governance & Lifecycle |
+| `changelog-rules` | Standards for documenting changes in asset history, including formatting, versioning, and contributor notes | Contributor Standards |
+| `client-needs` | Behavioral and/or non-behavioral health needs of clients | Content Domain |
+| `client-transfer` | Reassigning program workers | Operational Workflow |
+| `client-view` | View of the client table or filtered derivatives | Asset Type |
+| `cohort-definition` | Defines inclusion/exclusion logic for program cohorts | Program Design |
+| `contributor-guidance` | Contributor onboarding and standards | Contributor Standards |
+| `cross-repo` | Logic spans multiple repositories | Governance & Lifecycle |
+| `custom-functions` | Includes or documents custom JavaScript functions | Front-End Behavior |
+| `data-dictionary` | Structured reference files that define field-level metadata, value constraints, conditional logic, and audit notes for program forms and datasets. Used for reporting, contributor onboarding, and stakeholder transparency | Asset Type, Contributor Standards, Content Domain, Data Modeling |
+| `data-integrity` | Ensures accuracy, consistency, and reliability of data across forms, views, and reporting logic | Governance & Lifecycle, Data Modeling |
+| `data-team-facing` | Internal documentation or logic | Audience & Usage |
+| `dismissal` | Ending a client’s enrollment | Operational Workflow |
+| `documentation` | Documentation of an asset | Asset Type |
+| `documentation-standards` | Guidelines for formatting, structuring, and maintaining documentation across assets and contributors | Contributor Standards |
+| `dropdown-mapping` | Cascading dropdown logic | Front-End Behavior |
+| `enrollment` | Starting a client’s enrollment | Operational Workflow |
+| `etl-process` | Extract-transform-load logic | Asset Function |
+| `event-metadata` | Metadata about Pathway Events | Database Features |
+| `exception-report` | Identifies anomalies or data gaps | Asset Function |
+| `external-sharing` | Structured for outside partners | Audience & Usage |
+| `field-metadata` | Tags field-level attributes such as data type, value constraints, conditional logic, and SQL join behavior. Supports schema alignment, contributor clarity, and UX-aware documentation | Data Modeling, Front-End Behavior, Contributor Standards |
+| `form-driven-logic` | Logic tied to specific forms or UI elements | Front-End Behavior |
+| `form-schema` | YAML or JSON schema defining form logic | Asset Type |
+| `form-updates` | Concerns updating of front-end forms | Governance & Lifecycle, Operational Workflow |
+| `form-validation` | Required fields, dropdowns, or UI constraints | Front-End Behavior |
+| `frontmatter-schema` | YAML schema used in documentation files to support metadata, indexing, and contributor workflows | Contributor Standards |
+| `governance` | Review status or deployment logic | Governance & Lifecycle |
+| `historical-record-view` | Full history of changes | Asset Type, Data Modeling |
+| `housing-status-data` | Housing receipt and status | Content Domain |
+| `html-form` | HTML form used in [FAMCare-HTML-Form-Code Repo](https://github.com/Behavioral-Health-Network/FAMCare-HTML-Form-Code.git) | Asset Type |
+| `impact-assessment` | Concerns assessing the consequences of requested or planned changes | Governance & Lifecycle, Data Modeling |
+| `implementation-planning` | Steps and considerations for deploying a change, including asset updates, testing, and stakeholder coordination | Governance & Lifecycle, Operational Workflow |
+| `insurance-data` | Payor source | Content Domain |
+| `internal-review` | Indicates that the document or logic update requires review by internal Data Team members before stakeholder sharing or deployment | Governance & Lifecycle, Operational Workflow |
+| `markdown-template` | Markdown-based documentation scaffold | Asset Type |
+| `master-pathway-dashboard` | Client-based dashboard governed by Pathway Events | Database Features |
+| `mermaid-diagram` | Mermaid-based flowchart or logic diagram | Asset Type |
+| `milestone-tracking` | Time-based or event-based progress markers | Program Design |
+| `multi-join` | Uses multiple joins across tables | Data Modeling |
+| `needs-review` | Tag indicating that a document or logic update requires contributor or stakeholder validation before deployment or publication | Governance & Lifecycle |
+| `needs-testing` | Tag indicating that a document or logic update requires validation before deployment or publication | Governance & Lifecycle |
+| `needs-view` | Client/caregiver needs and service referral metadata | Asset Type |
+| `outcome-metrics` | Success measurement logic | Program Design |
+| `pathway-creation` | Creating and assigning a Pathway | Operational Workflow |
+| `pathway-event` | Event logic tied to Pathways | Database Features |
+| `pathway-join-view` | Joins enrollment to Pathways metadata | Asset Type |
+| `pathways-module` | FAMCare’s Pathways module | Database Features |
+| `production-ready` | Fully reviewed and deployed | Governance & Lifecycle |
+| `program-docs` | Program-specific documentation | Audience & Usage |
+| `program-goals` | Intended outcomes or benchmarks | Program Design |
+| `program-structure` | How the program is organized | Program Design |
+| `program-staff-facing` | Intended for non-technical users | Audience & Usage |
+| `program-worker-assignment` | Assigning or transferring program workers | Operational Workflow |
+| `providerplacement-form` | Form used for enrollment and dismissal | Database Features |
+| `re-engagement` | Reconnecting after lapse in participation | Operational Workflow |
+| `reconnection` | Reconnecting a client with an agency | Operational Workflow |
+| `referral-out-view` | Referrals to external services | Asset Type |
+| `report-change` | Concerns changes to reports | Governance & Lifecycle, Operational Workflow |
+| `reporting-logic` | Data surfaced in reports or dashboards | Program Design, Asset Function |
+| `report-template` | Structured template for recurring reports | Asset Type |
+| `rollback` | Documents the logic or steps required to reverse a deployed change, restoring prior behavior or data structure if needed | Governance & Lifecycle, Operational Workflow |
+| `scheduled-report` | Part of recurring reporting cycle | Audience & Usage |
+| `service-referral-out` | Referrals to external agencies or services | Content Domain |
+| `session-vars` | Session variables or directives | Front-End Behavior |
+| `slowly-changing-dimension` | Slowly evolving data structures | Asset Function, Data Modeling |
+| `stakeholder-approval` | Formal or informal sign-off from program directors, program managers, or external partners before deployment | Governance & Lifecycle |
+| `stakeholder-review` | Tag indicating that a document or change requires review by relevant stakeholders | Governance & Lifecycle |
+| `sql-choice-table` | Master Tables with code-description pairs | Front-End Behavior |
+| `sql-view` | SQL view logic used for reporting or dashboards used in [FAMCare-SQL-Toolkit Repo](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit.git) | Asset Type |
+| `substance-use-tx-referral` | Referrals to treatment agencies | Content Domain |
+| `summation-view` | Aggregates or tracks slow changes | Asset Type, Data Modeling |
+| `tag-governance` | Tag usage and schema conventions | Contributor Standards |
+| `taxonomy-reference` | Tag definitions and indexing logic | Contributor Standards |
+| `template` | Template for documentation files | Asset Type, Contributor Standards |
+| `vendor-dependent` | Tied to vendor constraints | Front-End Behavior |
+| `workflow-logic` | Step-by-step program processes | Program Design |
 
-| Tag                    | Description                                    |
-|------------------------|------------------------------------------------|
-| `enrollment-dismissal` | Logic and documentation related to ending a client’s enrollment |
-| `reconnection`         | Logic and documentation related to reconnecting a client with an agency |
-| `client-transfer`      | Workflow for reassigning clients between outreach workers or teams |
-| `re-engagement`        | Workflow for reconnection with clients after a lapse in participation |
-| `pathway-creation`     | Workflow for creating and assigning a Pathway               |
+</div>
+</details>
 
->**Tip**: use the operational workflow tags alongside `workflow-logic` and `program-docs` to support filtering and audit dashboards.
+---
 
-## Asset Function
+## Changelog
 
-| Tag                   | Description                                    |
-|-----------------------|------------------------------------------------|
-| `exception-logic`     | Identifies anomalies or data gaps              |
-| `event-metadata`      | Documents metadata about Pathway Events        |
-| `master-pathway-dashboard` | Asset relats to the use and operation of the Master Pathway Dashboard |
-| `audit-trail`         | Tracks user actions or compliance              |
-| `etl-process`         | Extract-transform-load logic                   |
-| `form-validation`     | Front-end logic for required fields, dropdowns |
-| `active-record-view`  | View that retains only the most recent or current record |
-| `historical-record-view` | View that retains the full history of changes |
-| `summation-view`      | View that aggregates or tracks slowly changing dimensions over time |
-| `client-view`         | View of the client table or filtered derivatives (e.g., excluding test clients, program-specific views) |
-| `needs-view`          | View of client or caregiver needs, including service referral metadata |
-| `referral-out-view`   | View documenting referrals out to external agencies or services |
-| `pathway-join-view`   | View that joins enrollment data to Pathways module metadata and Pathway Event form metadata |
-| `pathway-event`       | Asset relates to a Pathway Event               |
-| `data-dictionary`     | Asset relates to a Pathway Event               |
-| `documentation`       | Documentation of an asset                      |
-| `template`            | Template for composing a type of documentation file |
-
-> **Note**: These tags surface the intent and structure of views and other assets.
-
-## Technical Structure
-
-| Tag                   | Description                                    |
-|-----------------------|------------------------------------------------|
-| `multi-join`          | Uses multiple joins across tables              |
-| `session-vars`        | Relies on session variables or directives      |
-| `dropdown-mapping`    | Cascading dropdown logic or table joins        |
-| `vendor-dependent`    | Tied to vendor logic or constraints            |
-| `slowly-changing-dimension` | Uses multiple joins across tables        |
-
-## Governance & Lifecycle
-
-| Tag                   | Description                                    |
-|-----------------------|------------------------------------------------|
-| `production-ready`    | Fully reviewed and deployed                    |
-| `needs-review`        | Flagged for contributor or stakeholder review  |
-| `archived`            | Retained for historical reference              |
-| `cross-repo`          | Logic spans multiple repositories              |
-
-## Audience & Usage
-
-| Tag                   | Description                                    |
-|-----------------------|------------------------------------------------|
-| `program-docs`        | General tag for program-specific documentation pages    |
-| `program-staff-facing`| Intended for non-technical users               |
-| `data-team-only`      | Internal documentation or logic                |
-| `external-sharing`    | Structured for outside partners                |
-| `scheduled-report`    | Part of recurring reporting cycle              |
-
-_Tip: use `program-docs` alongisde `program_scope:` and `programs:` to support cross-program indexing and filtering._
-
-## Tag Evolution Log
-
+- **2025-09-23**: Adds the `field-metadata` tag and updates the description of the `data-dictionary` tag.
+- **2025-09-20**: Adds numerous new tags and renames others. Consolidates tags into one unified table to aid scripting, auditing, and sorting. Adds `Category` column to classify tags by type or function. Renames `permalink:` and page title to distinguish this canonical tags reference from the tag-usage-index, which shows where tags are used. Adds `<details>` tag element to shorten the long `Tag Reference Matrix`. Adds `<div markdown="1">` tag to satisfy the Kramdown Markdown editor used by Jekyll since the `<details>` tag broke the Markdown table when building the site locally.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-18**: Adds `substance-use-tx-referral`, `client-needs`, `caregiver needs`, `pathway-creation`, `event-metadata`, `master-pathway-dashboard`, `active-record-view`, `historical-record-view`, `summation-view`, `client-view`, `needs-view`, `referral-out-view`, `pathway-join-view`, `pathway-event`, `data-dictionary`, `documentation`,  and `template` tags. Reformats the Markdown for the tables to make them a little more readable to contributors.
 - **2025-09-11**: Adds tags for program-specific documentation.
 - **2025-07-26**: Adds initial template to support future tagging conventions

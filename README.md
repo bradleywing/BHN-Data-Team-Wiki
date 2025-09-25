@@ -28,7 +28,7 @@ This repository serves as the centralized, version-controlled documentation hub 
 ├── docs/
     └── audit-tracking/                  # wiki-audit-tracker.md and related tools
     └── data-dictionaries/               # Modular data dictionary pages for forms and other assets
-    └── data-team-processes/             # Workflow templates, style guides, change control process
+    └── data-team-processes/             # Workflow templates, change control process
     └── famcare-form-development/        # Form creation, validation, and promotion workflows
     └── famcare-master-tables/           # Standards for dropdown tables, auditing, and view updates
     └── famcare-provider-setup/          # Program hierarchies and cascading dropdown logic
@@ -37,7 +37,13 @@ This repository serves as the centralized, version-controlled documentation hub 
     └── famcare-user-management/         # USERID and HRFORM maintenance guidance
     └── handbook/                        # Handbook migration staging and canonical reference materials
     └── programs/                        # Program-specific documentation (e.g. EPICC, YERE)
-    └── reporting/                       # Report architecture, standards, reports request tracker
+    └── reporting/                       # Report architecture, reports request tracker
+    └── wiki-architecture/               # Contributor-facing standards for navigation, metadata, and documentation architecture
+
+## Build Files
+
+Gemfile                                  # Jekyll theme and plugin dependencies
+_config.yml                              # Site-wide configuration
 ```
 
 ---
@@ -61,7 +67,7 @@ Markdown content in this wiki uses:
 - Code blocks for examples in SQL, R, JS, or LaTeX
 - Clean formatting—emojis, decorative icons, and Markdown auto-formatting are avoided unless intentionally added
 
-See also [Documentation Standards](./docs/data-team-processes/documentation-standards.md).
+See also [Documentation Standards](./docs/wiki-architecture/documentation-standards.md).
 
 ## Contents
 
@@ -79,7 +85,7 @@ To browse full documentation, visit the [Landing Page](index.md).
 
 ## Contribution Guide & Governance
 
-This wiki is maintained by the BHN Data Team. See [CONTRIBUTING.md](CONTRIBUTING.md) for a detailed overview of contribution standards and editorial principles.
+This wiki is maintained by the BHN Data Team. See [CONTRIBUTING](CONTRIBUTING.md) for a detailed overview of contribution standards and editorial principles.
 
 Topics include:
 
@@ -95,7 +101,7 @@ Topics include:
 Suggested entry points:
 
 - [Landing Page](index.md): Main landing page for documentation navigation
-- [Reporting Standards](docs/reporting/reporting-standards.md): SQL style guide and reporting workflows
+- [Reporting Standards](docs/wiki-architecture/reporting-standards.md): SQL style guide and reporting workflows
 - [Workflow Template](docs/data-team-processes/program-workflow-template.md): Core templates for documenting logic
 - [Reports Request Tracker](docs/reporting/reports-request-tracker.md): Planned SQL-based Quick Reports in development or awaiting specification  
 - [SQL Asset Style Guide](https://github.com/BHN/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md): Guide that defines the canonical Markdown documentation structure for all SQL assets in the `FAMCare-SQL-Toolkit` repository.
@@ -124,6 +130,16 @@ This repository is now publicly visible to support transparency, shared learning
 - **License**: Content is shared under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/), unless otherwise noted.
 - **Intended Audience**: BHN staff, contributors, and collaborators working within the FAMCare ecosystem or similar data environments.
 - **Contribution Scope**: External contributions are not currently accepted. For questions or collaboration inquiries, contact the BHN Data Team.
-- **Internal Editing**: All edits must follow our contributor workflow and documentation standards. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+- **Internal Editing**: All edits must follow our contributor workflow and documentation standards. See [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 > This wiki is part of BHN’s broader effort to build sustainable, auditable, and teachable documentation ecosystems. We welcome feedback and dialogue around these practices.
+
+## Changelog
+
+- **2025-09-23**: Updates link to `/documentation-standards/` and `/reporting-standards/` and updates repo structure to reflect the fact that these standards documents are now found in `/wiki-architecture/`.
+- **2025-09-22**: Tweaks the links to CONTRIBUTING.md. Updates the repo structure to include `/wiki-architecture/` folder and build files.
+- **2025-08-18**: Revises License & Access section to reflect the fact that the repo is going to be public and also to adopt the Creative Commons license.
+- **2025-08-15**: Changes code-fence block for the repo structure to bash from plaintext, which enables syntax highlighting for the comments to make them stand out better on the page. Updates the cross-reference to the sql-asset-doc-standards.md from the outdated name comment-style-guide.md.
+- **2025-08-03**: Updates the repo structure with new content and adds a cross-link to documentation-standards.md because there is overlap of content between Editing Conventions section and that document.
+- **2025-07-28**: Updates README content and renames the repository to BHN-Data-Team-Wiki. Fixes README.md link to docs/reporting/reporting-standards.md.
+- **2025-07-21**: Adds initial Markdown file.

@@ -1,14 +1,23 @@
 ---
 front-matter-title: Pathways Maintenance
 author: Bradley Wing
-last_updated: 2025-08-14
+last_updated: 2025-09-22
 status: active
+program_scope: none
+programs:
+  - none
 tags:
+  - database-features
+  - data-team-facing
+  - documentation
   - pathway-creation
   - pathway-event
   - event-metadata
   - master-pathway-dashboard
 permalink: /pathways-maintenance/
+layout: home
+nav_order: 6
+parent: Data Team Processes
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -74,6 +83,8 @@ When creating or modifying Pathway Events, do the following:
 
 ## Changelog
 
+- **2025-09-22**: Adds `nav_order:` and `parent:` fields to frontmatter. Adds `documentation` tag to frontmatter. Adds `database-features` and `data-team-facing` tags to frontmatter.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-16**: Updates frontmatter to bring closer into alignment with `schema_version` 1.0.
 - **2025-08-15**: Adds initial commit to repo.
 - **2025-08-04**: Adds Markdown file.

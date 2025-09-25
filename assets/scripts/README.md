@@ -7,7 +7,7 @@ permalink: /readme/
 
 # R Scripts Archive
 
-This folder contains R scripts under consideration for adoption into the BHN Data Team’s tooling ecosystem. Scripts may support diagnostics, parsing, visualization, or documentation scaffolding.
+This folder contains R scripts and Python scripts under consideration for adoption into the BHN Data Team’s tooling ecosystem. Scripts may support diagnostics, parsing, visualization, or documentation scaffolding.
 
 Scripts here are:
 

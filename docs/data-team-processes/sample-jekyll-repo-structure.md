@@ -1,11 +1,17 @@
 ---
 front-matter-title: Sample Jekyll Repo Structure
 author: Bradley Wing
-last_updated: 2025-09-18
+last_updated: 2025-09-22
 status: active
+program_scope: none
+programs:
+  - none
 tags: 
   - template
 permalink: /sample-jekyll-repo-structure/
+layout: home
+nav_order: 7
+parent: Data Team Processes
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-18

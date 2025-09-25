@@ -1,13 +1,20 @@
 ---
 front-matter-title: Program Workflow Template
 author: Bradley Wing
-last_updated: 2025-08-14
+last_updated: 2025-09-22
 status: active
+program_scope: none
+programs:
+  - none
 tags: 
+  - data-team-facing
+  - documentation
   - template
   - workflow-logic
-  - documentation
 permalink: /program-workflow-template/
+layout: home
+nav_order: 5
+parent: Data Team Processes
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -79,6 +86,9 @@ _Use this template to document core workflows such as Enrollment, Dismissal, Tra
 
 ## Changelog
 
+- **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
+- **2025-09-22**: Adds `nav_order:` and `parent:` fields to frontmatter. Adds `data-team-facing` tag to frontmatter.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-16**: Updates frontmatter to bring closer into alignment with `schema_version` 1.0.
 - **2025-08-15**: Updates frontmatter and tweaks format of template.
 - **2025-07-28**: Adds Markdown file.
