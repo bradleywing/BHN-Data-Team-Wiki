@@ -1,14 +1,20 @@
 ---
 front-matter-title: EPICC Enrollment Workflow  
 author: Bradley Wing
-last_updated: 2025-09-18  
+last_updated: 2025-09-21
+status: active
 program_scope: single
 programs:
   - epicc
-status: active
 tags:
-  - tag
+  - enrollment
+  - program-docs
+  - program-structure
+  - workflow-logic
 permalink: /epicc-enrollment-process/
+layout: home
+nav_order: 1
+parent: EPICC Program Workflows
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-18
@@ -57,6 +63,8 @@ This preserves historical assignment data while ensuring operational continuity.
 
 ## Changelog
 
+- **2025-09-21**: Adds `enrollment`, `program-docs`, `program-structure`, and `workflow-logic` tags to frontmatter. Adds `nav_order:` and `parent:` fields to frontmatter.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-18**: Adds `program_scope:` and `programs:` fields to frontmatter.
 - **2025-09-16**: Renames file to remove ambiguity about content.
 - **2025-08-17**: Adds frontmatter yaml.
