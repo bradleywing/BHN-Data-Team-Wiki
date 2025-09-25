@@ -4,8 +4,7 @@ author: Bradley Wing
 last_updated: 2025-09-21
 category: program-documentation
 category_label: Program Documentation
-status: active  
-lifecycle: in-development
+status: draft  
 program_scope: single
 programs:
   - yere
@@ -18,7 +17,6 @@ permalink: /yere-dismissal-process/
 layout: home
 nav_order: 2
 parent: YERE Program Workflows
-change-control: internal-review-required
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
