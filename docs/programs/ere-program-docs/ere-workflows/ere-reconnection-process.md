@@ -1,20 +1,22 @@
 ---
-front-matter-title: ERE Client Transfer Process  
+front-matter-title: ERE Reconnection Process  
 author: Bradley Wing
-last_updated: 2025-09-11
+last_updated: 2025-09-21
 category: program-documentation
 category_label: Program Documentation
 status: active  
-lifecycle: production
 program_scope: single
 programs:
   - ere
 tags:
   - program-docs
-  - workflow-logic
   - program-structure
   - reconnection
-change-control: internal-review-required
+  - workflow-logic
+permalink: /ere-reconnection-process/
+layout: home
+nav_order: 4
+parent: ERE Workflows
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -46,4 +48,6 @@ BHN Data Team staff enter referrals into FAMCare exactly as assigned by AnswerFi
 
 ## Changelog
 
+- **2025-09-21**: Removes `lifecycle:` and `change-control:` fields from frontmatter as they are more appropriate for assets outside of the context of the wiki and since they overlap with tags such as `archived`, `needs-review`, `production-ready`, `change-management`, `implementation-planning`, and `stakeholder-approval`. Adds `nav_order:` and `parent:` fields to frontmatter.
+- **2025-09-19**: Adds `permalink:` and `layout:` fields to frontmatter.
 - **2025-08-27**: Adds initial reconnection documentation.
