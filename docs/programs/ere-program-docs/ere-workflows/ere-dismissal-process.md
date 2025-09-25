@@ -1,20 +1,22 @@
 ---
-front-matter-title: ERE Enrollment Dismissal Process  
+front-matter-title: ERE Dismissal Process  
 author: Bradley Wing
-last_updated: 2025-09-11
+last_updated: 2025-09-21
 category: program-documentation
 category_label: Program Documentation
 status: active  
-lifecycle: production
 program_scope: single
 programs:
   - ere
 tags:
+  - dismissal
   - program-docs
-  - workflow-logic
   - program-structure
-  - enrollment-dismissal
-change-control: internal-review-required
+  - workflow-logic
+permalink: /ere-dismissal-process/
+layout: home
+nav_order: 3
+parent: ERE Workflows
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -32,6 +34,11 @@ Documents the process for dismissing ERE program enrollments.
 
 Enrollments for clients who are not determined eligible and clients who choose not to engage despite being eligible for ERE program participation should be dismissed promptly by Data Team staff entering the enrollment on `PROVIDERPLACEMENT`. One of the following dismissal reasons should be selected:
 
+<details>
+<summary><strong>Dismissal Reasons Matrix</strong></summary>
+
+<div markdown="1">
+
 | Dismissal Reason                  | Definition                                                                                                                                                                                                                                                                                                              |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Administrative        | Definition TBD        |
@@ -41,6 +48,9 @@ Enrollments for clients who are not determined eligible and clients who choose n
 | Reconnect    | Client has an existing team at a CMHC OR is already consistently receiving services.         |
 | Transfer To Compass      | Client is dismissed because they were transferred to Compass for care.         |
 | Transfer To DM3700       | Client is dismissed because they were transferred to DM3700 for care.           |
+
+</div>
+</details>
 
 ## Dismissal Process When There Has Been No Client Contact
 
@@ -60,4 +70,6 @@ Enrollments for clients who are not determined eligible and clients who choose n
 
 ## Changelog
 
-- **2025-08-28**: Adds initial ERE enrollment dismissal process.
+- **2025-09-21**: Adds `<div markdown ="1">` tag tag to satisfy the Kramdown Markdown editor used by Jekyll since the `<details>` tag broke the Markdown table when building the site locally. Removes `lifecycle:` and `change-control:` fields from frontmatter as they are more appropriate for assets outside of the context of the wiki and since they overlap with tags such as `archived`, `needs-review`, `production-ready`, `change-management`, `implementation-planning`, and `stakeholder-approval`. Adds `nav_order:` and `parent:` fields to frontmatter.
+- **2025-09-19**: Adds collapsible `<details>` tag to the `Dismissal Reasons Matrix`. Adds `permalink:` and `layout:` fields to frontmatter.
+- **2025-08-28**: Adds Markdown file named initial ERE enrollment dismissal process.
