@@ -1,11 +1,19 @@
 ---
 front-matter-title: Reporting Standards  
 author: Bradley Wing  
-last_updated: 2025-08-14
+last_updated: 2025-09-22
 status: active  
+program_scope: none
+programs:
+  - none
 tags:
-  - tag 
+  - data-team-facing
+  - documentation
+  - documentation-standards
 permalink: /reporting-standards/
+layout: home
+nav_order: 1
+parent: Reporting Documentation
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -40,6 +48,8 @@ The following matrix defines standardized aliases for all commonly used tables a
 
 <details>
 <summary><strong>Table Aliases</strong></summary>
+
+<div markdown="1">
 
 | Table Source   | Table Name                         | Alias          | View on Master Table | View Not on Master Table | Primary Join Fields(s) |
 |----------------|------------------------------------|----------------|----------------------|--------------------------|------------------------|
@@ -138,8 +148,9 @@ The following matrix defines standardized aliases for all commonly used tables a
 | YERE           | YERE_TYPE_OF_SCHOOL_DISCIPLINE     | YTSD           | 1                    | 0                        |                        |
 | ...            | ...                                | ...            | ...                  | ...                      | ...                    |
 
-> For additional guidance on join logic, see [documentation-standards.md](../data-team-processes/documentation-standards.md).
+> For additional guidance on join logic, see [Documentation Standards]({{site.baseurl}}//documentation-standards/).
 
+</div>
 </details>
 
 ---
@@ -150,7 +161,7 @@ The following matrix defines standardized aliases for all commonly used tables a
 - **View Flags**:
   - `View on Master Table = 1` indicates an alias for a master table that may be queried on front-end HTML forms when entering fields and in queries.
   - `View Not on Master Table = 1` indicates the table is only available in a view.
-- **Program-Specific Tables**: Tables scoped to a specific program (e.g. BCR) are grouped accordingly.
+- **Program-Specific Tables**: Tables scoped to a specific program (e.g., BCR) are grouped accordingly.
 
 ---
 
@@ -162,6 +173,9 @@ The following matrix defines standardized aliases for all commonly used tables a
 
 ## Changelog
 
+- **2025-09-23**: Moves `reporting-standards.md` from `/reporting/` to `/wiki-architecture/` to centralize standards documentation for enhanced discoverability through centralization in one folder. Fixes link to the moved `documentation-standards.md`.
+- **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Adds `data-team-facing` `documentation`, and `documentation-standards` tags to frontmatter. Fixes link to `/documentation-standards/`.
+- **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-18**: Adds `Q_PLACEMENT_PROGRAM_WORKER_HISTORY | WORKER_HISTORY` table alias.
 - **2025-09-16**: Updates frontmatter; adds table aliases for `Q_YERE_CLIENT_NEEDS` and `Q_YERE_CAREGIVER_NEEDS`.
 - **2025-09-12**: Adds `Q_ERE_HOSPITAL_VISIT_NOTE` table alias.
