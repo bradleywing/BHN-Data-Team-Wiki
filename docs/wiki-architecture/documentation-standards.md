@@ -276,7 +276,8 @@ Use consistent heading levels and formatting for clarity.
 | Section header | ## Form Parsing Utilities          | H2 for major sections |
 | Subsection     | ### Input Requirements             | H3 for nested details |
 | Code block     | Triple backticks + language tag    | Use bash, r, python, sql, etc. |
-| Links          | [/assets/scripts/README.md](/assets/scripts/README.md) | Prefer relative links |
+| Links to site documentation files         | [Documentation Standards]({{site.baseurl}}/documentation-standards/) | Use `{{site.baseurl}}/permalink/` |
+| Links to raw files in GitHub repos | [GitHub: scripts README](https://github.com/Behavioral-Health-Network/BHN-Data-Team-Wiki/blob/732611b6c12f487d6f8434e50d13a76fd78c646f/assets/scripts/README.md) | Use `[link text](https://github.com/Behavioral-Health-Network/BHN-Data-Team-Wiki/blob/main/folder/subfolder/filename.md)` |
 
 ### Contributor Notes and Comments
 
@@ -351,6 +352,7 @@ It is possible to use GitHub-flavored diff syntax to indicate adds vs. removals:
 
 ## Changelog
 
+- **2025-09-25**: Replaces broken link example in `Documentation Structure` subsection Markdown table and adds another link example for files in GitHub repos.
 - **2025-09-23**: Moves `documentation-standards.md` from `/data-team-processes/` to `/wiki-architecture/` to centralize standards documentation for enhanced discoverability through centralization in one folder. Updates `parent:` field in the frontmatter to reflect this change. Renames `sql-asset-doc-standards.md` to `SQL Asset Style Guide` for more contributor friendly naming.
 - **2025-09-22**: Fixes links to `Tags.md` and `CONTRIBUTING.md`. Updates the instructions for adding collapsible sections using `<details>` element by adding `<div markdown="1"></div>` to the documentation.
 - **2025-09-21**: Renames `cross-repo-consistency` tag to `cross-repo`. Renames `contributor-guide` tag to `contributor-guidance`. Adds `parent:` and `nav_order:` to frontmatter yaml. Updates guidance for `schema_version:` to signify that `schema_version:` is not to update until initial publication to GitHub Pages. After that, any changes to frontmatter schema should increment the `schema_version:`. Adds guidance for using `program_scope:` and `programs:` fields in frontmatter when an asset is not program-specific. Restyles the admonitions (reference, note, tip) below `Universal Metadata` yaml block. Adds another note to those admonitions to provide guidance on the preference for using the `status:` field instead of tags to communicate the current status of an asset.
