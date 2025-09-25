@@ -1,18 +1,24 @@
 ---
 front-matter-title: Documentation Standards
 author: Bradley Wing
-last_updated: 2025-09-12
+last_updated: 2025-09-21
 status: active
+program_scope: none
+programs:
+  - none
 tags:
-  - contributor-guide
+  - changelog-rules
+  - contributor-guidance
+  - cross-repo
+  - documentation-standards
   - frontmatter-schema
   - markdown-style
-  - changelog-rules
-  - documentation-standards
   - schema-versioning
   - metadata-governance
-  - cross-repo-consistency
 permalink: /documentation-standards/
+layout: home
+nav_order: 1
+parent: Wiki Architecture
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-12
@@ -24,7 +30,7 @@ schema_version: 1.0
 
 This document defines the standards for documentation authored by the BHN Data Team. It includes guidance on frontmatter metadata, Markdown formatting, and changelog conventions. These standards support contributor onboarding, auditability, and cross-repo coordination.
 
-> For contributor expectations and file structure, see [CONTRIBUTING.md](/CONTRIBUTING.md)
+> **Tip**: For contributor expectations and file structure, see [CONTRIBUTING]({{site.baseurl}}/contributor-notes/)
 
 ---
 
@@ -41,17 +47,27 @@ These fields apply to all documentation types.
 ```yaml
 front-matter-title: string  # Unique identifier for the documentation file
 author: string              # Contributor or team responsible
-status: active | deprecated | retired | experimental
+status: draft | active | deprecated | archived | experimental | needs-review | needs-testing
 last_updated: YYYY-MM-DD    # Date of last substantive edit
 description: string         # Optional
+reviewed_by: string         # Name of the most recent reviewer
 last_reviewed: YYYY-MM-DD   # Date of last formal review
 schema_version: float       # Version of the frontmatter schema used
-permalink: /file-name/       # Jekyll-rendered URL path (omit.md or .html)
-tags: [tag1, tag2]          # Thematic or functional tags for indexing
+permalink: /file-name/      # Jekyll-rendered URL path (omit.md or .html)
+layout: home                # Must use this layout value.
+tags:                       # Thematic or functional tags for indexing
+  - tag1
+  - tag2
+parent: string              # References parent page `front-matter-title`
+                            #   of another page to group the current page
+                            #   in the side bar.
+nav_order: integer          # Sets the order of the page within its parent
+                            #   group. Lower numbers appear first.
 ```
 
-> For tag definitions and usage conventions, see [tags.md](/tags.md).  
-> **Note**: Use `permalink:` to define the rendered URL path when publishing with Jekyll or GitHub Pages. Always begin with `/` and avoid file extensions unless required by the theme. This ensures stable linking and clean navigation.  
+> **Reference**: For tag definitions and usage conventions, see [tags.md]({{site.baseurl}}/tag-reference/).  
+> **Note**: Use `permalink:` to define the rendered URL path when publishing with Jekyll or GitHub Pages. Always begin with `{{site.baseurl}}/` and avoid file extensions unless required by the theme. This ensures stable linking and clean navigation.  
+> **Note**: Use status: to indicate the lifecycle state of a document. Common values include draft, active, needs-review, needs-testing, archived, and deprecated. This field supports contributor workflows and future automation. Avoid using tags to signal status.  
 > **Tip**: The `description:` node is optional but recommended for any page that serves as a landing, guide, or summary. It supports SEO, feed generation, and contributor clarity. Keep it concise - under 160 characters.
 
 ### Program Scope & Governance
@@ -59,17 +75,18 @@ tags: [tag1, tag2]          # Thematic or functional tags for indexing
 Used to define program relevance and review requirements.
 
 ```yaml
-program_scope: single | multi
+program_scope: single | multi | none
 programs:
   - epicc
   - bcr
+  - none # when appropriate - not to be used when a program is in scope
 change_control: value | [value1, value2]  # Review or coordination requirements
 reviewed_by:
   - name: contributor
     date: YYYY-MM-DD
 ```
 
-> **Note**: `program_scope: single` requires exactly one entry in `programs:`. Use `multi` for cross-program assets.
+> **Note**: `program_scope: single` requires exactly one entry in `programs:`. Use `multi` for cross-program assets. Use `none` for forms that are BHN program-agnostic, and use `none` for `programs:` as well in that case.
 
 ### Asset-Specific Metadata
 
@@ -188,6 +205,7 @@ The `schema_version:` field tracks the version of the frontmatter schema used in
   - Signals which fields and conventions are expected in the frontmatter.
   - Enables scripts or linters to validate structure based on version.
   - Supports backward compatibility when publishing or sharing documentation externally.
+- `schema_version:` remains at 1.0 until initial publication to GitHub Pages.
 - Update `schema_version:` when:
   - New fields are added to the frontmatter.
   - Field names or formats change.
@@ -200,7 +218,7 @@ The `schema_version:` field tracks the version of the frontmatter schema used in
   - 1.1 → Minor field addition or rename
   - 2.0 → Major structural overhaul
 
-For implementation examples, see [`sql-asset-doc-standards.md`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md).
+For implementation examples, see [SQL Asset Style Guide`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md).
 
 ### Optional: `asset_schema_version`
 
@@ -275,7 +293,7 @@ Use sparingly and only when clarity is improved.
 
 | Feature         | Format Example                          | Notes |
 |-----------------|------------------------------------------|-------|
-| Collapsible sections | `<details><summary>Advanced Logic</summary>...</details>` | Use for long logic or edge cases |
+| Collapsible sections | `<details><summary>Advanced Logic</summary><div markdown="1">...</div></details>` | Use for long logic or edge cases |
 | Bold monospace  | ``**`FieldName`**``                         | Use for emphasis in tables or headings |
 
 ---
@@ -333,6 +351,10 @@ It is possible to use GitHub-flavored diff syntax to indicate adds vs. removals:
 
 ## Changelog
 
+- **2025-09-23**: Moves `documentation-standards.md` from `/data-team-processes/` to `/wiki-architecture/` to centralize standards documentation for enhanced discoverability through centralization in one folder. Updates `parent:` field in the frontmatter to reflect this change. Renames `sql-asset-doc-standards.md` to `SQL Asset Style Guide` for more contributor friendly naming.
+- **2025-09-22**: Fixes links to `Tags.md` and `CONTRIBUTING.md`. Updates the instructions for adding collapsible sections using `<details>` element by adding `<div markdown="1"></div>` to the documentation.
+- **2025-09-21**: Renames `cross-repo-consistency` tag to `cross-repo`. Renames `contributor-guide` tag to `contributor-guidance`. Adds `parent:` and `nav_order:` to frontmatter yaml. Updates guidance for `schema_version:` to signify that `schema_version:` is not to update until initial publication to GitHub Pages. After that, any changes to frontmatter schema should increment the `schema_version:`. Adds guidance for using `program_scope:` and `programs:` fields in frontmatter when an asset is not program-specific. Restyles the admonitions (reference, note, tip) below `Universal Metadata` yaml block. Adds another note to those admonitions to provide guidance on the preference for using the `status:` field instead of tags to communicate the current status of an asset.
+- **2025-09-19**: Adds `layout:` field to frontmatter and to the `Universal Metadata` section. Fixes link to `data-team-proceses`.
 - **2025-09-17**: Updates the `Form-Specific Metadata`, `Pathways-Goverened Forms Metadata` sections and adds the `Standalone Pathways Forms Metadata` and `Vendor-Controlled Forms Metadata` sections to clarify how to handle the pathways fields in the frontmatter based on the form type. Moves the `date_field` field from the `Form-Specific Metadata` subsection to the subsections `Pathways-Governed Forms Metadata`, `Standalone Pathways Forms Metadata`, and `Vendor-Controlled Forms Metadata` to be explicit about how the `date_field` field is to be handled across the form types.
 - **2025-09-16**: Updates frontmatter. Adds explicit `Frontmatter Schema Reference` section to better guide frontmatter composition and maintenance. This replaces the inadequate `Schema Versioning in Documentation` section that had only addressed the schema version and didn't explain frontmatters in general. Removes `Versioning Guidance` subsection entirely.
 - **2025-09-10**: Updates the `Purpose` subsection to reflect the renaming of the SQL asset documentation standards document; adds Schema Versioning in Documentation subsection to explain the usage of schema_version in the frontmatter yaml.
