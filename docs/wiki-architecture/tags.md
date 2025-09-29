@@ -3,12 +3,17 @@ front-matter-title: Tag Reference
 author: Bradley Wing
 last_updated: 2025-09-20 
 status: active  
+program_scope: none
+programs:
+  - none
 tags:
   - tag-governance
   - contributor-guidance
   - documentation-standards
 permalink: /tag-reference/
 layout: home
+nav_order: 4
+parent: Wiki Architecture
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-16
@@ -145,8 +150,19 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 
 ---
 
+## Related Standards
+
+- [Data Dictionary Standards]({{site.baseurl}}/data-dictionary-standards/)
+- [Documentation Standards]({{site.baseurl}}/documentation-standards/)
+- [Reporting Standards]({{site.baseurl}}/reporting-standards/)
+
+> **Tip**: See also [Sidebar Configuration]({{site.baseurl}}/sidebar-config/) for information on how to update `_navigation.yaml` so that any new page is added to the sidebar.
+
+---
+
 ## Changelog
 
+- **2025-09-26**: Moves this document to `/wiki-architecture/` from the root-level as part of centralizing standards documentation. This also ensures that Jekyll will render the page in the wiki appropriately instead of as a stand-alone page. Adds `program_scope:`, `programs:`, `nav_order:`, and `parent:` fields in the frontmatter. Adds `Related Standards` section.
 - **2025-09-23**: Adds the `field-metadata` tag and updates the description of the `data-dictionary` tag.
 - **2025-09-20**: Adds numerous new tags and renames others. Consolidates tags into one unified table to aid scripting, auditing, and sorting. Adds `Category` column to classify tags by type or function. Renames `permalink:` and page title to distinguish this canonical tags reference from the tag-usage-index, which shows where tags are used. Adds `<details>` tag element to shorten the long `Tag Reference Matrix`. Adds `<div markdown="1">` tag to satisfy the Kramdown Markdown editor used by Jekyll since the `<details>` tag broke the Markdown table when building the site locally.
 - **2025-09-19**: Adds `layout:` field to frontmatter.
