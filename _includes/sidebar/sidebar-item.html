@@ -1,0 +1,52 @@
+{% assign normalized_page_url = page_url | append: "/" %}
+{% assign normalized_item_url = item.url | append: "/" %}
+{% assign should_open = false %}
+
+{% if item.children %}
+  {% for child in item.children %}
+    {% assign normalized_child_url = child.url | append: "/" %}
+    {% if normalized_page_url == normalized_child_url %}
+      {% assign should_open = true %}
+    {% endif %}
+    {% if child.children %}
+      {% for grandchild in child.children %}
+        {% assign normalized_grandchild_url = grandchild.url | append: "/" %}
+        {% if normalized_page_url == normalized_grandchild_url %}
+          {% assign should_open = true %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<li class="nav-item{% if item.collapsible %} collapsible{% endif %}">
+  {% if item.children and item.collapsible %}
+    <details {% if should_open %}open{% endif %}>
+      <summary>
+        {% if item.url %}
+          <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link{% if normalized_page_url == normalized_item_url %} active{% endif %}">
+            {{ item.title }}
+          </a>
+        {% else %}
+          {{ item.title }}
+        {% endif %}
+      </summary>
+      <ul class="nav-sublist">
+        {% for child in item.children %}
+          {% include sidebar-item.html item=child page_url=page_url %}
+        {% endfor %}
+      </ul>
+    </details>
+  {% elsif item.children %}
+    <span class="nav-header">{{ item.title }}</span>
+    <ul class="nav-sublist">
+      {% for child in item.children %}
+        {% include sidebar-item.html item=child page_url=page_url %}
+      {% endfor %}
+    </ul>
+  {% else %}
+    <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link{% if normalized_page_url == normalized_item_url %} active{% endif %}">
+      {{ item.title }}
+    </a>
+  {% endif %}
+</li>
