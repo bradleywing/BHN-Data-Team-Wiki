@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.front-matter-title | default: page.title | default: site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/git-wiki-style.css">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico">
+  </head>
+
+  <body class="darkmode--activated">
+    <div class="wiki-layout">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            {% for item in site.data.navigation %}
+              {% include sidebar/sidebar-item.html item=item page_url=page.url %}
+            {% endfor %}
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="wiki-content">
+        {{ content }}
+      </main>
+    </div>
+  </body>
+</html>
