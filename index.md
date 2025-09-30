@@ -36,9 +36,9 @@ Workflows, policies, and shared logic by program
 Field definitions, lookup tables, Power BI assets  
 → [View Dictionaries]({{site.baseurl}}/data-dictionaries/)
 
-## Wiki Architecture
+### Wiki Architecture
 
-Standards documentation, tag reference and usage index, and wiki configuration details
+Standards documentation, tag reference and usage index, and wiki configuration details  
 → [View Wiki Architecture]({{site.baseurl}}/wiki-architecture/)
 
 ---
