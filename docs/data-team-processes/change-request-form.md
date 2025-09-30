@@ -42,11 +42,12 @@ schema_version: 1.0
 - **Date Submitted**: `MM/DD/YYYY`  
 - **Submitted By**: `Name`  
 - **Program / Agency**:  
-  - [ ] Youth ERE  
-  - [ ] EPICC  
+
   - [ ] Bridges To Care And Recovery  
   - [ ] Complex Care  
-  - [ ] Statewide ERE  
+  - [ ] EPICC  
+  - [ ] ERE  
+  - [ ] Youth ERE  
   - [ ] Other: `__________`
 
 ---
@@ -57,6 +58,7 @@ _Select the best match. If none apply, use "Other" and describe below._
 
 - [ ] Revise Existing Form  
 - [ ] Create New Form  
+- [ ] Add, Remove, or Update A Value In One Or More Form Fields
 - [ ] Revise Existing Report Or Dashboard  
 - [ ] Create New Report Or Dashboard  
 - [ ] Data Extract (One-Time Or Recurring)  
@@ -70,7 +72,10 @@ _Select the best match. If none apply, use "Other" and describe below._
 
 _What will happen if this change is not made?_  
 
-- [ ] Operational Disruption  
+- [ ] Operational Disruption
+  - example: prevents outreach workers from entering data needed for day-to-day work with clients
+  - example: forces partner agencies to rely on manual/parallel processes involving phone calls or spreadsheets
+  - example: leads to clients 'falling through the cracks' due to not filling a known gap
 - [ ] Compliance Or Reporting Risk  
 - [ ] Staff Confusion Or Inefficiency  
 - [ ] Missed Funding Opportunity  
@@ -85,7 +90,7 @@ _Use the prompts below to guide your response. You don’t need to answer every 
 - **What needs to change?**  
 - **Why is this change needed?**  
 - **Who will be affected?**  
-- **What are the downstream implications?**  
+- **What are the downstream implications?**  (examples include impact on other forms, reports, staff workflows, training needs, etc.)
 - **Is there a deadline or time sensitivity?**
 
 ---
@@ -139,6 +144,7 @@ _Use this space for anything not captured above._
 
 ## Changelog
 
+- **2025-09-29**: Adds a request category for changing values in an LOV. Adds concrete examples of Operational Disruption Business Impact reason. Adds examples of downstream implications.
 - **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
 - **2025-09-21**: Updates tags in frontmatter. Adds `parent:` and `nav_order:` to frontmatter.
 - **2025-09-19**: Adds `layout:` field to frontmatter.
