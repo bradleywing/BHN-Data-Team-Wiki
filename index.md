@@ -37,13 +37,13 @@ Field definitions, lookup tables, Power BI assets
 → [View Dictionaries]({{site.baseurl}}/data-dictionaries/)
 
 ## Wiki Architecture
-→ [View Wiki Architecture]({{site.baseurl}}/wiki-architecture/)
 
-Standards, dependencies, tag-usage index
+Standards documentation, tag reference and usage index, and wiki configuration details
+→ [View Wiki Architecture]({{site.baseurl}}/wiki-architecture/)
 
 ---
 
-## Tag Index
+## Tag Reference
 
 Browse documentation by theme or function  
 → [Explore Tags]({{site.baseurl}}/tag-reference/)
@@ -55,6 +55,6 @@ Browse documentation by theme or function
 This wiki is version-controlled via GitHub.  
 Changes may be proposed via pull requests or submitted to the Data Team for review.
 
-For editing help or repo structure guidelines, see [Contributor Notes]({{site.baseurl}}/contributor-notes/).
+For editing help or repo structure guidelines, see [Contributor Notes](https://github.com/Behavioral-Health-Network/BHN-Data-Team-Wiki/blob/f74312d945377dbfca899e0286142830affcef43/CONTRIBUTING.md).
 
 ---
