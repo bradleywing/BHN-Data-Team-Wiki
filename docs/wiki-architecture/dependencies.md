@@ -14,7 +14,7 @@ tag:
   - governance
 permalink: /dependencies/
 layout: home
-nav_order: 1
+nav_order: 7
 parent: Wiki Architecture
 reviewed-by:
   - name: Bradley Wing
@@ -145,6 +145,7 @@ To support consistent builds and contributor onboarding, the following local set
 
 ## Changelog
 
+- **2025-09-27**: Updates the `nav_order:` field in the frontmatter.
 - **2025-09-22**: Adds `program_scope:` and `programs` fields to frontmatter.
 - **2025-09-21**: Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-20**: Adds initial Markdown file.
