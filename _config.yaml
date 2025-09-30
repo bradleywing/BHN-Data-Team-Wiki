@@ -6,6 +6,8 @@ permalink: /:path/
 repository: Behavioral-Health-Network/BHN-Data-Team-Wiki
 remote_theme: Behavioral-Health-Network/git-wiki-theme
 markdown: kramdown
+kramdown:
+  input: GFM
 highlighter: rouge
 
 # Optional but useful for sidebar and navigation
@@ -20,6 +22,9 @@ defaults:
       type: docs
     values:
       layout: home
+
+sass:
+  sass_dir: _sass
 
 # Plugins (optional; depends on GitHub Pages support)
 plugins:
