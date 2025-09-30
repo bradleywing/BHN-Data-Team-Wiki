@@ -15,7 +15,7 @@
         <nav class="sidebar-nav">
           <ul class="nav-list">
             {% for item in site.data.navigation %}
-              {% include sidebar/sidebar-item.html item=item page_url=page.url %}
+                {% include sidebar/sidebar-item.html item=item page_url=page.relative_path depth=0 %}
             {% endfor %}
           </ul>
         </nav>
