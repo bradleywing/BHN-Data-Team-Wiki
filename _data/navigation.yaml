@@ -1,55 +1,148 @@
 # This is work in progress content for the navigation structure of the BHN Data Team Wiki.
 # It will be used to generate the sidebar and navigation links in the Jekyll site once it is updated and built.
+
+# Be aware that the git-wiki-theme has been customized locally with files in the _includes/ and _layouts/ folders to handle four levels.
+# That is three folders and one content item. To go further than this (probably not recommended), one must modify sidebar-child.html to handle this.
+# Currently, sidebar-child.html allows for children, grandchildren, and great-grandchildren. To go futher, add great-great-grandchildren.
+# Note: this support for nesting does not impact sections of the sidebar that do not require nesting. Those just work as intended.
 - title: Home
   url: /docs/
 
 - title: Data Team Processes
+  collapsible: true
   children:
     - title: Change Control Process
-      url: /docs/data-team-processes/change-control-process.md
-    - title: Documentation Standards
-      url: /docs/data-team-processes/documentation-standards.md
+      url: /change-control-process/
+    - title: Change Request Form
+      url: /change-request-form/
+    - title: Change Scope Form
+      url: /change-scope-form/
+    - title: Pathways Maintenance
+      url: /pathways-maintenance/
     - title: Program Workflow Template
-      url: /docs/data-team-processes/program-workflow-template.md
+      url: /program-workflow-template/
+    - title: Sample Repo Structure
+      url: /sample-jekyll-repo-structure/
 
 - title: Reporting Documentation
+  collapsible: true
   children:
     - title: Reports and Assets Overview
-      url: /docs/reporting/famcare-reports-and-assets.md
+      url: /famcare-reports-and-assets/
     - title: Reports Request Tracker
-      url: /docs/reporting/reports-request-tracker.md
+      url: /reports-request-tracker/
     - title: Quick Reports Overview
-      url: /docs/reporting/quick-reports-overview.md
-    - title: Reporting Standards
-      url: /docs/reporting/reporting-standards.md
+      url: /quick-reports-overview/
 
 - title: Program-Specific Docs
+  collapsible: true
   children:
-    - title: EPICC Dismissals Workflow
-      url: /docs/programs/epicc/dismissal.md
-    - title: EPICC Enrollment Workflow
-      url: /docs/programs/epicc/enrollment.md
+    - title: BCR Program Docs
+      collapsible: true
+      children:
+        - title: BCR Placeholder
+          url: /bcr-placeholder/
+          collapsible: true
+          children:
+            - title: BCR Placeholder2
+              url: /bcr-placeholder2/
+    - title: EPICC Program Docs
+      url: /epicc-program-docs/
+      collapsible: true
+      children:
+        - title: Workflows
+          url: /epicc-workflows/
+          collapsible: true
+          children:
+            - title: EPICC Dismissals Workflow
+              url: /epicc-dismissal-process/
+            - title: EPICC Enrollment Workflow
+              url: /epicc-enrollment-process/
+    - title: ERE Program Docs
+      collapsible: true
+      children:
+        - title: Goals
+          url: /ere-goals/
+          children:
+            - title: ERE Goals
+              url: /ere-goals-logic/
+        - title: Workflows
+          url: /ere-workflows/
+          children:
+            - title: Client Transfer Process
+              url: /ere-client-transfer-process/
+            - title: Dismissal Process
+              url: /ere-dismissal-process/
+            - title: Reconnection Process
+              url: /ere-reconnection-process/
+    - title: YERE Program Docs
+      collapsible: true
+      children:
+        - title: Goals
+          url: /yere-goals/
+          children:
+            - title: YERE Goals
+              url: /yere-goals-logic/
+        - title: Workflows
+          url: /Yere-workflows/
+          children:
+            - title: Dismissal Process
+              url: /yere-dismissal-process/
 
 - title: Data Dictionaries
+  collapsible: true
   children:
-    - title: Shared Field Definitions
-      url: /docs/data-dictionaries/shared-fields.md
     - title: BCR Data Dictionaries
-      url: /docs/data-dictionaries/bcr
-    - title: EPICC Data Dictionaries
-      url: /docs/data-dictionaries/epicc
-    - title: ERE Data Dictionaries
-      url: /docs/data-dictionaries/ere
+      url: /bcr-data-dictionaries/
+      children:
+        - title: BCR Placeholder
+          url: /bcr-placeholder/
     - title: Complex Care Data Dictionaries
-      url: /docs/data-dictionaries/complex-care
+      url: /complex-care-data-dictionaries/
+      children:
+        - title: Complex Care Placeholder
+          url: /complex-care-placeholder/
+    - title: EPICC Data Dictionaries
+      url: /epicc-data-dictionaries/
+      children:
+        - title: EPICC Initial Contact
+          url: /epicc-initial-contact/
+    - title: ERE Data Dictionaries
+      url: /ere-data-dictionaries/
+      children:
+        - title: ERE Placeholder
+          url: /ere-placeholder/
+    - title: Shared Field Definitions
+      url: /all-programs-shared-fields/
+      children:
+        - title: Shared Fields Placeholder
+          url: /shared-fields-placeholder/
     - title: YERE Data Dictionaries
-      url: /docs/data-dictionaries/yere
+      url: /yere-data-dictionaries/
+      children:
+        - title: YERE Placeholder
+          url: /yere-placeholder/
 
-- title: Tag Index
-  url: /tags.md
-
-- title: Repo Overview
-  url: /README.md
-
-- title: Contributors Guide
-  url: /CONTRIBUTING.md
+- title: Wiki Architecture
+  collapsible: true
+  children:
+    - title: Data Dictionary Standards
+      url: /data-dictionary-standards/
+    - title: Documentation Standards
+      url: /documentation-standards/
+    - title: Reporting Standards
+      url: /reporting-standards/
+    - title: Repo Overview
+      url: /repo-overview/
+    - title: Tag Reference
+      url: /tag-reference/
+    - title: Tag Usage Index
+      url: /tag-usage-index/
+    - title: Sidebar Configuration
+      url: /sidebar-config/
+    - title: Dependencies
+      url: /dependencies/
+    - title: Installing Ruby
+      url: /installing-ruby/
+    - title: Building The Site Locally
+      url: /building-wiki-locally-using-ruby/
