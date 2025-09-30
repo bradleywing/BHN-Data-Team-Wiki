@@ -1,7 +1,7 @@
 ---
 front-matter-title: FAMCare Reports & SQL Assets  
 author: Bradley Wing  
-last_updated: 2025-09-22
+last_updated: 2025-09-30
 status: active  
 program_scope: none
 programs:
@@ -29,10 +29,8 @@ This page documents Quick Reports used within BHN’s FAMCare implementation. It
 
 These matrices catalog all named reports relevant to BHN’s FAMCare implementation, whether published in FAMCare or maintained for internal analysis. It includes Quick Reports, SSMS logic assets, and staging logic intended for reuse or publication. Assets link to SQL code and paired documentation (where available).
 
-<details>
+<details markdown="1">
 <summary><strong>Exception Reports</strong></summary>
-
-<div markdown="1">
 
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
@@ -64,12 +62,11 @@ These matrices catalog all named reports relevant to BHN’s FAMCare implementat
 | Exception Reports | YERE IA Hidden Fields Null | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/yere-ia-hidden-fields-null.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/yere-ia-hidden-fields-null.md) |
 | Exception Reports | YERE Youth Needs Hidden Fields Null | | System Administrator, GVT | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/exception-reports/yere-youth-needs-hidden-fields-null.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/exception-reports/yere-youth-needs-hidden-fields-null.md) |
 
-</div>
 </details>
 
 <br>
 
-<details>
+<details markdown="1">
 <summary><strong>Program Management Reports</strong></summary>
 
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
@@ -81,29 +78,23 @@ These matrices catalog all named reports relevant to BHN’s FAMCare implementat
 | Program Management | ERE Caseload Report | Summarizes YERE program client caseloads, including enrollment details, worker assignment, agency, milestone completion status, payor information, and suicide attempt history. Supports program managers in tracking milestone compliance, identifying overdue forms, and reviewing worker caseloads. | System Administrator, GVT, BCR Managers | SSMS, Quick Report, ERE Managers | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/program-management-reports/ere-caseload-report.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/program-management-reports/ere-caseload-report.md) |
 | Program Management | YERE Caseload Report | Summarizes YERE program client caseloads, including enrollment details, worker assignment, agency, milestone completion status, payor information, and suicide attempt history. | System Administrator, GVT, YERE Managers | SSMS, Quick Report | [SQL](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/code/program-management-reports/yere-caseload-report.sql) &#124; [Doc](https://github.com/behavioral-health-network/famcare-sql-toolkit/blob/main/docs/program-management-reports/yere-caseload-report.md) |
 
-</div>
 </details>
 
 <br>
 
-<details>
+<details markdown="1">
 <summary><strong>Audit Reports</strong></summary>
 
-<div markdown="1">
-
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
 
-</div>
 </details>
 
 <br>
 
-<details>
+<details markdown="1">
 <summary><strong>Compliance Reports</strong></summary>
 
-<div markdown="1">
-
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
 
@@ -112,15 +103,12 @@ These matrices catalog all named reports relevant to BHN’s FAMCare implementat
 
 <br>
 
-<details>
+<details markdown="1">
 <summary><strong>External Data Sharing Reports</strong></summary>
-
-<div markdown="1">
 
 | Category | Report Name | Description | Security Groups | Run Environment | Assets |
 |----------|-------------|-------------|------------------|------------------|--------|
 
-</div>
 </details>
 
 ---
@@ -160,6 +148,7 @@ Each file contains multi-line top-level comment blocks per the shared style guid
 
 ## Changelog
 
+- **2025-09-30**: Replaces `<div markdown="1"></div>` with `<details markdown="1">` after learning that `Jekyll` must be configured to parse Markdown inside HTML blocks. While GitHub Pages will should build tables correctly if Kramdown is configured to use the `GitHub Flavored Markdown (GFM)` in the `_config.yaml`.
 - **2025-09-23**: Adds link to `reporting-standards.md`.
 - **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Adds `database-features`, `data-team-facing`, and `documentation` tags to frontmatter. Adds links to `FAMCARE-SQL-Toolkit` repo.
 - **2025-09-19**: Adds `permalink:` and `layout:` fields to frontmatter.
