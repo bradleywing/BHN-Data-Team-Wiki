@@ -12,8 +12,8 @@ tags:
   - documentation-standards
 permalink: /reporting-standards/
 layout: home
-nav_order: 1
-parent: Reporting Documentation
+nav_order: 3
+parent: Wiki Architecture
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-11
@@ -38,7 +38,7 @@ These standards support clarity, auditability, and consistency across all report
 
 ## R Child Doc Standards
 
-Prefer 0|1 instead of 'No'|'Yes'.
+Prefer `0|1` instead of `'No'|'Yes'`.
 
 ## SQL Standardized Table Aliases
 
@@ -171,8 +171,17 @@ The following matrix defines standardized aliases for all commonly used tables a
 - Link to sample queries using standardized aliases
 - Automate alias validation in SQL linting tools
 
+## Related Standards
+
+- [Data Dictionary Standards]({{site.baseurl}}/data-dictionary-standards/)
+- [Documentation Standards]({{site.baseurl}}/documentation-standards/)
+- [Tag Reference]({{site.baseurl}}/tag-reference/)
+
+> **Tip**: See also [Sidebar Configuration]({{site.baseurl}}/sidebar-config/) for information on how to update `_navigation.yaml` so that any new page is added to the sidebar.
+
 ## Changelog
 
+- **2025-09-26**: Updates `nav_order:` field in the frontmatter. The pages in /wiki-architecture/ can't all be `1`! Updates `parent:` field to `/wiki-architecture/`. Adds `Related Standards` section.
 - **2025-09-23**: Moves `reporting-standards.md` from `/reporting/` to `/wiki-architecture/` to centralize standards documentation for enhanced discoverability through centralization in one folder. Fixes link to the moved `documentation-standards.md`.
 - **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Adds `data-team-facing` `documentation`, and `documentation-standards` tags to frontmatter. Fixes link to `/documentation-standards/`.
 - **2025-09-19**: Adds `layout:` field to frontmatter.
