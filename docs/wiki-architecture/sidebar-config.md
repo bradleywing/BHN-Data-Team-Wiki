@@ -12,6 +12,8 @@ tags:
   - contributor-guidance
 permalink: /sidebar-config/
 layout: home
+nav_order: 6
+parent: Wiki Architecture
 reviewed-by:
   - name: Bradley Wing
   - date: 2025-09-22
@@ -79,5 +81,6 @@ We may revisit this strategy if:
 
 ## Changelog
 
+- **2025-09-26**: Updates the `nav_order:` field in the frontmatter.
 - **2025-09-23**: Adds `program_scope:` and `program:` fields to frontmatter.
 - **2025-09-22**: Adds initial Markdown file.

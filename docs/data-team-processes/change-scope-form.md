@@ -34,6 +34,14 @@ schema_version: 1.0
 - **Request Title**: *(copied from original form using LOADFIELDS)*
 - **Requesting Program/Agency**: *(copied from original form using LOADFIELDS)*
 
+## Staff Assignment (Check All That Apply)
+
+- [ ] Bradley
+- [ ] Kayla
+- [ ] Katy
+- [ ] Laura
+- [ ] Makayla
+
 ## Summary of Requested Change
 
 - **Business Need (from request)**:  
@@ -58,8 +66,27 @@ schema_version: 1.0
   - `docs/epicc/reporting/famcare-reports-and-assets.md`
 
 - **Entities to Train**:
-  - Stakeholders
-  - Outreach staff
+  - [ ] Stakeholders
+  - [ ] Outreach staff
+
+## Blockers / Constraints
+
+- **Purpose**: Data Team staff should use this field while scoping to explicitly record any active blockers, dependencies, or constraints that would prevent or delay implementation. This information is stored in the database and remains editable through the scoping process so the team and partners can track resolution.
+
+- **How to use (recommended fields)**:
+  - Blocker description (short free-text) — what is blocked and why.
+  - Blocker owner — who is responsible for resolving (e.g., partner agency, vendor, Data Team).
+  - Status — Open | Monitoring | In progress | Resolved.
+  - Estimated resolution date (optional) — yyyy-mm-dd.
+  - Impact if not resolved — brief note of operational or timeline consequences.
+  - Notes / required actions — steps needed to clear the blocker.
+
+- **Examples**:
+  - "Program Manager sign-off pending meeting with agency supervisors; prevents finalizing ____ form." (Owner: Program Manager; Status: Open)
+  - "No configuration module access for setting security group filters on Case Notes form; prevents customation for EPICC." (Owner: GVT; Status: Open)
+  - "Data sharing agreement not executed; prevents sharing PII across hospitals/agencies." (Owner: Hospital Legal Dept / Partner; Status: Open)
+
+- **Reviewer Guidance**: If one or more blockers are marked Open or In progress, include a mitigation plan or acceptance criteria for proceeding (for example, a documented temporary workaround, a committed resolution date, or explicit approval to proceed with limited scope). Reviewers may flag the scope as "Blocked" until key blockers are resolved.
 
 ## Logic Summary
 
@@ -81,14 +108,20 @@ schema_version: 1.0
 - **Date Scoped**: `YYYY-MM-DD`
 - **Scoped By**: `Name`
   *(select using HR dropdown)*
+- **Estimated Completion Date**: `YYYY-MM-DD`
 - **Deployment Notes**:  
   *(e.g., deployed to ALPHA on `YYYY-MM-DD`, pending internal review)*
   *(e.g., deployed to PROD on `YYYY-MM-DD`, pending UAT)*
 - **Rollback Plan**:  
   *(e.g., revert to `PWEPICCIC` to commit [5a146d5](https://github.com/bradleywing/FAMCare-HTML-Form-Code/commit/5a146d5fee676cc33c8a183905e106cda6eb6740)`)*
 
+## Notes Field
+
+- Multiline text field for adding notes.
+
 ## Changelog
 
+- **2025-09-29**: Adds Staff Assignment section with names. Adds Blockers/Constraints section. Adds Estimated Completion Date. Adds a notes field.
 - **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
 - **2025-09-21**: Updates tags in frontmatter. Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-19**: Adds `layout:` field to frontmatter.

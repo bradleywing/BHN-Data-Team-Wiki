@@ -11,12 +11,12 @@ nav_order: 3
 
 This section contains documentation for BHN program workflows, processes, and program goals.
 
-- [BCR Documentation]({{site.baseurl}}/bcr/)
-- [Complex Care Documentation]({{site.baseurl}}/complex-care/)
-- [Cross-Program Documentation]({{site.baseurl}}/cross-program/)
-- [EPICC Documentation]({{site.baseurl}}/epicc/)
-- [ERE Documentation]({{site.baseurl}}/ere/)
-- [YERE Documentation]({{site.baseurl}}/yere/)
+- [BCR Documentation]({{site.baseurl}}/bcr-program-docs/)
+- [Complex Care Documentation]({{site.baseurl}}/complex-care-program-docs/)
+- [Cross-Program Documentation]({{site.baseurl}}/cross-program-docs/)
+- [EPICC Documentation]({{site.baseurl}}/epicc-program-docs/)
+- [ERE Documentation]({{site.baseurl}}/ere-program-docs/)
+- [YERE Documentation]({{site.baseurl}}/yere-program-docs/)
 
 ## Changelog
 

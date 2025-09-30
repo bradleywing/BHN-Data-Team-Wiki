@@ -84,6 +84,14 @@ _Use this template to document core workflows such as Enrollment, Dismissal, Tra
 
 ---
 
+## Related Documents
+
+- Link to **Dismissal Workflow**
+- Link to **Form Reference Dictionary**
+- Link to **Program Logic Tracker**
+
+---
+
 ## Changelog
 
 - **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
@@ -92,11 +100,3 @@ _Use this template to document core workflows such as Enrollment, Dismissal, Tra
 - **2025-09-16**: Updates frontmatter to bring closer into alignment with `schema_version` 1.0.
 - **2025-08-15**: Updates frontmatter and tweaks format of template.
 - **2025-07-28**: Adds Markdown file.
-
----
-
-## Related Documents
-
-- Link to **Dismissal Workflow**
-- Link to **Form Reference Dictionary**
-- Link to **Program Logic Tracker**

@@ -22,7 +22,7 @@ schema_version: 1.0
 # Sample Jekyll Repo Structure
 
 ```bash
-famcare-wiki/
+BHN-Data-Team-Wiki/
 ├── _config.yml                 # Required
 |                               # Jekyll site settings (title, theme, baseurl, plugins, permalink style)
 |                               # This is modified to match the repo name and navigation preferences
@@ -34,52 +34,116 @@ famcare-wiki/
 ├── README.md                   # Optional
 |                               # GitHub-side contributor guide and repo overview; not published as part of the wiki
 |
-├── _layouts/                   # Optional
-|                               # Custom HTML templates for markdown rendering (e.g., default.html)
-|                               # If using a theme like git-wiki, we may not need to change this at first
+├── _layouts/                   
+│   └── home.html               # Custom HTML template for Markdown rendering
 |
 ├── _includes/                  # Optional
-│                               # Reusable content blocks (e.g., header/footer snippets)
-│                               # Handy if you customize page templates later
+│   └── sidebar-child.html      # Custom HTML template for managing nested folders in sidebar
+│   └── sidebar-item.html       # Custom HTML template for managing nested folders in sidebar
+│                               # May include other reusable content blocks (e.g., header/footer snippets)
 |
 ├── _data/                      # Optional but useful
 │   └── navigation.yml          # Sidebar configuration (manual or plugin-based)
 │                               # Defines hierarchical links shown on every page if your theme supports it
-
+|
 ├── assets/                     # Optional but practical
 │   ├── images/                 # Screenshots, diagrams (e.g., workflow visuals)
-│   └── mermaid/                # Mermaid source files if you keep diagram code separate
-|
-├── tags.md                     # Optional tag index (manual or plugin-generated)
+│   │   └── index.md
+│   ├── mermaid/                # Mermaid source files if you keep diagram code separate
+│   │   └── index.md
+│   ├── scripts/                # Script files
+│   │   ├── parsers/
+│   │   │   ├── generate-script-index.md
+│   │   │   ├── index.md
+│   │   │   ├── r-parser-for-field-groupings.md
+│   │   │   └── r-parser-for-script-tags.md
+│   │   ├── index.md
+│   │   ├── roadmap.md
+│   │   └── script-index.md
+│   └── index.md
 │
 ├── docs/                       # Core content folder
 │   ├── data-team-processes/    # Shared standards, templates, logic references, and style guides
+│   │   ├── change-control-process.md
+│   │   ├── change-request-form.md
+│   │   ├── change-scope-form.md
+│   │   ├── index.md
+│   │   ├── pathways-maintenance.md
 │   │   ├── program-workflow-template.md
-│   │   ├── dismissal-template.md
-│   │   └── report-revision-process.md
+│   │   ├── program-workflow-template.md
+│   │   └── sample-jekyll-repo-structure.md
 │   │
-│   ├── reporting/              # Reporting assets spanning all programs
+│   ├── reporting/              # Documentation on reporting assets
 │   │   ├── famcare-reports-and-assets.md
+│   │   ├── index.md
 │   │   ├── quick-reports-overview.md
 │   │   ├── reports-request-tracker.md
-│   │   └── sql-comment-style-guide.md
+│   │   └── saving-and-securing-quick-reports.md
 │   │
 │   ├── programs/               # Program-specific folders for workflows, policies, or whatever we decide the wiki should cover for programs
-│   │   ├── bcr/
-│   │   │   ├── workflows/
-│   │   │   └── policies/
-│   │   ├── epicc/
-│   │   │   ├── workflows/
-│   │   │   └── dismissal-logic.md
-│   │   ├── complex-care/
-│   │   ├── ere/
-│   │   ├── yere/
-│   │   └── cross-program/
-│   │       ├── shared-matching-logic.md
-│   │       └── eligibility-overrides.md
+│   │   ├── bcr-program-docs/
+│   │   │   ├── bcr-workflows/
+│   │   │   │   └── index.md
+│   │   │   ├── bcr-policies/
+│   │   │   │   └── index.md
+│   │   │   └── index.md
+│   │   ├── epicc-program-docs/
+│   │   │   ├── epicc-workflows/
+│   │   │   │   ├── epicc-dismissal-process.md
+│   │   │   │   ├── epicc-enrollment-process.md
+│   │   │   │   └── index.md
+│   │   │   └── index.md
+│   │   ├── complex-care-program-docs/
+│   │   │   └── index.md
+│   │   ├── ere-program-docs/
+│   │   │   ├── ere-goals/
+│   │   │   │   ├── ere-goals-logic.md
+│   │   │   │   └── index.md
+│   │   │   └── ere-workflows/
+│   │   │   │   ├── ere-client-transfer-process.md
+│   │   │   │   ├── ere-dismissal-process.md
+│   │   │   │   ├── ere-reconnection-process.md
+│   │   │   │   └── index.md
+│   │   │   └── index.md
+│   │   ├── yere-program-docs/
+│   │   │   ├── yere-goals/
+│   │   │   │   ├── index.md
+│   │   │   │   └── yere-goals-logic.md
+│   │   │   ├── yere-workflows/
+│   │   │   │   ├── index.md
+│   │   │   │   └── yere-dismissal-process.md
+│   │   │   └── index.md
+│   │   ├── cross-program-docs/
+│   │   │    └── index.md
+│   │   └── index.md
 │   │
-│   ├── data-dictionaries/      # Reference documents and Excel links - currently unsure about this
-│   │   ├── program-dictionary.md
-│   │   ├── lookup-tables.md
-│   │   └── beacn-power-bi-assets.md
+│   ├── data-dictionaries/      # Data dictionaries for each program and one for fields common across program forms
+│   │   ├── bcr-data-dictionaries/
+│   │   │   └── index.md
+│   │   ├── complex-care-data-dictionaries/
+│   │   │   └── index.md
+│   │   ├── epicc-data-dictionaries/
+│   │   │    ├── index.md
+│   │   │    └── epicc-initial-contact.md
+│   │   ├── ere-data-dictionaries/
+│   │   │   └── index.md
+│   │   ├── shared-field-data-dictionaries/
+│   │   │    ├── index.md
+│   │   │    └── shared-fields.md
+│   │   ├── yere-data-dictionaries/
+│   │   │   └── index.md
+│   │   └── index.md
+│   │ 
+│   ├── wiki-architecture/      # Documentation of various standards, core dependencies, configuration logic
+│   │   ├── building-wiki-locally-using-ruby.md
+│   │   ├── data-dictionary-standards.md
+│   │   ├── dependencies.md
+│   │   ├── index.md
+│   │   └── installing-ruby.md
+│   │   ├── repo-overivew.md
+│   │   ├── reporting-standards.md
+│   │   ├── sidebar-config.md
+│   │   └── tag-usage-index.md
+│   │   └── tags.md
+│   └── index.md
 ```

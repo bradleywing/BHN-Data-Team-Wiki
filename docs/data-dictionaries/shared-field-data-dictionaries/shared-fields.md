@@ -1,5 +1,8 @@
 ---
 front-matter-title: Shared Fields Data Dictionary
+author: Bradley Wing
+last_updated: 2025-09-30
+status: draft
 program_scope: multi
 programs:
   - bcr
@@ -7,16 +10,14 @@ programs:
   - epicc
   - ere
   - yere
-author: Bradley Wing
-last_updated: 2025-09-19
-status: In Development
 tags:
   - tag1
   - data-dictionary
-permalink: /shared-fields/
+permalink: /all-programs-shared-fields/
+nav_order: 1
+parent: Shared Fields Data Dictionaries
 layout: home
 master_tables: value
-permalink: /all-programs-shared-fields/
 schema_version: 1.0
 ---
 
@@ -24,6 +25,8 @@ schema_version: 1.0
 
 ## Changelog
 
+- **2025-09-30**: Adds `nav_order:` and `parent:` fields to the frontmatter. Moves `author:`, `last_updated:`, and `status:` fields to their proper locations in the frontmatter.
+- **2025-09-27**: Removes redundant `permalink:` field and updates the remaining `permalink:`.
 - **2025-09-19**: Adds `permalink:` and `layout:` fields to frontmatter.
 - **2025-09-18**: Adds frontmatter.
 - **2025-08-03**: Adds Markdown file for data dictioanry content that is common across multiple programs so that the Data Dictionaries may conform to DRY philosophy by avoiding redundancy.

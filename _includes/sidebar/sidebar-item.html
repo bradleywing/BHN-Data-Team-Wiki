@@ -1,0 +1,23 @@
+{% if depth == nil %}
+  {% assign depth = 0 %}
+{% endif %}
+
+{% if item.children and item.children != empty and depth < 5 %}
+  {% assign next_depth = depth | plus: 1 %}
+  <li class="nav-item collapsible">
+    <details>
+      <summary>{{ item.title }}</summary>
+      <ul class="nav-sublist">
+        {% include sidebar/sidebar-child.html item=item page_url=page_url depth=next_depth %}
+      </ul>
+    </details>
+  </li>
+{% else %}
+  <li class="nav-item">
+    {% if item.url %}
+      <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
+    {% else %}
+      <span class="nav-header">{{ item.title }}</span>
+    {% endif %}
+  </li>
+{% endif %}

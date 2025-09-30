@@ -1,7 +1,7 @@
 ---
 front-matter-title: EPICC Initial Contact – Data Dictionary
 author: Bradley Wing
-last_updated: 2025-09-22
+last_updated: 2025-09-30
 status: draft
 program_scope: single
 programs: 
@@ -23,9 +23,8 @@ schema_version: 1.0
 
 ## Core Fields
 
-<details><summary><strong>Click to expand Core Fields</strong></summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>Click to expand Core Fields</strong></summary>
 
 | Field Order |                          FC Field Prompt                          |                  FC Field Name                 | Hidden |         Master Table        | Required | Reporting |         Notes        |
 |:-----------:|:-----------------------------------------------------------------:|:----------------------------------------------:|:------:|:---------------------------:|:--------:|:---------:|:--------------------:|
@@ -59,17 +58,13 @@ groupings:
     pivots: 5
 ```
 
-</div>
 </details>
 
-<details><summary><strong>Click to expand Core Field Details</strong></summary>
+<details markdown="1">
+<summary><strong>Click to expand Core Field Details</strong></summary>
 
-<div markdown="1">
-
-<details><summary><strong>0205 - epicc_pro_or_core_ic</strong> – LOV</summary>
-
-<div markdown="1">
-
+<details markdown="1">
+<summary><strong>0205 - epicc_pro_or_core_ic</strong> – LOV</summary>
 
 **LOV:**
 
@@ -80,12 +75,10 @@ groupings:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0206 - how_client_found_out_about_program</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0206 - how_client_found_out_about_program</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -105,12 +98,10 @@ groupings:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0207 - program_participation_ic</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0207 - program_participation_ic</strong> – LOV</summary>
 
 **LOV:**
 
@@ -132,12 +123,10 @@ groupings:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0208 - treatment_path_ic</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0208 - treatment_path_ic</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -153,12 +142,10 @@ groupings:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0210 -community_referral_source_ic</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0210 -community_referral_source_ic</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -212,12 +199,10 @@ Deprecated values:
 
 - '040' - 'Significant Other'
 
-</div>
 </details>
 
-<details><summary><strong>0211 - type_contact_ic</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0211 - type_contact_ic</strong> – LOV</summary>
 
 **LOV:**
 
@@ -228,12 +213,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0212 - if_transfer_what_region_ic</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0212 - if_transfer_what_region_ic</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -251,12 +234,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0213 - who_initiated_referral</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0213 - who_initiated_referral</strong> – LOV</summary>
 
 **LOV:**
 
@@ -268,12 +249,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong> 0214 - if_transfer_contact_transfer_region_success_ic</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong> 0214 - if_transfer_contact_transfer_region_success_ic</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -288,12 +267,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0215 - status_unable_contact_transfer</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0215 - status_unable_contact_transfer</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -309,12 +286,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0216 - why_not_meet_prog_eligibility_ic</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0216 - why_not_meet_prog_eligibility_ic</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -329,12 +304,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0217 - non_opioid_substance</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0217 - non_opioid_substance</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -355,12 +328,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0218 - reason_ic_not_success</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0218 - reason_ic_not_success</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -378,12 +349,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0220 - consent_crc_referral_ic</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0220 - consent_crc_referral_ic</strong> – LOV</summary>
 
 **LOV:**
 
@@ -394,12 +363,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0221 - reason_consent_refused_crc_ic</strong> – Textarea & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0221 - reason_consent_refused_crc_ic</strong> – Textarea & Conditional Logic</summary>
 
 **Field Type:** Free-text input (textarea)
 
@@ -411,12 +378,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0222 - overdose_event_referral</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0222 - overdose_event_referral</strong> – LOV</summary>
 
 **LOV:**
 
@@ -427,12 +392,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0223 - overdose_location</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0223 - overdose_location</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -449,12 +412,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0224 - specify_other_location</strong> – Text & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0224 - specify_other_location</strong> – Text & Conditional Logic</summary>
 
 **Field Type:** Free-text input (text)
 
@@ -466,12 +427,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0225 - first_overdose</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0225 - first_overdose</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -486,12 +445,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0226 - num_past_overdoses</strong> – Text & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0226 - num_past_overdoses</strong> – Text & Conditional Logic</summary>
 
 **Field Type:** Free-text input (text)
 
@@ -514,12 +471,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0227 - most_recent_past_overdose_date</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0227 - most_recent_past_overdose_date</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -538,12 +493,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0228 - epicc_opioids_of_use</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0228 - epicc_opioids_of_use</strong> – LOV</summary>
 
 **LOV:**
 
@@ -558,12 +511,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0229 - su_treatment_past_twelve_mos</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0229 - su_treatment_past_twelve_mos</strong> – LOV</summary>
 
 **LOV:**
 
@@ -575,12 +526,10 @@ Deprecated values:
 
 - Deprecated values: N/A
 
-</div>
 </details>
 
-<details><summary><strong>0230 - current_su_treatment</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0230 - current_su_treatment</strong> – LOV</summary>
 
 **LOV:**
 
@@ -592,12 +541,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0231 - current_opioid_prescription</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0231 - current_opioid_prescription</strong> – LOV</summary>
 
 **LOV:**
 
@@ -609,12 +556,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0232 - other_opioid_ic</strong> – Text & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0232 - other_opioid_ic</strong> – Text & Conditional Logic</summary>
 
 **Field Type:** Free-text input (text)
 
@@ -626,12 +571,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0233 - opioid_leading_overdose_ic</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0233 - opioid_leading_overdose_ic</strong> – LOV</summary>
 
 **LOV:**
 
@@ -646,12 +589,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0234 - if_other_specify</strong> – Textarea</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0234 - if_other_specify</strong> – Textarea</summary>
 
 **Field Type:** Free-text input (textarea)
 
@@ -659,12 +600,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0235 - current_script_mat_not_referral</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0235 - current_script_mat_not_referral</strong> – LOV</summary>
 
 **LOV:**
 
@@ -676,12 +615,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0236 - ever_script_mat_not_referral</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0236 - ever_script_mat_not_referral</strong> – LOV</summary>
 
 **LOV:**
 
@@ -693,12 +630,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0237 - current_script_mat_type</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0237 - current_script_mat_type</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -717,12 +652,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0238 - mat_initiated_hospital</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0238 - mat_initiated_hospital</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -737,12 +670,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0239 - what_mat_initiated_hospital</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0239 - what_mat_initiated_hospital</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -761,12 +692,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0240 - mat_script_discharge</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0240 - mat_script_discharge</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -781,12 +710,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0241 - what_mat_script_discharge</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0241 - what_mat_script_discharge</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -805,12 +732,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0242 - overdose_ed_provided</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0242 - overdose_ed_provided</strong> – LOV</summary>
 
 **LOV:**
 
@@ -821,12 +746,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0243 - reason_oe_not_provided</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0243 - reason_oe_not_provided</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -841,12 +764,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0244 - if_other_specify</strong> – Textarea & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0244 - if_other_specify</strong> – Textarea & Conditional Logic</summary>
 
 **Field Type:** Free-text input (textarea)
 
@@ -858,12 +779,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0246 - reason_narcan_not_distributed</strong> – LOV & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0246 - reason_narcan_not_distributed</strong> – LOV & Conditional Logic</summary>
 
 **LOV:**
 
@@ -880,12 +799,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0247 - no_narcan_exp</strong> – Text & Conditional Logic</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0247 - no_narcan_exp</strong> – Text & Conditional Logic</summary>
 
 **Field Type:** Free-text input (text)
 
@@ -897,12 +814,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0248 - preg_post_part_ic</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0248 - preg_post_part_ic</strong> – LOV</summary>
 
 **LOV:**
 
@@ -913,12 +828,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0249 - veteran_status</strong> – LOV</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0249 - veteran_status</strong> – LOV</summary>
 
 **LOV:**
 
@@ -931,12 +844,10 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-<details><summary><strong>0251 - presenting_notes_ic</strong> – Textarea</summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>0251 - presenting_notes_ic</strong> – Textarea</summary>
 
 **Field Type:** Free-text input (textarea)
 
@@ -944,19 +855,16 @@ Deprecated values:
 
 - note
 
-</div>
 </details>
 
-</div>
 </details>
 
 ---
 
 ## Pivoted Fields (Hidden)
 
-<details> <summary><strong>Click to expand Pivoted Rows</strong></summary>
-
-<div markdown="1">
+<details markdown="1">
+<summary><strong>Click to expand Pivoted Rows</strong></summary>
 
 | Field   Order |     FC Field Prompt     |           FC Field Name           | Hidden | Required |        Notes       |
 |:-------------:|:-----------------------:|:---------------------------------:|:------:|:--------:|:------------------:|
@@ -968,11 +876,11 @@ Deprecated values:
 | 0206.6        | Church                  | heard_about_from_church           | Yes    | No       | Renamed 11/18/2024 |
 | 0206.7        | Other                   | heard_about_from_other            | Yes    | No       | Renamed 11/18/2024 |
 
-</div>
 </details>
 
 ## Changelog
 
+- **2025-09-30**: Replaces `<div markdown="1"></div>` with `<details markdown="1">` after learning that `Jekyll` must be configured to parse Markdown inside HTML blocks. While GitHub Pages will should build tables correctly if Kramdown is configured to use the `GitHub Flavored Markdown (GFM)` in the `_config.yaml`.
 - **2025-09-22**: Adds `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Changes `status:` to `draft` since `In Development` is no longer a valid status. Adds `documentation` tag to frontmatter.
 - **2025-09-19**: Adds `permalink:` and `layout:` fields to frontmatter.
 - **2025-09-18**: Renames file to `epicc-initial-contact.md` to eliminate ambiguity in permalinks.

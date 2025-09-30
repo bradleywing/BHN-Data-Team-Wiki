@@ -11,7 +11,7 @@ tags:
   - metadata
   - data-dictionaries
   - contributor-guidance
-permalink: data-dictionary-standards
+permalink: /data-dictionary-standards/
 layout: home
 nav_order: 1
 parent: Wiki Architecture
@@ -135,10 +135,13 @@ Future automation may support validation, changelog generation, and schema versi
 
 - [Documentation Standards]({{site.baseurl}}/documentation-standards/)
 - [Reporting Standards]({{site.baseurl}}/reporting-standards/)
+- [Tag Reference]({{site.baseurl}}/tag-reference/)
 
 > **Tip**: See also [Sidebar Configuration]({{site.baseurl}}/sidebar-config/) for information on how to update `_navigation.yaml` so that any new page is added to the sidebar.
 
 ## Changelog
 
+- **2025-09-27**: Fixes `permalink:` field. Was missing the `/`.
+- **2025-09-26**: Adds link to `tags.md`.
 - **2025-09-25**: Adds the missing `permalink:` field to frontmatter.
 - **2025-09-23**: Adds initial Markdown file.

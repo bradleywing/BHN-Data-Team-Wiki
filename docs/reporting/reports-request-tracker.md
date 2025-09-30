@@ -1,7 +1,7 @@
 ---
 front-matter-title: SQL Reports Requests Tracker  
 author: Bradley Wing
-last_updated: 2025-09-22
+last_updated: 2025-09-30
 status: active  
 program_scope: none
 programs:
@@ -39,10 +39,8 @@ This page documents current and planned SQL-based Quick Reports in development o
 
 ## Requested Reports Table
 
-<details>
+<details markdown="1">
 <summary><strong>Requests</strong></summary>
-
-<div markdown="1">
 
 | Report Name                                           | Request Type | Report Category     | Program / Requestor     | Description / Purpose                                       | Priority | Status   | Format |
 |-------------------------------------------------------|--------------|----------------------|--------------------------|-------------------------------------------------------------|----------|----------|--------|
@@ -65,7 +63,6 @@ This page documents current and planned SQL-based Quick Reports in development o
 | EPICC Hospital Referrals Report | New Report | Program Management | EPICC / Data Team | BLANK | Medium | Backlog | SQL |
 | EPICC Community Referrals Report | New Report | Program Management | EPICC / Data Team | BLANK | Medium | Backlog | SQL |
 
-</div>
 </details>
 
 ---
@@ -107,6 +104,7 @@ Format may shift over time as tools evolve and vendor capabilities expand.
 
 ## Changelog
 
+- **2025-09-30**: Replaces `<div markdown="1"></div>` with `<details markdown="1">` after learning that `Jekyll` must be configured to parse Markdown inside HTML blocks. While GitHub Pages will should build tables correctly if Kramdown is configured to use the `GitHub Flavored Markdown (GFM)` in the `_config.yaml`.
 - **2025-09-25**: Fixes link to `/saving-and-securing-quick-reports/`.
 - **2025-09-23**: Adds link to `reporting-standards.md`. Adds `EPICC Casenotes Report`, `ERE Casenotes Report`, `YERE Casenotes Report`, `EPICC Hospital Referrals Report`, and `EPICC Community Referrals Report` to the list of requested reports. Removes the `ERE Hospital Visit Note Report` because the program manager indicated that it was no longer needed after adding a column for hospital visit on the `ERE Caseload Report`.
 - **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Fixes links to the related wiki pages. Adds `change-management`, `data-team-facing`, `docummentation`, and `governance` tags to frontmatter.
