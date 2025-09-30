@@ -17,7 +17,7 @@ tags:
   - metadata-governance
 permalink: /documentation-standards/
 layout: home
-nav_order: 1
+nav_order: 2
 parent: Wiki Architecture
 reviewed-by:
   - name: Bradley Wing
@@ -30,7 +30,7 @@ schema_version: 1.0
 
 This document defines the standards for documentation authored by the BHN Data Team. It includes guidance on frontmatter metadata, Markdown formatting, and changelog conventions. These standards support contributor onboarding, auditability, and cross-repo coordination.
 
-> **Tip**: For contributor expectations and file structure, see [CONTRIBUTING]({{site.baseurl}}/contributor-notes/)
+> **Tip**: For contributor expectations and file structure, see [CONTRIBUTING](https://github.com/Behavioral-Health-Network/BHN-Data-Team-Wiki/blob/f74312d945377dbfca899e0286142830affcef43/CONTRIBUTING.md)
 
 ---
 
@@ -65,7 +65,7 @@ nav_order: integer          # Sets the order of the page within its parent
                             #   group. Lower numbers appear first.
 ```
 
-> **Reference**: For tag definitions and usage conventions, see [tags.md]({{site.baseurl}}/tag-reference/).  
+> **Reference**: For tag definitions and usage conventions, see [Tag Reference]({{site.baseurl}}/tag-reference/).  
 > **Note**: Use `permalink:` to define the rendered URL path when publishing with Jekyll or GitHub Pages. Always begin with `{{site.baseurl}}/` and avoid file extensions unless required by the theme. This ensures stable linking and clean navigation.  
 > **Note**: Use status: to indicate the lifecycle state of a document. Common values include draft, active, needs-review, needs-testing, archived, and deprecated. This field supports contributor workflows and future automation. Avoid using tags to signal status.  
 > **Tip**: The `description:` node is optional but recommended for any page that serves as a landing, guide, or summary. It supports SEO, feed generation, and contributor clarity. Keep it concise - under 160 characters.
@@ -350,8 +350,17 @@ It is possible to use GitHub-flavored diff syntax to indicate adds vs. removals:
 
 > **Note**: Each line must begin with `+` or `-` for the GitHub-flavored diff fenced code block syntax to work. Therefore, this is not compatible with the established changelogs. However, there may be instances where tracking diffs may be useful and desired.
 
+## Related Standards
+
+- [Data Dictionary Standards]({{site.baseurl}}/data-dictionary-standards/)
+- [Reporting Standards]({{site.baseurl}}/reporting-standards/)
+- [Tag Reference]({{site.baseurl}}/tag-reference/)
+
+> **Tip**: See also [Sidebar Configuration]({{site.baseurl}}/sidebar-config/) for information on how to update `_navigation.yaml` so that any new page is added to the sidebar.
+
 ## Changelog
 
+- **2025-09-26**: Updates `nav_order:` field in the frontmatter. The pages in /wiki-architecture/ can't all be `1`! Adds `Related Standards` section. Updates link to `tags.md` by adding the title of the page itself. Fixes link to `CONTRIBUTING.md`.
 - **2025-09-25**: Replaces broken link example in `Documentation Structure` subsection Markdown table and adds another link example for files in GitHub repos.
 - **2025-09-23**: Moves `documentation-standards.md` from `/data-team-processes/` to `/wiki-architecture/` to centralize standards documentation for enhanced discoverability through centralization in one folder. Updates `parent:` field in the frontmatter to reflect this change. Renames `sql-asset-doc-standards.md` to `SQL Asset Style Guide` for more contributor friendly naming.
 - **2025-09-22**: Fixes links to `Tags.md` and `CONTRIBUTING.md`. Updates the instructions for adding collapsible sections using `<details>` element by adding `<div markdown="1"></div>` to the documentation.
