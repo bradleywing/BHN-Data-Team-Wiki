@@ -148,8 +148,16 @@ Reports required to meet contractual, regulatory, or policy mandates.
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-22**: Fixes links to `FAMCare-SQL-Toolkit` GitHub main landing page. Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `change-management`, `data-team-facing`, `docummentation`, and `governance` tags to frontmatter. Adds link to `sql-asset-doc-standards.md`.
 - **2025-09-19**: Adds `permalink:` and `layout:` fields to the frontmatter. Fixes the URLs so that they point to various sections in the `sql-asset-doc-standard.md` in the remote BHN [FAMCare-SQL-Toolkit](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit.git)` repo. Cleans up the links by removing the file name from all of them to enhance clarity and reduce mental load on the user.
 - **2025-09-16**: Updates frontmatter to align with `schema_version:` 1.0.
 - **2025-08-15**: Updates the cross-references to the renamed sql-asset-doc-standards.md throughout. Adds front-matter yaml.
 - **2025-07-21**: Adds Markdown file.
+
+</details>
