@@ -181,6 +181,12 @@ The following matrix defines standardized aliases for all commonly used tables a
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-26**: Updates `nav_order:` field in the frontmatter. The pages in /wiki-architecture/ can't all be `1`! Updates `parent:` field to `/wiki-architecture/`. Adds `Related Standards` section.
 - **2025-09-23**: Moves `reporting-standards.md` from `/reporting/` to `/wiki-architecture/` to centralize standards documentation for enhanced discoverability through centralization in one folder. Fixes link to the moved `documentation-standards.md`.
 - **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Adds `data-team-facing` `documentation`, and `documentation-standards` tags to frontmatter. Fixes link to `/documentation-standards/`.
@@ -194,3 +200,5 @@ The following matrix defines standardized aliases for all commonly used tables a
 - **2025-08-10**: Reformats sections and the `Table Aliases` matrix.
 - **2025-08-09**: Adds substantial content, including a Markdown table for the table aliases.
 - **2025-07-28**: Adds Markdown file.
+
+</details>
