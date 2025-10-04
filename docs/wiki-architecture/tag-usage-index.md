@@ -41,7 +41,15 @@ This index helps contributors find documentation by topic, scope, or contributor
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-26**: Updates the `nav_order:` field in the frontmatter. Fixes links to `CONTRIBUTING.md`.
 - **2025-09-25**: Updates `permalink:` field to align with the link added to index.md in /wiki-architecture/.
 - **2025-09-21**: Adds `tag-governance` tag. Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-20**: Adds initial Markdown file.
+
+</details>
