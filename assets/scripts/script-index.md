@@ -89,7 +89,15 @@ _Last generated: `r format(Sys.Date(), "%Y-%m-%d")`_
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-22**: Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them.
 - **2025-09-18**: Adds frontmatter.
 - **2025-08-03**: Adds `scripts/` folder to `assets/` and begins the process of adding content, including a draft of an R parser script. This content may grow to include Python scripts as well. This is very much under construction and subject to change.
 - **2025-08-01**: Adds Markdown file.
+
+</details>
