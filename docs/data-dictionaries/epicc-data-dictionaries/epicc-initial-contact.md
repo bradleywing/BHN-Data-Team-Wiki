@@ -880,6 +880,12 @@ Deprecated values:
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-30**: Replaces `<div markdown="1"></div>` with `<details markdown="1">` after learning that `Jekyll` must be configured to parse Markdown inside HTML blocks. While GitHub Pages will should build tables correctly if Kramdown is configured to use the `GitHub Flavored Markdown (GFM)` in the `_config.yaml`.
 - **2025-09-22**: Adds `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Changes `status:` to `draft` since `In Development` is no longer a valid status. Adds `documentation` tag to frontmatter.
 - **2025-09-19**: Adds `permalink:` and `layout:` fields to frontmatter.
@@ -889,3 +895,5 @@ Deprecated values:
 - **2025-08-03**: Renames file to `table-initial-contact.md`. Removes the `Changelog` and transfers it to the HTML file in `FAMCare-HTML-Form-Code` repo because the content centered on changes to the form and table; adds substantial content, mostly consisting of `LOV` sections; updates the frontmatter.
 - **2025-08-02**: Adds collapsible `<details>` elements; reformats significant amounts of the file; adds more `LOV` sections.
 - **2025-08-01**: Adds Markdown file, adds frontmatter, adds most content, including a `Core Fields` matrix and various `LOV` sections.
+
+</details>
