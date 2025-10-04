@@ -20,8 +20,16 @@ This section includes documentation of various standards, core dependencies, con
 
 ## Changelog
 
--**2025-09-30**: Updates the Wiki Architecture section to indicate that this section contains various standards documents.
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
+- **2025-09-30**: Updates the Wiki Architecture section to indicate that this section contains various standards documents.
 - **2025-09-23**: Updates the links to documents stored in `/wiki-architecture/`.
 - **2025-09-22**: Adds `nav_order:` field and comment.
 - **2025-09-21**: Renames `front-matter-title:` to `Wiki Architecture` because the `permalink:` value had been added in error.
 - **2025-09-20**: Adds initial Markdown file.
+
+</details>
