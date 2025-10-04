@@ -75,6 +75,12 @@ schema_version: 1.0
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-21**: Adds `dismissal`, `program-docs`, `program-structure`, and `workflow-logic` tags to frontmatter. Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-18**: Adds `program_scope:` and `programs:` fields to frontmatter.
@@ -83,3 +89,5 @@ schema_version: 1.0
 - **2025-08-15**: Adds list of dismissal reasons.
 - **2025-08-01**: Adds `Dismissal Reasons Across Milestones` section.
 - **2025-07-28**: Adds Markdown file.  
+
+</details>
