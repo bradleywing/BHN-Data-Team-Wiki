@@ -77,4 +77,12 @@ This prepares your environment to install `Jekyll` and build the site.
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-29**: Adds initial Markdown documentation file.
+
+</details>
