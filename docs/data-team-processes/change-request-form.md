@@ -144,6 +144,12 @@ _Use this space for anything not captured above._
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-29**: Adds a request category for changing values in an LOV. Adds concrete examples of Operational Disruption Business Impact reason. Adds examples of downstream implications.
 - **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
 - **2025-09-21**: Updates tags in frontmatter. Adds `parent:` and `nav_order:` to frontmatter.
@@ -151,3 +157,5 @@ _Use this space for anything not captured above._
 - **2025-09-16**: Adds frontmatter.
 - **2025-08-15**: Adds initial commit of the change request form. This is pending review by the Data Team and the leadership team.
 - **2025-08-14**: Adds Markdown file.
+
+</details>
