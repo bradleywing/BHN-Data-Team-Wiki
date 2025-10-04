@@ -92,6 +92,12 @@ To ensure consistency, data integrity, and effective collaboration, a formal cha
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
 - **2025-09-22**: Fixes cross-reference links to `change-request-form` page, `change-scope-form` page, and `data-dictionaries` folder.
 - **2025-09-21**: Updates tags in frontmatter. Adds `parent:` and `nav_order:` to frontmatter.
@@ -99,3 +105,5 @@ To ensure consistency, data integrity, and effective collaboration, a formal cha
 - **2025-09-16**: Updates frontmatter to align with `schema_version` 1.0.
 - **2025-08-15**: Adds initial commit of `change-control-process.md`, which is a conversion of the LaTeX version of this section from the Handbook to Markdown with a newly added front-matter yaml and cross-references added. This is still subject to change as we develop the `change-request-form.md` and the `change-scope-form.md`. Adds permalink to frontmatter.
 - **2025-07-28**: Adds Markdown file.
+
+</details>
