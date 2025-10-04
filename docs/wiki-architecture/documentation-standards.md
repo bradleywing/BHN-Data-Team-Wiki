@@ -34,6 +34,16 @@ This document defines the standards for documentation authored by the BHN Data T
 
 ---
 
+## Linting Expectations
+
+To ensure consistent Markdown formatting across BHN documentation projects, contributors are expected to use the [Markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) in VS Code.
+
+Linting rules are defined in the `.markdownlint.json` file at the root of each repository. These rules enforce formatting standards such as code fence style, line length, and allowed HTML elements. Contributors should resolve any linting errors before committing changes.
+
+For installation and configuration details, see [Dependencies]({{site.baseurl}}/dependencies/).
+
+---
+
 ## Frontmatter Schema Reference
 
 This section defines the YAML frontmatter schema used across documentation files in the BHN Data Team wiki and related repositories. Frontmatter enables structured metadata for indexing, filtering, auditability, and contributor clarity.
@@ -261,11 +271,13 @@ Use backticks for inline references to functions or logic snippets.
 
 Use fenced code blocks for longer logic:
 
+~~~markdown
 ```javascript
 if (field.value === "") {
   showWarning("Missing required field");
 }
 ```
+~~~
 
 ### Documentation Structure
 
@@ -300,8 +312,6 @@ Use sparingly and only when clarity is improved.
 ---
 
 ## Changelog Standards
-
----
 
 ### Purpose - Changelogs
 
@@ -358,8 +368,16 @@ It is possible to use GitHub-flavored diff syntax to indicate adds vs. removals:
 
 > **Tip**: See also [Sidebar Configuration]({{site.baseurl}}/sidebar-config/) for information on how to update `_navigation.yaml` so that any new page is added to the sidebar.
 
+---
+
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds section on `Linting Expectations`. Adds outer fence to the example for fenced code blocks in the `Logic and Function References` subsection. Removes unneeded horizontal line at the beginning of the `Changelog Standards` section and adds one between `Related Standards` section and the `Changelog`. Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-26**: Updates `nav_order:` field in the frontmatter. The pages in /wiki-architecture/ can't all be `1`! Adds `Related Standards` section. Updates link to `tags.md` by adding the title of the page itself. Fixes link to `CONTRIBUTING.md`.
 - **2025-09-25**: Replaces broken link example in `Documentation Structure` subsection Markdown table and adds another link example for files in GitHub repos.
 - **2025-09-23**: Moves `documentation-standards.md` from `/data-team-processes/` to `/wiki-architecture/` to centralize standards documentation for enhanced discoverability through centralization in one folder. Updates `parent:` field in the frontmatter to reflect this change. Renames `sql-asset-doc-standards.md` to `SQL Asset Style Guide` for more contributor friendly naming.
@@ -373,4 +391,6 @@ It is possible to use GitHub-flavored diff syntax to indicate adds vs. removals:
 - **2025-08-15**: Updates frontmatter.
 - **2025-08-03**: Adds `Markdown Standards` section.
 - **2025-08-01**: Adds `Changelog Standards` section and frontmatter.
-- **2025-07-28**: Adds Markdown file.
+- **2025-07-28**: Adds initial Markdown file.
+
+</details>
