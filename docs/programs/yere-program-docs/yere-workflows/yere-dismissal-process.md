@@ -71,7 +71,15 @@ When you are ready to dismiss a client:
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-21**: Adds `nav_order:` and `parent:` to frontmatter.
 - **2025-09-19**: Adds collapsible `<details>` tag to the `Dismissal Reasons Matrix`. Adds `permalink:` and `layout:` fields to frontmatter.
 - **2025-09-16**: Renames dismissal.md as the name was ambiguous. Adds frontmatter, renames page to YERE Enrollment Dismissal Process, and adds description subsection.
 - **2025-09-10**: Adds the Markdown file named as dismissals.md.
+
+</details>
