@@ -63,9 +63,17 @@ This preserves historical assignment data while ensuring operational continuity.
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-21**: Adds `enrollment`, `program-docs`, `program-structure`, and `workflow-logic` tags to frontmatter. Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-19**: Adds `layout:` field to frontmatter.
 - **2025-09-18**: Adds `program_scope:` and `programs:` fields to frontmatter.
 - **2025-09-16**: Renames file to remove ambiguity about content.
 - **2025-08-17**: Adds frontmatter yaml.
 - **2025-07-28**: Adds Markdown file.
+
+</details>
