@@ -148,6 +148,12 @@ Each file contains multi-line top-level comment blocks per the shared style guid
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-30**: Replaces `<div markdown="1"></div>` with `<details markdown="1">` after learning that `Jekyll` must be configured to parse Markdown inside HTML blocks. While GitHub Pages will should build tables correctly if Kramdown is configured to use the `GitHub Flavored Markdown (GFM)` in the `_config.yaml`.
 - **2025-09-23**: Adds link to `reporting-standards.md`.
 - **2025-09-22**: Adds `program_scope:`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `<div markdown="1"></div>` element to each `<details></details>` element throughout the page to satisfy the Kramdown Markdown editor used by Jekyll so that the collapsible sections do not break the Markdown within them. Adds `database-features`, `data-team-facing`, and `documentation` tags to frontmatter. Adds links to `FAMCARE-SQL-Toolkit` repo.
@@ -157,3 +163,5 @@ Each file contains multi-line top-level comment blocks per the shared style guid
 - **2025-08-01**: Adds substantial updates to famcare-reports-and-assets.md. Adds some missing descriptions. Splits up the reports matrix into one matrix per report/query category. Adds collapsible sections around each table to increase scanability of the page for users. Adds two program management report rows to the Program Management Reports matrix.
 - **2025-07-30**: Adds a few additional reports to the reports matrix.
 - **2025-07-28**: Adds initial Markdown file. Fixes all URLs to use kebab-case.
+
+</details>
