@@ -141,7 +141,15 @@ Future automation may support validation, changelog generation, and schema versi
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-27**: Fixes `permalink:` field. Was missing the `/`.
 - **2025-09-26**: Adds link to `tags.md`.
 - **2025-09-25**: Adds the missing `permalink:` field to frontmatter.
 - **2025-09-23**: Adds initial Markdown file.
+
+</details>
