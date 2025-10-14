@@ -248,7 +248,7 @@ This field is optional and may be adopted for audit dashboards or schema evoluti
 
 ### Purpose - Markdown
 
-This guide standardizes formatting across Markdown-based documentation, including field references, logic descriptions, changelogs, and contributor notes. It complements the SQL asset documentation standards and changelog standards.
+This guide standardizes formatting across Markdown-based documentation, including field references, logic descriptions, changelogs, and contributor notes. It complements the SQL asset documentation standards and changelog standards found in [SQL Asset Style Guide`](https://github.com/Behavioral-Health-Network/FAMCare-SQL-Toolkit/blob/main/sql-asset-doc-standards.md).
 
 ### Field Names and Table Names
 
