@@ -30,12 +30,14 @@ This guide defines contributor expectations for authoring, reviewing, and publis
 
 ## Purpose
 
-Data dictionaries document field-level metadata for forms, datasets, and workflows. They serve to:
+A data dictionary serves as a comprehensive reference for database metadata for forms, datasets, and workflows. They serve to:
 
 - Preserve institutional memory around field definitions and usage
 - Support consistent reporting and schema alignment
 - Provide shareable references for program leadership and external stakeholders
 - Enable future automation and validation of data logic
+
+While FAMCare's SQL Server database maintains an _active_ data dictionary that consists of database tables that automatically store and update object information and attributes for all tables, indexes, columns, data types, and views, it is vital to also create and maintain supplemental, so-called _passive_ or manually updated data dictionaries for reference purposes. These data dictionaries aid data analysts and stakeholders by documenting the meaning of different data points and their relationships with each other.
 
 ---
 
