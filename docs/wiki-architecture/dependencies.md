@@ -99,29 +99,25 @@ This means:
 To support consistent builds and contributor onboarding, the following local setup is recommended:
 
 - **Ruby Version**:  
-  - This project currently uses Ruby `3.4.5` locally, as specified in `.ruby-version`.
-  - GitHub Pages currently builds with Ruby `3.1.2`, so contributors may need to switch Ruby versions using a version manager like `rbenv`, `rvm`, or `asdf` to ensure compatibility.
-
-  > **Tip**: If you encounter build issues or plugin mismatches, try switching to Ruby `3.1.2` to match GitHub’s environment.
-
+  - This project currently uses Ruby `3.4.5` locally, as specified in `.ruby-version`
+  - GitHub Pages currently builds with Ruby `3.1.2`, so contributors may need to switch Ruby versions using a version manager like `rbenv`, `rvm`, or `asdf` to ensure compatibility
+  > **Tip**: If you encounter build issues or plugin mismatches, try switching to Ruby `3.1.2` to match GitHub’s environment
 - **`.ruby-version`**:  
-  - Located in the root directory. Helps contributors auto-switch Ruby versions when entering the repo.
-
+  - Located in the root directory. Helps contributors auto-switch Ruby versions when entering the repo
 - **`.jekyll-metadata`**:  
-  - This file is generated automatically by Jekyll during local builds to optimize incremental rendering.
+  - This file is generated automatically by Jekyll during local builds to optimize incremental rendering
   - It is ignored via `.gitignore` and should not be committed.
-
 - **Bundler**:  
-  - Use `bundle install` to install dependencies defined in `Gemfile`.  
-  `Gemfile.lock` is ignored unless using GitHub Actions or a custom build pipeline.
-
+  - Use `bundle install` to install dependencies defined in `Gemfile`.
+  - `Gemfile.lock` is ignored unless using GitHub Actions or a custom build pipeline
 - **Build Commands**:  
   - Run `jekyll serve` or `bundle exec jekyll serve` to preview the site locally.
-
 - **Optional Tools**:  
-  - The `/assets/scripts/` folder is reserved for future parsers that will interact with this repo, the `FAMCare-HTML-Form-Code` repo, and the `FAMCare-SQL-Toolkit` repo.
-  - Gems like `csv`, `logger`, and `base64` are pre-declared in the `Gemfile` to support this work.
-  - Specific implementation details will be documented once scripting is active.
+  - The `/assets/scripts/` folder is reserved for future parsers that will interact with this repo, the `FAMCare-HTML-Form-Code` repo, and the `FAMCare-SQL-Toolkit` repo
+  - Gems like `csv`, `logger`, and `base64` are pre-declared in the `Gemfile` to support this work
+  - Specific implementation details will be documented once scripting is active
+- **Markdownlint Setup**:
+  - For `Markdownlint` setup and linting rules, see [Markdownlint Configuration](#markdownlint-configuration)
 
 ---
 
@@ -143,9 +139,32 @@ To support consistent builds and contributor onboarding, the following local set
 
 ---
 
+## Markdownlint Configuration
+
+- **Purpose**: Enforces consistent Markdown formatting across documentation projects
+- **Installation**:
+  - Install the [Markdownlint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- **Configuration**:
+  - Each repo includes a `.markdownlint.json` file at the root level
+  - This file defines project-specific linting rules (e.g., allowing mixed code fence styles, permitted HTML tags)
+  - Do not override these rules in your local `settings.json` unless explicitly documented
+- **Usage**:
+  - Linting errors will appear in the Problems pane in VS Code
+  - Resolve all errors before committing documentation changes
+
+---
+
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds section on `Markdownlint` configuration to explain the purpose of the root-level `.markdownlint.json` file and the requirement to install the `Markdownlint` extension to monitor and correct linting errors in `.md` files. Cleans up lists on the page by removing unneeded blank lines and removing periods. Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-27**: Updates the `nav_order:` field in the frontmatter.
 - **2025-09-22**: Adds `program_scope:` and `programs` fields to frontmatter.
 - **2025-09-21**: Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-20**: Adds initial Markdown file.
+
+</details>

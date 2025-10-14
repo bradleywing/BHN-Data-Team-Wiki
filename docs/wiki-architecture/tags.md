@@ -115,6 +115,7 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 | `needs-view` | Client/caregiver needs and service referral metadata | Asset Type |
 | `outcome-metrics` | Success measurement logic | Program Design |
 | `pathway-creation` | Creating and assigning a Pathway | Operational Workflow |
+| `pathway-dismissal` | Closing a Pathway | Operational Workflow |
 | `pathway-event` | Event logic tied to Pathways | Database Features |
 | `pathway-join-view` | Joins enrollment to Pathways metadata | Asset Type |
 | `pathways-module` | FAMCare’s Pathways module | Database Features |
@@ -169,6 +170,12 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-29**: Adds tags `jekyll`, `ruby`, `prerequisites`, `troubleshooting`, and `wiki-architecture`. Renames `Contributor Standards` category to the broader `Contributor Practices`. Adds categories `Diagnostics & Debugging` and `Tooling & Runtime`.
 - **2025-09-26**: Moves this document to `/wiki-architecture/` from the root-level as part of centralizing standards documentation. This also ensures that Jekyll will render the page in the wiki appropriately instead of as a stand-alone page. Adds `program_scope:`, `programs:`, `nav_order:`, and `parent:` fields in the frontmatter. Adds `Related Standards` section.
 - **2025-09-23**: Adds the `field-metadata` tag and updates the description of the `data-dictionary` tag.
@@ -177,6 +184,8 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 - **2025-09-18**: Adds `substance-use-tx-referral`, `client-needs`, `caregiver needs`, `pathway-creation`, `event-metadata`, `master-pathway-dashboard`, `active-record-view`, `historical-record-view`, `summation-view`, `client-view`, `needs-view`, `referral-out-view`, `pathway-join-view`, `pathway-event`, `data-dictionary`, `documentation`,  and `template` tags. Reformats the Markdown for the tables to make them a little more readable to contributors.
 - **2025-09-11**: Adds tags for program-specific documentation.
 - **2025-07-26**: Adds initial template to support future tagging conventions
+
+</details>
 
 ---
 Feel free to suggest additional tags or restructure this format as the team sees fit. This file is meant to guide—not constrain—collaborative taxonomy development.

@@ -51,6 +51,23 @@ assets/css/*.min.css
 .idea/
 .vscode/
 
+# Ignore binary output files and exports
+*.pdf
+*.docx
+*.xlsx
+*.pptx
+*.odt
+*.ods
+*.ppt
+*.doc
+*.xls
+*.rtf
+*.epub
+*.zip
+*.tar.gz
+*.bak
+*.tmp
+
 # Optional: Ignore drafts if you don’t want them versioned
 # _drafts/
 

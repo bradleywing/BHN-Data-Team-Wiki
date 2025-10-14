@@ -121,6 +121,12 @@ schema_version: 1.0
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-29**: Adds Staff Assignment section with names. Adds Blockers/Constraints section. Adds Estimated Completion Date. Adds a notes field.
 - **2025-09-23**: Adds `program_scope:` and `programs:` to frontmatter. Updates value of both to none.
 - **2025-09-21**: Updates tags in frontmatter. Adds `nav_order:` and `parent:` fields to frontmatter.
@@ -128,3 +134,5 @@ schema_version: 1.0
 - **2025-09-16**: Adds frontmatter.
 - **2025-08-15**: Adds initial commit of the `Change Scope Form` doc, intended to pair with the `Change Request Form` in FAMCare. This is also pending review by the Data Team.
 - **2025-08-14**: Adds Markdown file.
+
+</details>

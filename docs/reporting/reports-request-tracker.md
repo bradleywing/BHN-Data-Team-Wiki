@@ -104,6 +104,12 @@ Format may shift over time as tools evolve and vendor capabilities expand.
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-30**: Replaces `<div markdown="1"></div>` with `<details markdown="1">` after learning that `Jekyll` must be configured to parse Markdown inside HTML blocks. While GitHub Pages will should build tables correctly if Kramdown is configured to use the `GitHub Flavored Markdown (GFM)` in the `_config.yaml`.
 - **2025-09-25**: Fixes link to `/saving-and-securing-quick-reports/`.
 - **2025-09-23**: Adds link to `reporting-standards.md`. Adds `EPICC Casenotes Report`, `ERE Casenotes Report`, `YERE Casenotes Report`, `EPICC Hospital Referrals Report`, and `EPICC Community Referrals Report` to the list of requested reports. Removes the `ERE Hospital Visit Note Report` because the program manager indicated that it was no longer needed after adding a column for hospital visit on the `ERE Caseload Report`.
@@ -112,3 +118,5 @@ Format may shift over time as tools evolve and vendor capabilities expand.
 - **2025-09-16**: Updates frontmatter to align with `schema_version` 1.0. Adds `ERE Hospital Visit Note Report`, `ERE Transfer Report`, and `ERE Dismissals Report` to the list of requested reports. Fixes typo in row for `EPICC Client on Formal Treatment Path But Not Referred SU Tx Agency Summation Record`.
 - **2025-08-17**: Adds collapsible `<details>` tag around the `Requests` matrix.
 - **2025-08-15**: Adds Markdown file. Adds frontmatter.
+
+</details>

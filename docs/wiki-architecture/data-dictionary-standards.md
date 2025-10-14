@@ -30,12 +30,14 @@ This guide defines contributor expectations for authoring, reviewing, and publis
 
 ## Purpose
 
-Data dictionaries document field-level metadata for forms, datasets, and workflows. They serve to:
+A data dictionary serves as a comprehensive reference for database metadata for forms, datasets, and workflows. They serve to:
 
 - Preserve institutional memory around field definitions and usage
 - Support consistent reporting and schema alignment
 - Provide shareable references for program leadership and external stakeholders
 - Enable future automation and validation of data logic
+
+While FAMCare's SQL Server database maintains an _active_ data dictionary that consists of database tables that automatically store and update object information and attributes for all tables, indexes, columns, data types, and views, it is vital to also create and maintain supplemental, so-called _passive_ or manually updated data dictionaries for reference purposes. These data dictionaries aid data analysts and stakeholders by documenting the meaning of different data points and their relationships with each other.
 
 ---
 
@@ -141,7 +143,15 @@ Future automation may support validation, changelog generation, and schema versi
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-27**: Fixes `permalink:` field. Was missing the `/`.
 - **2025-09-26**: Adds link to `tags.md`.
 - **2025-09-25**: Adds the missing `permalink:` field to frontmatter.
 - **2025-09-23**: Adds initial Markdown file.
+
+</details>

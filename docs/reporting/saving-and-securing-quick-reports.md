@@ -24,7 +24,15 @@ schema_version: 1.0
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-22**: Adds `program_scope`, `programs:`, `nav_order:` and `parent:` fields to frontmatter. Adds `data-team-facing` and `documentation` tags to frontmatter.
 - **2025-09-19**: Adds `layout:` field to frontmatter. Adds page title and changelog.
 - **2025-09-16**: Adds frontmatter.
 - **2025-08-03**: Adds Markdown file as a placeholder for Data Team Handbook content on Quick Reports.
+
+</details>

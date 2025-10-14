@@ -70,6 +70,14 @@ Enrollments for clients who are not determined eligible and clients who choose n
 
 ## Changelog
 
+<details markdown="1">
+  <summary><strong>View Changelog Details</strong></summary>
+
+### 2025
+
+- **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-21**: Adds `<div markdown ="1">` tag tag to satisfy the Kramdown Markdown editor used by Jekyll since the `<details>` tag broke the Markdown table when building the site locally. Removes `lifecycle:` and `change-control:` fields from frontmatter as they are more appropriate for assets outside of the context of the wiki and since they overlap with tags such as `archived`, `needs-review`, `production-ready`, `change-management`, `implementation-planning`, and `stakeholder-approval`. Adds `nav_order:` and `parent:` fields to frontmatter.
 - **2025-09-19**: Adds collapsible `<details>` tag to the `Dismissal Reasons Matrix`. Adds `permalink:` and `layout:` fields to frontmatter.
 - **2025-08-28**: Adds Markdown file named initial ERE enrollment dismissal process.
+
+</details>
