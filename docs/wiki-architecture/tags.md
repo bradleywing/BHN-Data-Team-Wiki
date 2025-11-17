@@ -32,6 +32,7 @@ This file outlines current and potential tags used across the wiki. Tagging conv
 - **Use kebab-case for consistency**
 - **Cross-reference program-specific vs. universal tags in relevant content**
 - **Multiple Categories** - Tags may belong to more than one category, which allows for them to have more than one purpose.
+- **Apply parsimony** — avoid creating one-off tags that only ever apply to a single asset; combine existing tags where possible, and introduce new tags only if they will be reused across multiple programs or assets.
 
 ## Tag Categories
 
