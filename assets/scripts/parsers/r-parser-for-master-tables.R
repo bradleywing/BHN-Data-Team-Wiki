@@ -1,4 +1,5 @@
 # Load required packages
+library(dplyr)      # for changelog filtering and mutate
 library(readxl)     # for reading Excel
 library(knitr)      # for kable()
 library(here)       # for repo-relative paths
@@ -219,14 +220,44 @@ if (
 # Path to the Excel workbook with master tables
 excel_path <- "P:/DATA/LUTs/FC_Master_Tables.xlsx"
 
+
 # Get all master table sheet names
-sheets <- excel_sheets(
+all_sheets <- excel_sheets(
   excel_path
 )
+
+# Exclude the changelog sheet
+
+sheets <- setdiff(
+  all_sheets,
+  "tables_changelog"
+)
+
+# Read tables_changelog once (manually maintained)
+tables_changelog <- read_excel(
+  excel_path,
+  sheet = "tables_changelog"
+  ) %>%
+  mutate(
+    change_date = as.Date(
+      change_date
+      )
+    )
 
 # ------------------------------------------------------------ 
 # 5. Loop through sheets and generate Markdown 
 # ------------------------------------------------------------
+
+# Helper: strip date fields for content-aware comparison
+strip_dates <- function(
+    x
+) {
+  x[!grepl(
+    "^(last_updated:|^last_reviewed:|^ - date:)",
+    x
+  )
+  ]
+}
 
 # Loop over sheets
 for (
@@ -281,7 +312,7 @@ tags:
 permalink: /famcare-master-tables/{kebab_name}/
 layout: home
 nav_order: 1
-parent: FamCare Master Tables 
+parent: FAMCare Master Tables 
 reviewed-by: 
   - name: {reviewer} 
   - date: {format(Sys.Date(), '%Y-%m-%d')}
@@ -290,40 +321,177 @@ schema_version: 1.0
 ---
 "
     ) 
-  
+
   # -------------------------------------------------------- 
   # Markdownlint-compliant top-level header 
   # -------------------------------------------------------- 
   header <- glue(
-    "# {clean_name} Master Table\n\n"
-    ) 
-  
+    "# {clean_name} Master Table"
+    )
+
   # -------------------------------------------------------- 
   # Table 
   # -------------------------------------------------------- 
   md_table <- knitr::kable(
-    df, 
+    df,
     format = "pipe"
-    ) 
+    )
   
-  # -------------------------------------------------------- 
-  # Write file 
-  # --------------------------------------------------------
+  message("Sheet: ", sheet) 
+  message(" df rows: ", nrow(df), ", cols: ", ncol(df)) 
+  message(" md_table type: ", paste(class(md_table), collapse = ", ")) 
+  message(" md_table nchar: ", nchar(paste(md_table, collapse = "\n"))) 
+  message(" table_lines length: ", length(table_lines))
   
-  # Write to file (overwrite each run)
-  writeLines(
+  # -------------------------------------------------------------------
+  # Changelog block for this table (year-grouped, nested <details>)
+  # -------------------------------------------------------------------
+  
+  # Filter changelog entries for this table (sheet name == table_name)
+  table_changes <- tables_changelog %>%
+    filter(
+      table_name == sheet
+      ) %>%
+    arrange(
+      change_date
+      )
+  
+  if (
+    nrow(
+      table_changes
+    ) > 0
+  ) {
+    table_changes <- table_changes %>%
+      mutate(
+        year = format(
+          as.Date(
+            change_date
+          ),
+          "%Y"
+        )
+      )
+    changes_by_year <- split(
+      table_changes,
+      table_changes$year
+    )
+    year_blocks <- purrr::map_chr(
+      names(
+        changes_by_year
+      ),
+      function(
+    yr
+      ) {
+        df <- changes_by_year[[yr]]
+        bullets <- paste0(
+          "- **",
+          df$change_date,
+          "**: ",
+          df$change_detail,
+          collapse = "\n"
+        )
+        glue(
+"<details markdown=\"1\">
+  <summary><strong>{yr}</strong></summary>
+
+### {yr}
+
+{bullets}
+
+</details>"
+        )
+      }
+    )
+    
+    changelog_md <- glue(
+"## Changelog
+
+<details markdown=\"1\">
+  <summary><strong>View Changelog Details</strong></summary>
+
+{paste(year_blocks, collapse = \"\n\n\")}
+
+</details>"
+    )
+  } else {
+      
+    # Stub changelog for tables with no entries
+    changelog_md <- glue(
+"## Changelog
+
+_No changes recorded._"
+    )
+  }
+
+  # ------------------------------------------------------------ 
+  # Content-aware write: only update if content is changed 
+  # ------------------------------------------------------------ 
+
+  # Build the complete markdown text as a single string
+  new_text <- paste(
     c(
       front_matter,
       "",
       header,
-      md_table
+      "",
+      md_table,
+      "",
+      if(
+        nzchar(
+          changelog_md
+        )
+      ) changelog_md
+      else NULL
     ),
-    file_path
+    collapse = "\n"
   )
+  
+  # Convert that text into a line-by-line vector
+  new_content <- readLines(
+    textConnection(
+      new_text
+      ),
+    warn = FALSE
+    )
+  
+  # If file exists, compare content ignoring date fields
+  if (
+    file.exists(
+      file_path
+    )
+  ) {
+    old_content <- readLines(
+      file_path,
+      warn = FALSE
+    )
+    if (
+      identical(
+        strip_dates(
+          old_content
+        ),
+        strip_dates(
+          new_content
+        )
+      )
+    )
+    {
+      message(
+        glue(
+          "No content change — skipping write: {file_path}"
+        )
+      )
+      next 
+    }
+  }
+  
+  # If content changed, write updated file
+  writeLines(
+    new_content,
+    file_path
+    )
   
   message(
     glue(
-      "Wrote: {file_path}"
+      "Updated: {file_path}"
       )
     )
 }
