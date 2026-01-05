@@ -288,7 +288,7 @@ render_form_markdown <- function(form_id_target) {
 
       glue(
 "<details markdown=\"1\">
-  <summary><strong>{yr}</strong></summary>
+<summary><strong>{yr}</strong></summary>
 
 ### {yr}
 
@@ -388,3 +388,247 @@ _No changes recorded._"
 all_forms <- unique(forms_meta$form_id)
 
 purrr::walk(all_forms, render_form_markdown)
+
+# -------------------------------------------------------------------
+# 5. Auto-generate index.md files for each program data dictionary subfolder.
+# -------------------------------------------------------------------
+
+# Base folder for all data dictionaries
+repo_base <- here(
+  "docs",
+  "data_dictionaries"
+  )
+
+# Group forms by program
+forms_by_program <- forms_meta %>%
+  filter(
+    !is.na(
+      program
+      ) & program != ""
+    ) %>%
+  mutate(
+    kebab = gsub(
+      "_",
+       "-",
+      form_id
+      ),
+    link  = glue(
+      "- [{front_matter_title}](/data-dictionaries/{program}-data-dictionaries/{kebab}/)"
+      )
+  ) %>%
+  group_by(
+    program
+    )
+
+
+forms_by_program %>%
+ group_walk(
+  function(
+    df,
+    key
+    ) {
+
+  program <- key$program
+  program_folder <- file.path(
+    repo_base,
+    paste0(
+      program,
+      "-data-dictionaries"
+      )
+    )
+
+  # Ensure folder exists
+  if (
+    !dir.exists(
+      program_folder
+      )
+    ) {
+    dir.create(
+      program_folder,
+      recursive = TRUE
+      )
+  }
+
+  # ------------------------------------------------------------
+  # YAML front matter 
+  # ------------------------------------------------------------
+  fm_yaml <- glue(
+"---
+front-matter-title: {toupper(program)} Data Dictionaries
+layout: home
+permalink: /data-dictionaries/{program}-data-dictionaries/
+nav_order: 1
+parent: BHN Program Data Dictionaries
+---"
+  )
+  
+  # ------------------------------------------------------------
+  # Header + link list 
+  # ------------------------------------------------------------
+  header <- glue(
+    "# {toupper(program)} Data Dictionaries"
+    )
+  
+  links <- paste(
+    df$link,
+    collapse = "\n"
+    )
+
+# ------------------------------------------------------------
+# Program-level changelog (change_scope == 'program')
+# ------------------------------------------------------------
+  program_changes <- forms_changes %>%
+    filter(
+      change_scope == "program",
+      program == !!program
+    )
+  if (
+    nrow(
+      program_changes
+    ) > 0
+  ) {
+    program_changes <- program_changes %>%
+      arrange(
+        desc(
+          change_date
+        )
+      ) %>%
+      mutate(
+        year = format(
+          as.Date(
+            change_date
+          ),
+          "%Y"
+        )
+      )
+    changes_by_year <- split(
+      program_changes,
+      program_changes$year
+    )
+    year_blocks <- purrr::map_chr(
+      rev(
+        names(
+          changes_by_year
+        )
+      ),
+      function(
+    yr
+      ) {
+        dfyr <- changes_by_year[[yr]]
+        bullets <- paste0(
+          "- **",
+          dfyr$change_date,
+          "**: ",
+          dfyr$change_detail,
+          collapse = "\n"
+        )
+        glue(
+"<details markdown=\"1\">
+<summary><strong>{yr}</strong></summary>
+
+### {yr}
+
+{bullets}
+
+</details>"
+        )
+      }
+    )
+    changelog_md <- glue(
+"## Changelog
+
+<details markdown=\"1\">
+<summary><strong>View Changelog Details</strong></summary>
+
+{paste(year_blocks, collapse = \"\n\n\")}
+
+</details>"
+    )
+  } else {
+      changelog_md <- glue(
+"## Changelog
+
+_No changes recorded._"
+    )
+  }
+  
+# ------------------------------------------------------------
+# Assemble full Markdown
+# ------------------------------------------------------------
+  new_text <- paste(
+    c(
+      fm_yaml,
+      "",
+      header,
+      "",
+      "## Available Data Dictionaries",
+      "",
+      links,
+      "",
+      changelog_md
+      ),
+    collapse = "\n"
+    )
+
+# ------------------------------------------------------------
+# Normalize trailing whitespace
+# ------------------------------------------------------------
+  lines <- unlist(
+    strsplit(
+      new_text,
+      "\n",
+      fixed = TRUE
+      )
+    )
+  while (
+    length(
+      lines
+      ) > 0 && lines[length(lines)] == ""
+    ) {
+    lines <- lines[-length(lines)]
+    }
+
+# writeLines() adds exactly one newline
+  index_path <- file.path(
+    program_folder,
+    "index.md"
+    )
+
+# ------------------------------------------------------------ 
+# Content-aware write
+# ------------------------------------------------------------
+  if (
+    file.exists(
+      index_path
+      )
+    ) {
+    old <- readLines(
+      index_path,
+      warn = FALSE
+      )
+    if (
+      identical(
+        old,
+        lines
+        )
+      )
+    { 
+      message(
+        glue(
+          "No content change — skipping write: {index_path}"
+          )
+        )
+      return() 
+      }
+    }
+  writeLines(
+    lines,
+    index_path
+    )
+  message(
+    glue(
+      "Updated program index: {index_path}"
+      )
+    )
+  }
+)
