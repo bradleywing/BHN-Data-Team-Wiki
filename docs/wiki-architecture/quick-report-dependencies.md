@@ -1,0 +1,722 @@
+---
+front-matter-title: Quick Report Dependencies
+author: Bradley Wing
+last_updated: 2026-01-04
+status: active
+program_scope: none
+programs:
+  - none
+tags:
+  - report-metadata
+  - dependencies
+permalink: /quick-report-dependencies/
+layout: home
+nav_order: 1
+parent: Wiki Architecture
+reviewed-by:
+  - name: Bradley Wing
+  - date: 2026-01-04
+last_reviewed: 2026-01-04
+schema_version: 1.0
+---
+# Quick Report Dependencies
+
+## [Compliance Reports]
+
+### ERE FAMCare Updates to Enter Into CareManager
+
+- Q_CLIENT_BHN
+- Q_ERE_PATHCLIENT_ENROLLMENTS
+
+## [Exception Reports]
+
+### BCR Client Active 90 Days or Longer
+
+- Q_BCR_CLIENT_ACTIVE_90_DAYS_OR_LONGER
+
+### BCR Duplicate PWY Forms Per Enrollment
+
+- Q_BCR_PATHCLIENT_ENROLLMENTS
+
+### BCR Enrolled No Referral
+
+- Q_BCR_PATHCLIENT_ENROLLMENTS
+- Q_BCR_REFERRAL
+
+### BCR Grant Missing
+
+- BCR_GRANT
+- PROVIDERPLACEMENT
+- PWBCRINITIALCONTACT
+- Q_CLIENT_BHN
+
+### BCR Imports Miss Date Accomplished Enrolled July to Dec
+
+- BCR_PROG_PARTICIPATION
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- PROVIDERPLACEMENT
+- PWBCRREFERRAL
+- Q_CLIENT
+
+### BCR Multiple Referrals Per Enrollment
+
+- PROVIDERPLACEMENT
+- PWBCRREFERRAL
+- Q_CLIENT
+
+### BCR Pathway Added Client Never Enrolled
+
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- PROVIDERPLACEMENT
+- Q_CLIENT_BHN
+- RACE
+
+### BCR Presenting Concerns Hidden Fields Null
+
+- PWBCRPRESENTINGCONCERNS
+- Q_CLIENT
+
+### BCR Referrals Placed Hidden Fields Null
+
+- PWBCRREFERRALSPLACED
+- Q_CLIENT_BHN
+
+### Client Dismissed But Client Status Still Active
+
+- Q_CLIENT
+- Q_PROVIDERPLACEMENT
+
+### Client Status Missing
+
+- Q_CLIENT_BHN
+
+### Clients With Multiple Active Enrollments
+
+- Q_CLIENT
+- Q_PROVIDERPLACEMENT
+
+### Clients With Multiple Active Pathways
+
+- Q_CLIENTS_WITH_MULTIPLE_ACTIVE_PATHWAYS
+
+### Clients With Multiple Pathways Sharing Same Start Date
+
+- Q_CLIENTS_WITH_MULTIPLE_PATHWAYS_SHARING_SAME_START_DATE
+
+### Complex Care BEACN Duplicate PWY Forms Per Enrollment
+
+- Q_COMPLEX_CARE_PATHCLIENT_ENROLLMENTS
+
+### Complex Care BEACN Enrolled No Roster
+
+- Q_COMPLEX_CARE_PATHCLIENT_ENROLLMENTS
+- Q_COMPLEX_CARE_ROSTER
+
+### Complex Care BEACN Housing Status Summation Exceptions
+
+- Q_COMPLEX_CARE_BEACN_HOUSING_STATUS_EXCEPTIONS
+
+### Duplicate Enrollments With Program
+
+- Q_DUPLICATE_ENROLLMENTS_WITH_PROGRAM
+
+### EPICC Core Exceptions By Type
+
+- Q_EPICC_CORE_EXCEPTIONS_BY_TYPE
+
+### EPICC Duplicate PWY Forms Per Enrollment
+
+- Q_EPICC_DUPLICATE_PWY_FORMS_W_CHILD_SUM_JOINS
+
+### EPICC Enrolled No Referral
+
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+- Q_EPICC_REFERRAL
+
+### EPICC IC Opioids of Use Hidden Fields Null
+
+- PWEPICCINITIALCONTACT
+- Q_CLIENT
+
+### EPICC IC PWY Date Outside Same Day Enrollment Range
+
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+
+### EPICC Imports Miss Date Accomplish Enrolled July to Dec
+
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- PROVIDERPLACEMENT
+- Q_CLIENT
+
+### EPICC Imports Miss Date Accomplish Open as of Dec
+
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- PROVIDERPLACEMENT
+- Q_CLIENT
+
+### EPICC Ref Referring Agency Mismatch W IC PRO_OR_CORE
+
+- Q_EPICC_REFERRAL_REFERRING_AGENCY_IC_PRO_OR_CORE_MISMATCH
+
+### EPICC Referral Completed Missing Initial Contact
+
+- Q_CLIENT
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+
+### EPICC SU TX Agency PARENTDOCSERNO is Null
+
+- Q_EPICC_ALL_SU_TX_AGENCY
+
+### ERE Duplicate PWY Forms Per Enrollment
+
+- Q_ERE_DUPLICATE_PWY_FORMS_W_CHILD_SUM_JOINS
+
+### ERE Enrolled No Referral
+
+- Q_ERE_PATHCLIENT_ENROLLMENTS
+- Q_ERE_REFERRAL
+
+### Orphaned PWHOUSINGSTATUS Summation Records
+
+- PWHOUSINGSTATUS
+- Q_ALL_PATHWAY_FORM_DOCSERNOS
+- Q_CLIENT_BHN
+
+### Orphaned PWPAYORSOURCE Summation Records
+
+- PWPAYORSOURCE
+- Q_ALL_PATHWAY_FORM_DOCSERNOS
+- Q_CLIENT_BHN
+
+### Pathway Closed Enrollment Still Active
+
+- PATHWAY
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- PROVIDERPLACEMENT
+- Q_CLIENT_BHN
+- Q_HRFORM
+- Q_PROVIDER
+
+### Pathway Event Forms Missing TIEDENROLLMENT
+
+- Q_ALL_PATHWAY_FORM_DOCSERNOS
+
+### Pathway Still Open Enrollment Closed
+
+- PATHWAY
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- Q_CLIENT_BHN
+- Q_HRFORM
+- Q_PROVIDER
+- Q_PROVIDERPLACEMENT_BHN
+
+### YERE Caregiver Needs Hidden Fields Null
+
+- PWYERECAREGIVERPROGRAMNEEDS
+- Q_CLIENT
+
+### YERE Core Exceptions By Type
+
+- Q_YERE_CORE_EXCEPTIONS_BY_TYPE
+
+### YERE Duplicate PWY Forms Per Enrollment
+
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+
+### YERE Enrolled No Referral
+
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+- Q_YERE_REFERRAL
+
+### YERE Hospital Visit Note Hidden Fields Null
+
+- PWYEREHOSPITALVISITNOTE
+- Q_CLIENT
+
+### YERE IA Hidden Fields Null
+
+- PWYEREINITIALCONTACT
+- Q_CLIENT
+
+### YERE Youth Needs Hidden Fields Null
+
+- PWYERECLIENTNONBEHAVIORALNEEDSSUM
+- Q_CLIENT
+
+## [Program Management]
+
+### BCR Caseload Report
+
+- BCR_GRANT
+- Q_BCR_ACTIVE_HOUSING_STATUS
+- Q_BCR_ACTIVE_PAYOR_SOURCE
+- Q_BCR_IC
+- Q_BCR_PATHCLIENT_ENROLLMENTS
+- Q_CLIENT_BHN
+
+### BCR Client Active 30 Days or Longer
+
+- Q_BCR_CLIENT_ACTIVE_30_DAYS_OR_LONGER
+
+### BCR Events
+
+- Q_BCR_EVENTS
+
+### Complex Care Active BEACN Clients Benchmark Data
+
+- Q_COMPLEX_CARE_MERCY_BEACN_BENCHMARKS
+- Q_COMPLEX_CARE_PATHCLIENT_ENROLLMENTS
+
+### Complex Care BEACN Clinical Committee Notes
+
+- Q_COMPLEX_CARE_CLINICAL_NOTES_REPORT
+
+### Count Client Per Agency by Program and Client Status
+
+- Q_CLIENT_BHN
+- Q_PROGRAM_AGENCY_BRIDGE
+- Q_PROVIDERPLACEMENT_BHN
+
+### EPICC Candidates for Dismissal
+
+- CLOSINGREASONS
+- PATHWAY
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- PROVIDERPLACEMENT
+- Q_CLIENT_BHN
+- Q_EPICC_IC
+- Q_EPICC_REFERRAL
+- Q_EPICC_SIX_MONTH
+- Q_EPICC_THIRTY_DAY
+- Q_EPICC_THREE_MONTH
+- Q_EPICC_TWO_WEEK
+- Q_HRFORM
+- Q_PROVIDER
+
+### EPICC Candidates for Re-Engagement or Dismissal
+
+- CLOSINGREASONS
+- PATHWAY
+- PATHWAYCLIENT
+- PATHWAYEVENT
+- PATHWAYEVENTCLIENT
+- Q_CLIENT_BHN
+- Q_EPICC_IC
+- Q_EPICC_REENGAGEMENT
+- Q_EPICC_REFERRAL
+- Q_EPICC_SIX_MONTH
+- Q_EPICC_THIRTY_DAY
+- Q_EPICC_THREE_MONTH
+- Q_EPICC_TWO_WEEK
+- Q_HRFORM
+- Q_PROVIDER_BHN
+- Q_PROVIDERPLACEMENT_BHN
+
+### EPICC Caseload Report
+
+- Q_CLIENT
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+
+### EPICC EMS
+
+- Q_CLIENT_BHN
+- Q_EPICC_ACTIVE_PAYOR_SOURCE
+- Q_EPICC_IC
+- Q_EPICC_LATEST_SU_TX_AGENCY
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+- Q_EPICC_REFERRAL
+
+### EPICC EMS Report
+
+- Q_CLIENT_BHN
+- Q_EPICC_ACTIVE_HOUSING_STATUS
+- Q_EPICC_ACTIVE_PAYOR_SOURCE
+- Q_EPICC_IC
+- Q_EPICC_LATEST_SU_TX_AGENCY
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+- Q_EPICC_REFERRAL
+
+### EPICC Overdose Report
+
+- Q_CLIENT_BHN
+- Q_EPICC_IC
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+
+### ERE Caseload
+
+- PWYEREREFERRAL
+- Q_CLIENT_BHN
+- Q_ERE_ACTIVE_PAYOR_SOURCE
+- Q_ERE_PATHCLIENT_ENROLLMENTS
+- Q_HRFORM
+
+### ERE Caseload Report
+
+- PWYEREREFERRAL
+- Q_CLIENT_BHN
+- Q_ERE_ACTIVE_PAYOR_SOURCE
+- Q_ERE_PATHCLIENT_ENROLLMENTS
+- Q_HRFORM
+
+### ERE Hospital Visit Note Report
+
+- Q_ERE_HOSPITAL_VISIT_NOTE
+- Q_ERE_PATHCLIENT_ENROLLMENTS
+- Q_ERE_REFERRAL
+- Q_HRFORM
+- Q_PROVIDERPLACEMENT_BHN
+
+### YERE Caseload
+
+- PWYEREREFERRAL
+- Q_CLIENT_BHN
+- Q_HRFORM
+- Q_YERE_ACTIVE_PAYOR_SOURCE
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+
+### YERE Caseload Report
+
+- PWYEREREFERRAL
+- Q_CLIENT
+- Q_HRFORM
+- Q_YERE_ACTIVE_PAYOR_SOURCE
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+
+### YERE Caseload Report Simplified
+
+- PWYEREREFERRAL
+- Q_CLIENT
+- Q_HRFORM
+- Q_YERE_ACTIVE_PAYOR_SOURCE
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+
+### YERE Dismissal Report
+
+- Q_HRFORM
+- Q_PROVIDERPLACEMENT_BHN
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+- Q_YERE_SIX_MONTH
+- Q_YERE_THIRTY_DAY
+- Q_YERE_THREE_MONTH
+
+### YERE Hospital Visit Note Report
+
+- Q_HRFORM
+- Q_PROVIDERPLACEMENT_BHN
+- Q_YERE_HOSPITAL_VISIT
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+- Q_YERE_REFERRAL
+
+### YERE Needs Report
+
+- Q_HRFORM
+- Q_PROVIDERPLACEMENT_BHN
+- Q_YERE_NEEDS_REPORT
+
+## [R Child Doc Extracts]
+
+### BCR Active Housing Status
+
+- Q_BCR_ACTIVE_HOUSING_STATUS
+
+### BCR Active Payor Source
+
+- Q_BCR_ACTIVE_PAYOR_SOURCE
+
+### BCR Client
+
+- Q_BCR_CLIENT
+
+### BCR Client Counseling Sessions
+
+- Q_BCR_CLIENT_COUNSELING_SESSIONS
+
+### BCR Events
+
+- Q_BCR_EVENTS
+
+### BCR Initial Contact
+
+- Q_BCR_IC
+
+### BCR PHQ DASS BH Referrals Placed With Demographics
+
+- Q_BCR_PHQ_DASS_REF_PLACED_W_DEMOGRAPHICS
+
+### BCR Pathclient Enrollments
+
+- Q_BCR_PATHCLIENT_ENROLLMENTS
+
+### BCR Pathway Form Docsernos
+
+- Q_BCR_PATHWAY_FORM_DOCSERNOS
+
+### BCR Presenting Concerns
+
+- Q_BCR_PRESENTING_CONCERNS
+
+### BCR Referral
+
+- Q_BCR_REFERRAL
+
+### BCR Referrals Placed
+
+- Q_BCR_REF_PLACED
+
+### Complex Care Active Housing Status
+
+- Q_COMPLEX_CARE_ACTIVE_HOUSING_STATUS
+
+### Complex Care Active Payor Source
+
+- Q_COMPLEX_CARE_ACTIVE_PAYOR_SOURCE
+
+### Complex Care All Housing Status
+
+- Q_COMPLEX_CARE_ALL_HOUSING_STATUS
+
+### Complex Care All Payor Source
+
+- Q_COMPLEX_CARE_ALL_PAYOR_SOURCE
+
+### Complex Care BEACN Clinical Notes
+
+- Q_COMPLEX_CARE_CLINICAL_NOTES
+
+### Complex Care BEACN Quality of Life Assessment
+
+- Q_COMPLEX_CARE_BEACN_QUALITY_OF_LIFE_ASSESSMENT
+
+### Complex Care BEACN Shelter Bed Tracking
+
+- Q_COMPLEX_CARE_BEACN_SHELTER_BED_TRACKING
+
+### Complex Care Client
+
+- Q_COMPLEX_CARE_CLIENT
+
+### Complex Care Mercy BEACN Benchmarks
+
+- Q_COMPLEX_CARE_MERCY_BEACN_BENCHMARKS
+
+### Complex Care Pathclient Enrollments
+
+- Q_COMPLEX_CARE_PATHCLIENT_ENROLLMENTS
+
+### Complex Care PfP Discharge
+
+- Q_COMPLEX_CARE_PFP_DISCHARGE
+
+### Complex Care Roster
+
+- Q_COMPLEX_CARE_ROSTER
+
+### EPICC Active Housing Status
+
+- Q_EPICC_ACTIVE_HOUSING_STATUS
+
+### EPICC Active Payor Source
+
+- Q_EPICC_ACTIVE_PAYOR_SOURCE
+
+### EPICC All Housing Status
+
+- Q_EPICC_ALL_HOUSING_STATUS
+
+### EPICC All Payor Source
+
+- PWEPICCINITIALCONTACT
+- PWPAYORSOURCE
+- Q_CLIENT_BHN
+- Q_EPICC_PATHWAY_FORM_DOCSERNOS
+
+### EPICC All SU TX Agency
+
+- Q_EPICC_ALL_SU_TX_AGENCY
+
+### EPICC CORE Outreach Events
+
+- Q_EPICC_CORE_OUTREACH_EVENTS
+
+### EPICC Client
+
+- Q_EPICC_CLIENT
+
+### EPICC Events
+
+- Q_EPICC_EVENTS
+
+### EPICC IC
+
+- Q_EPICC_IC
+
+### EPICC Latest SU TX Agency
+
+- Q_EPICC_LATEST_SU_TX_AGENCY
+
+### EPICC Pathclient Enrollments
+
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+
+### EPICC Pathclient Enrollments 2016-2022
+
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+
+### EPICC Pathclient Enrollments 2023-Current
+
+- Q_EPICC_PATHCLIENT_ENROLLMENTS
+
+### EPICC Pathway Form Docsernos
+
+- Q_EPICC_PATHWAY_FORM_DOCSERNOS
+
+### EPICC Reengagement
+
+- Q_EPICC_REENGAGEMENT
+
+### EPICC Referral
+
+- Q_EPICC_REFERRAL
+
+### EPICC Six-Month
+
+- Q_EPICC_SIX_MONTH
+
+### EPICC Thirty-Day
+
+- Q_EPICC_THIRTY_DAY
+
+### EPICC Three-Month
+
+- Q_EPICC_THREE_MONTH
+
+### EPICC Two-Week
+
+- Q_EPICC_TWO_WEEK
+
+### ERE Active Housing Status
+
+- Q_ERE_ACTIVE_HOUSING_STATUS
+
+### ERE Active Payor Source
+
+- Q_ERE_ACTIVE_PAYOR_SOURCE
+
+### ERE All Housing Status
+
+- Q_ERE_ALL_HOUSING_STATUS
+
+### ERE All Payor Source
+
+- Q_ERE_ALL_PAYOR_SOURCE
+
+### ERE BHS
+
+- Q_ERE_BHS
+
+### ERE Client
+
+- Q_ERE_CLIENT
+
+### ERE Client Needs
+
+- Q_ERE_CLIENT_NEEDS
+
+### ERE Hospital Visit Note
+
+- Q_ERE_HOSPITAL_VISIT_NOTE
+
+### ERE IHNA
+
+- Q_ERE_IHNA
+
+### ERE Pathclient Enrollments
+
+- Q_ERE_PATHCLIENT_ENROLLMENTS
+
+### ERE Pathway Form Docsernos
+
+- Q_ERE_PATHWAY_FORM_DOCSERNOS
+
+### ERE Referral
+
+- Q_ERE_REFERRAL
+
+### ERE Six-Month
+
+- Q_ERE_SIX_MONTH
+
+### ERE Three-Month
+
+- Q_ERE_THREE_MONTH
+
+### Q_PROVIDERPLACEMENT_BHN
+
+- Q_PROVIDERPLACEMENT_BHN
+
+### YERE Active Housing Status
+
+- Q_YERE_ACTIVE_HOUSING_STATUS
+
+### YERE Active Payor Source
+
+- Q_YERE_ACTIVE_PAYOR_SOURCE
+
+### YERE BHS
+
+- Q_YERE_BHS
+
+### YERE Client
+
+- Q_CLIENT_BHN
+- Q_PROVIDERPLACEMENT_BHN
+
+### YERE Client Needs
+
+- Q_YERE_CLIENT_NEEDS
+
+### YERE Initial Assessment
+
+- Q_YERE_IA
+
+### YERE Pathclient Enrollments
+
+- Q_YERE_PATHCLIENT_ENROLLMENTS
+
+### YERE Pathway Form Docsernos
+
+- Q_YERE_PATHWAY_FORM_DOCSERNOS
+
+### YERE Referral
+
+- Q_YERE_REFERRAL
+
+### YERE Six-Month
+
+- Q_YERE_SIX_MONTH
+
+### YERE Thirty-Day
+
+- Q_YERE_THIRTY_DAY
+
+### YERE Three-Month
+
+- Q_YERE_THREE_MONTH
+
+### EPICC All Housing Status
+
+- Q_EPICC_ALL_HOUSING_STATUS
