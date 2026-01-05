@@ -353,8 +353,10 @@ schema_version: 1.0
       table_name == sheet
       ) %>%
     arrange(
-      change_date
+      desc(
+        change_date
       )
+    )
   
   if (
     nrow(
@@ -375,8 +377,10 @@ schema_version: 1.0
       table_changes$year
     )
     year_blocks <- purrr::map_chr(
-      names(
-        changes_by_year
+      rev(
+        names(
+          changes_by_year
+        )
       ),
       function(
     yr
