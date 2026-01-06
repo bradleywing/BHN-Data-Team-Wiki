@@ -262,7 +262,7 @@ _No pivoted fields defined for this form._
 <summary><strong>View Changelog Details</strong></summary>
 
 <details markdown="1">
-  <summary><strong>2025</strong></summary>
+<summary><strong>2025</strong></summary>
 
 ### 2025
 
