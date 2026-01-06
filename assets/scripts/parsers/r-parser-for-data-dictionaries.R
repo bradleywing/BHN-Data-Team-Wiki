@@ -18,29 +18,74 @@ base_path <- paste0(
   "/Behavioral Health Network of Greater St. Louis/BHN - Documents/Data Staging/Data Dictionaries/"
 )
 
-metadata_file <- file.path(base_path, "FC_Data_Dictionaries.xlsx")
+metadata_file <- file.path(
+  base_path,
+  "FC_Data_Dictionaries.xlsx"
+  )
 
-fields         <- read_excel(metadata_file, sheet = "fields")
-forms_meta     <- read_excel(metadata_file, sheet = "forms_meta")
-forms_changes  <- read_excel(metadata_file, sheet = "forms_changelogs")
+fields <- read_excel(
+  metadata_file,
+  sheet = "fields"
+  )
+
+forms_meta <- read_excel(
+  metadata_file,
+  sheet = "forms_meta"
+  )
+
+forms_changes <- read_excel(
+  metadata_file,
+  sheet = "forms_changelogs"
+  )
 
 # -------------------------------------------------------------------
 # 2. Helper functions
 # -------------------------------------------------------------------
 
-yn_from_flag <- function(x) {
+yn_from_flag <- function(
+    x
+    ) {
   case_when(
-    is.na(x)          ~ "",
-    x %in% c(1, "1")  ~ "Yes",
-    x %in% c(0, "0")  ~ "No",
-    TRUE              ~ as.character(x)
+    is.na(
+      x
+      )          ~ "",
+    x %in% c(
+      1,
+      "1"
+      ) ~ "Yes",
+    x %in% c(
+      0,
+      "0"
+      ) ~ "No",
+    TRUE ~ as.character(
+      x
+      )
   )
 }
 
-format_lov_md <- function(lov_string) {
-  if (is.na(lov_string) || lov_string == "NA" || lov_string == "") return("")
-  vals <- str_split(lov_string, ";")[[1]] |> trimws()
-  paste0("- ", vals, collapse = "\n")
+format_lov_md <- function(
+    lov_string
+    ) {
+  if (
+    is.na(
+      lov_string
+      ) ||
+    lov_string == "NA" ||
+    lov_string == ""
+    )
+    return(
+      ""
+      )
+  vals <- str_split(
+    lov_string,
+    ";"
+    )[[1]] %>% 
+  trimws()
+  paste0(
+    "- ",
+    vals,
+    collapse = "\n"
+    )
 }
 
 collapse_nonempty <- function(...) {
@@ -54,20 +99,54 @@ safe_val <- function(df, col) {
   if (col %in% names(df)) df[[col]] else ""
 }
 
-build_front_matter <- function(form_meta_row) {
+build_front_matter <- function(
+    form_meta_row
+    ) {
 
-  tags_vec <- if (!is.na(form_meta_row$tags) && form_meta_row$tags != "") {
-    str_split(form_meta_row$tags, ";")[[1]] |> trimws()
+  tags_vec <- if (
+    !is.na(
+      form_meta_row$tags
+      ) &&
+    form_meta_row$tags != ""
+    ) {
+    str_split(
+      form_meta_row$tags,
+      ";"
+      )[[1]] %>% 
+    trimws()
   } else {
-    c("data-dictionary", "documentation", form_meta_row$form_id)
+    c(
+      "data-dictionary",
+      "documentation",
+      form_meta_row$form_id
+      )
   }
 
-  tags_yaml <- paste0("  - ", tags_vec, collapse = "\n")
+  tags_yaml <- paste0(
+    "  - ",
+    tags_vec,
+    collapse = "\n"
+    )
 
-  if (!is.na(form_meta_row$master_tables) && form_meta_row$master_tables != "") {
-    mt_vec  <- str_split(form_meta_row$master_tables, ";")[[1]] |> trimws()
-    mt_yaml <- paste0("  - ", mt_vec, collapse = "\n")
-    mt_block <- glue("master_tables:\n{mt_yaml}")
+  if (
+    !is.na(
+      form_meta_row$master_tables
+      ) &&
+    form_meta_row$master_tables != ""
+    ) {
+    mt_vec  <- str_split(
+      form_meta_row$master_tables,
+      ";"
+      )[[1]] %>% 
+    trimws()
+    mt_yaml <- paste0(
+      "  - ",
+      mt_vec,
+      collapse = "\n"
+      )
+    mt_block <- glue(
+      "master_tables:\n{mt_yaml}"
+      )
   } else {
     mt_block <- ""
   }
@@ -91,47 +170,109 @@ schema_version: {form_meta_row$schema_version}
 # 3. Main rendering for a single form
 # -------------------------------------------------------------------
 
-render_form_markdown <- function(form_id_target) {
+render_form_markdown <- function(
+    form_id_target
+    ) {
 
-  form_meta <- forms_meta %>% filter(form_id == form_id_target)
+  form_meta <- forms_meta %>%
+    filter(
+      form_id == form_id_target
+      )
 
-  if (nrow(form_meta) == 0) {
-    message(glue("Skipping '{form_id_target}' — no metadata found."))
-    return(invisible(NULL))
+  if (
+    nrow(
+      form_meta
+      ) == 0
+    ) {
+    message(
+      glue(
+        "Skipping '{form_id_target}' — no metadata found."
+        )
+      )
+    return(
+      invisible(
+        NULL
+        )
+      )
   }
 
   form_meta <- form_meta[1, ]
   program <- form_meta$program
 
   form_fields <- fields %>%
-    filter(form_id == form_id_target) %>%
-    arrange(form_order, field_order)
+    filter(
+      form_id == form_id_target
+      ) %>%
+    arrange(
+      form_order,
+      field_order
+      )
 
-  if (nrow(form_fields) == 0) {
-    message(glue("Skipping '{form_id_target}' — no fields defined yet."))
-    return(invisible(NULL))
+  if (
+    nrow(
+      form_fields
+      ) == 0
+    ) {
+    message(
+      glue(
+        "Skipping '{form_id_target}' — no fields defined yet."
+        )
+      )
+    return(
+      invisible(
+        NULL
+        )
+      )
   }
 
   form_changes <- forms_changes %>%
-    filter(form_id == form_id_target)
+    filter(
+      form_id == form_id_target,
+        change_scope == "form"
+    )
 
-  fm_yaml <- build_front_matter(form_meta)
+  fm_yaml <- build_front_matter(
+    form_meta
+    )
 
   # -------------------------------------------------------------------
   # Core Fields table
   # -------------------------------------------------------------------
 
   core_fields <- form_fields %>%
-    filter(is_pivot_field %in% c(0, NA)) %>%
+    filter(
+      is_pivot_field %in% c(
+        0,
+        NA
+        )
+      ) %>%
     mutate(
-      Hidden      = yn_from_flag(is_hidden_field),
-      MasterTable = ifelse(!is.na(master_table_name) & master_table_name != "NA",
-                           master_table_name, ""),
-      Required    = yn_from_flag(is_required_field),
-      Reporting   = yn_from_flag(is_reporting_field),
-      System      = yn_from_flag(is_system_field),
-      Enabled     = yn_from_flag(is_enabled_field),
-      Analytical  = yn_from_flag(is_analytical_field)
+      Hidden = yn_from_flag(
+        is_hidden_field
+        ),
+      MasterTable = ifelse(
+        !is.na(
+          master_table_name
+          ) & 
+          master_table_name != "NA",
+        master_table_name,
+        ""
+        ),
+      Required = yn_from_flag(
+        is_required_field
+        ),
+      Reporting = yn_from_flag(
+        is_reporting_field
+        ),
+      System = yn_from_flag(
+        is_system_field
+        ),
+      Enabled = yn_from_flag(
+        is_enabled_field
+        ),
+      Analytical = yn_from_flag(
+        is_analytical_field
+        )
     ) %>%
     select(
       `Field Order` = field_order,
@@ -146,45 +287,114 @@ render_form_markdown <- function(form_id_target) {
       Analytical
     )
 
-  core_fields_table_md <- knitr::kable(core_fields, format = "pipe", align = "c")
+  core_fields_table_md <- knitr::kable(
+    core_fields,
+    format = "pipe",
+    align = "c"
+    )
 
   # -------------------------------------------------------------------
   # Core Field Details
   # -------------------------------------------------------------------
 
-  core_details_md <- purrr::map_chr(seq_len(nrow(core_fields)), function(i) {
+  core_details_md <- purrr::map_chr(
+    seq_len(
+      nrow(
+        core_fields
+        )
+      ),
+    function(
+    i
+    ) {
 
     f_name <- core_fields$`FC Field Name`[i]
-    ff <- form_fields %>% filter(fc_field_name == f_name)
+    ff <- form_fields %>%
+      filter(
+        fc_field_name == f_name
+        )
 
-    if (nrow(ff) == 0) {
-      warning(glue("No metadata found for fc_field_name = '{f_name}'"))
-      return("")
+    if (
+      nrow(
+        ff
+        ) == 0
+      ) {
+      warning(
+        glue(
+          "No metadata found for fc_field_name = '{f_name}'"
+          )
+        )
+      return(
+        ""
+        )
     }
 
-    ff <- ff %>% slice(1)
+    ff <- ff %>% 
+      slice(
+        1
+        )
 
     lov_block <- ""
-    if (!is.na(ff$enabled_lov_values) && ff$enabled_lov_values != "NA") {
-      lov_items <- format_lov_md(ff$enabled_lov_values)
-      lov_block <- glue("**LOV:**\n\n{lov_items}")
+    if (
+      !is.na(
+        ff$enabled_lov_values
+        ) &&
+      ff$enabled_lov_values != "NA"
+      ) {
+      lov_items <- format_lov_md(
+        ff$enabled_lov_values
+        )
+      lov_block <- glue(
+        "**LOV:**\n\n{lov_items}"
+        )
     }
 
     conditional_block <- ""
-    if (!is.na(ff$conditional_logic) && ff$conditional_logic != "NA" && ff$conditional_logic != "") {
-      conditional_block <- glue("**Conditional Logic:**\n\n- {ff$conditional_logic}")
+    if (
+      !is.na(
+        ff$conditional_logic
+        ) &&
+      ff$conditional_logic != "NA" &&
+      ff$conditional_logic != ""
+      ) {
+      conditional_block <- glue(
+        "**Conditional Logic:**\n\n- {ff$conditional_logic}"
+        )
     }
 
     audit_block <- ""
-    if (!is.na(ff$audit_notes) && ff$audit_notes != "NA" && ff$audit_notes != "") {
-      notes_vec <- str_split(ff$audit_notes, ";")[[1]] |> trimws()
-      audit_items <- paste0("- ", notes_vec, collapse = "\n")
-      audit_block <- glue("**Audit Notes:**\n\n{audit_items}")
+    if (
+      !is.na(
+        ff$audit_notes
+        ) &&
+      ff$audit_notes != "NA" &&
+      ff$audit_notes != ""
+      ) {
+      notes_vec <- str_split(
+        ff$audit_notes,
+        ";"
+        )[[1]] %>% 
+      trimws()
+      audit_items <- paste0(
+        "- ",
+        notes_vec,
+        collapse = "\n"
+        )
+      audit_block <- glue(
+        "**Audit Notes:**\n\n{audit_items}"
+        )
     }
 
     mt_block <- ""
-    if (!is.na(ff$master_table_name) && ff$master_table_name != "NA" && ff$master_table_name != "") {
-      mt_block <- glue("**Master Table:** {ff$master_table_name}")
+    if (
+      !is.na(
+        ff$master_table_name
+        ) &&
+      ff$master_table_name != "NA" &&
+      ff$master_table_name != ""
+      ) {
+      mt_block <- glue(
+        "**Master Table:** {ff$master_table_name}"
+        )
     }
 
     type_block <- glue(
@@ -210,19 +420,32 @@ render_form_markdown <- function(form_id_target) {
 
 </details>"
     )
-  }) |> paste(collapse = "\n\n")
+  }
+)  %>%
+    paste(
+      collapse = "\n\n"
+      )
 
   # -------------------------------------------------------------------
   # Pivoted Fields table (redesigned)
   # -------------------------------------------------------------------
 
   pivot_fields <- form_fields %>%
-    filter(is_pivot_field == 1) %>%
+    filter(
+      is_pivot_field == 1
+      ) %>%
     mutate(
       ParentField = pivot_parent,
       PopulatedWhen = conditional_logic,
       Values = enabled_lov_values,
-      Notes = ifelse(is.na(audit_notes) | audit_notes == "NA", "", audit_notes)
+      Notes = ifelse(
+        is.na(
+          audit_notes
+          ) |
+          audit_notes == "NA",
+        "",
+        audit_notes
+        )
     ) %>%
     select(
       `Field Order` = field_order,
@@ -233,8 +456,15 @@ render_form_markdown <- function(form_id_target) {
       Notes
     )
 
-  pivot_table_md <- if (nrow(pivot_fields) > 0) {
-    knitr::kable(pivot_fields, format = "pipe", align = "c")
+  pivot_table_md <- if (nrow(
+    pivot_fields
+    ) > 0
+    ) {
+    knitr::kable(
+      pivot_fields,
+      format = "pipe",
+      align = "c"
+      )
   } else {
     "_No pivoted fields defined for this form._"
   }
@@ -244,7 +474,11 @@ render_form_markdown <- function(form_id_target) {
   # -------------------------------------------------------------------
 
   changelog_md <- ""
-  if (nrow(form_changes) > 0) {
+  if (
+    nrow(
+      form_changes
+      ) > 0
+    ) {
 
     form_changes <- form_changes %>%
       arrange(
@@ -326,68 +560,122 @@ _No changes recorded._"
 
   md_sections <- c(
     fm_yaml,
-    glue("# {form_title}"),
-    "",
-    "## Core Fields",
-    "",
-    "<details markdown=\"1\">",
-    "<summary><strong>Click to expand Core Fields</strong></summary>",
-    "",
-    core_fields_table_md,
-    "",
-    "</details>",
-    "",
-    "## Core Field Details",
-    "",
-    "<details markdown=\"1\">",
-    "<summary><strong>Click to expand Core Field Details</strong></summary>",
-    "",
-    core_details_md,
-    "",
-    "</details>",
-    "",
-    "## Pivoted Fields (Hidden)",
-    "",
-    "<details markdown=\"1\">",
-    "<summary><strong>Click to expand Pivoted Rows</strong></summary>",
-    "",
-    pivot_table_md,
-    "",
-    "</details>",
-    "",
-    changelog_md
+    glue(
+      "# {form_title}"),
+      "",
+      "## Core Fields",
+      "",
+      "<details markdown=\"1\">",
+      "<summary><strong>Click to expand Core Fields</strong></summary>",
+      "",
+      core_fields_table_md,
+      "",
+      "</details>",
+      "",
+      "## Core Field Details",
+      "",
+      "<details markdown=\"1\">",
+      "<summary><strong>Click to expand Core Field Details</strong></summary>",
+      "",
+      core_details_md,
+      "",
+      "</details>",
+      "",
+      "## Pivoted Fields (Hidden)",
+      "",
+      "<details markdown=\"1\">",
+      "<summary><strong>Click to expand Pivoted Rows</strong></summary>",
+      "",
+      pivot_table_md,
+      "",
+      "</details>",
+      "",
+      changelog_md
   )
 
-  markdown_output <- paste(md_sections, collapse = "\n")
+  markdown_output <- paste(
+    md_sections,
+    collapse = "\n"
+    )
 
   # -------------------------------------------------------------------
   # Write to correct wiki folder
   # -------------------------------------------------------------------
 
-  repo_base <- here("docs", "data-dictionaries")
-  program_folder <- file.path(repo_base, paste0(program, "-data-dictionaries"))
+  repo_base <- here(
+    "docs",
+    "data-dictionaries"
+    )
+  
+  program_folder <- file.path(
+    repo_base,
+    paste0(
+      program,
+      "-data-dictionaries"
+      )
+    )
 
-  if (!dir.exists(program_folder)) {
-    dir.create(program_folder, recursive = TRUE)
+  if (
+    !dir.exists(
+      program_folder
+      )
+    ) {
+    dir.create(
+      program_folder,
+      recursive = TRUE
+      )
   }
 
-  file_name <- paste0(gsub("_", "-", form_id_target), ".md")
-  output_path <- file.path(program_folder, file_name)
+  file_name <- paste0(gsub(
+    "_",
+    "-",
+    form_id_target
+    ),
+    ".md"
+    )
+  output_path <- file.path(
+    program_folder,
+    file_name
+    )
 
-  writeLines(markdown_output, output_path)
+  writeLines(
+    markdown_output,
+    output_path
+    )
 
-  message(glue("Wrote: {output_path}"))
+  message(
+    glue(
+      "Wrote: {output_path}"
+      )
+    )
 }
 
-`%||%` <- function(x, y) if (!is.null(x) && !all(is.na(x))) x else y
+`%||%` <- function(
+    x,
+    y
+    ) if (
+      !is.null(
+        x
+        ) &&
+      !all(
+        is.na(
+          x
+          )
+        )
+      ) x else y
 
 # -------------------------------------------------------------------
 # 4. Driver
 # -------------------------------------------------------------------
 
-all_forms <- unique(forms_meta$form_id)
+all_forms <- unique(
+  forms_meta$form_id
+  )
 
-purrr::walk(all_forms, render_form_markdown)
+purrr::walk(
+  all_forms,
+  render_form_markdown
+  )
 
 # -------------------------------------------------------------------
 # 5. Auto-generate index.md files for each program data dictionary subfolder.
@@ -396,7 +684,7 @@ purrr::walk(all_forms, render_form_markdown)
 # Base folder for all data dictionaries
 repo_base <- here(
   "docs",
-  "data_dictionaries"
+  "data-dictionaries"
   )
 
 # Group forms by program
