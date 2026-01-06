@@ -9,7 +9,8 @@
       "strong",
       "br",
       "ul",
-      "li"
+      "li",
+      "span"
     ]
   }
 }

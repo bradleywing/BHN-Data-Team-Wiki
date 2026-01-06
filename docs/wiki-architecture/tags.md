@@ -32,6 +32,7 @@ This file outlines current and potential tags used across the wiki. Tagging conv
 - **Use kebab-case for consistency**
 - **Cross-reference program-specific vs. universal tags in relevant content**
 - **Multiple Categories** - Tags may belong to more than one category, which allows for them to have more than one purpose.
+- **Apply parsimony** — avoid creating one-off tags that only ever apply to a single asset; combine existing tags where possible, and introduce new tags only if they will be reused across multiple programs or assets.
 
 ## Tag Categories
 
@@ -40,6 +41,7 @@ This file outlines current and potential tags used across the wiki. Tagging conv
 | **Asset Function** | Tags describing the role the asset plays in reporting, program management, or contributor workflows (exception-report, program-management-report, Mermaid diagrams, reports, SQL queries, etc.). |
 | **Asset Type** | Tags describing the types of assets (html-form, markdown-template, sql-view, mermaid-diagram, etc.). |
 | **Audience & Usage** | Tags indicating who the documentation is for or how it’s used. |
+| **Back-End Behavior** | Tags tied to server-side logic and database management. |
 | **Contributor Practices** | Tags supporting onboarding, documentation practices, and contributor workflows. |
 | **Content Domain** | Tags tied to specific data fields or programmatic domains. |
 | **Data Modeling** | Tags describing how data behaves or is structured over time. |
@@ -73,6 +75,7 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 | `changelog-rules` | Standards for documenting changes in asset history, including formatting, versioning, and contributor notes | Contributor Practices |
 | `client-needs` | Behavioral and/or non-behavioral health needs of clients | Content Domain |
 | `client-transfer` | Reassigning program workers | Operational Workflow |
+| `client-form` | Client-based form that requires `CLIENTNUMBER` | Asset Type |
 | `client-view` | View of the client table or filtered derivatives | Asset Type |
 | `cohort-definition` | Defines inclusion/exclusion logic for program cohorts | Program Design |
 | `contributor-guidance` | Contributor onboarding and standards | Contributor Practices |
@@ -105,7 +108,9 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 | `insurance-data` | Payor source | Content Domain |
 | `internal-review` | Indicates that the document or logic update requires review by internal Data Team members before stakeholder sharing or deployment | Governance & Lifecycle, Operational Workflow |
 | `jekyll` | Used for documentation related to the Jekyll static site generator, including build logic, theme configuration, layout inheritance, and troubleshooting Jekyll-specific errors | Asset Type, Tooling & Runtime |
+| `lookup-metadata` | Metadata about SQL Choice tables and other lookup tables | Data Modeling, Database Features, Front-End Behavior |
 | `markdown-template` | Markdown-based documentation scaffold | Asset Type |
+| `master-table` | Master Tables with code-description pairs | Front-End Behavior |
 | `master-pathway-dashboard` | Client-based dashboard governed by Pathway Events | Database Features |
 | `mermaid-diagram` | Mermaid-based flowchart or logic diagram | Asset Type |
 | `milestone-tracking` | Time-based or event-based progress markers | Program Design |
@@ -113,6 +118,7 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 | `needs-review` | Tag indicating that a document or logic update requires contributor or stakeholder validation before deployment or publication | Governance & Lifecycle |
 | `needs-testing` | Tag indicating that a document or logic update requires validation before deployment or publication | Governance & Lifecycle |
 | `needs-view` | Client/caregiver needs and service referral metadata | Asset Type |
+| `non-client-form` | Non-client-based form that does not require `CLIENTNUMBER` | Asset Type |
 | `outcome-metrics` | Success measurement logic | Program Design |
 | `pathway-creation` | Creating and assigning a Pathway | Operational Workflow |
 | `pathway-dismissal` | Closing a Pathway | Operational Workflow |
@@ -131,6 +137,7 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 | `reconnection` | Reconnecting a client with an agency | Operational Workflow |
 | `referral-out-view` | Referrals to external services | Asset Type |
 | `report-change` | Concerns changes to reports | Governance & Lifecycle, Operational Workflow |
+| `report-metadata` | Tags report-level attributes such as dependencies | Back-End Behavior |
 | `reporting-logic` | Data surfaced in reports or dashboards | Program Design, Asset Function |
 | `report-template` | Structured template for recurring reports | Asset Type |
 | `rollback` | Documents the logic or steps required to reverse a deployed change, restoring prior behavior or data structure if needed | Governance & Lifecycle, Operational Workflow |
@@ -175,6 +182,7 @@ This table consolidates all tags used across the wiki. Tags are alphabetized and
 
 ### 2025
 
+- **2025-01-02**: Adds category 'Back-End Behavior'. Adds tags: `client-form`, `look-up-metadata`, `master-table`, non-client-form`, and `report-metadata`.
 - **2025-10-04**: Adds collapsible `<details markdown="1"></details>` section to the changelog. Adds year subsection to better organize long changelog lists.
 - **2025-09-29**: Adds tags `jekyll`, `ruby`, `prerequisites`, `troubleshooting`, and `wiki-architecture`. Renames `Contributor Standards` category to the broader `Contributor Practices`. Adds categories `Diagnostics & Debugging` and `Tooling & Runtime`.
 - **2025-09-26**: Moves this document to `/wiki-architecture/` from the root-level as part of centralizing standards documentation. This also ensures that Jekyll will render the page in the wiki appropriately instead of as a stand-alone page. Adds `program_scope:`, `programs:`, `nav_order:`, and `parent:` fields in the frontmatter. Adds `Related Standards` section.
