@@ -21,12 +21,12 @@ schema_version: 1
 
 | Field Order |      FC Field Prompt      | FC Field Name  | Hidden | Master Table | Required | Reporting | System | Enabled | Analytical |
 |:-----------:|:-------------------------:|:--------------:|:------:|:------------:|:--------:|:---------:|:------:|:-------:|:----------:|
-|     01      |  [System Metadata Field]  |    docserno    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     02      |  [System Metadata Field]  | parentdocserno |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     03      |  [System Metadata Field]  |    visitdt     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     04      |  [System Metadata Field]  |    visittm     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     05      | Select Pathway Assignment | TiedEnrollment |   No   |              |   Yes    |    NA     |   No   |   Yes   |    Yes     |
-|     06      |       Pathway Date        |  Pathway_Date  |   No   |              |   Yes    |    No     |   No   |   Yes   |    Yes     |
+|    0301     |  [System Metadata Field]  |    docserno    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0302     |  [System Metadata Field]  | parentdocserno |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0303     |  [System Metadata Field]  |    visitdt     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0304     |  [System Metadata Field]  |    visittm     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0305     | Select Pathway Assignment | TiedEnrollment |   No   |              |   Yes    |    NA     |   No   |   Yes   |    Yes     |
+|    0306     |       Pathway Date        |  Pathway_Date  |   No   |              |   Yes    |    No     |   No   |   Yes   |    Yes     |
 
 </details>
 
@@ -36,7 +36,7 @@ schema_version: 1
 <summary><strong>Click to expand Core Field Details</strong></summary>
 
 <details markdown="1">
-<summary><strong>01 - docserno</strong></summary>
+<summary><strong>0301 - docserno</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** varchar(25)  
@@ -46,7 +46,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>02 - parentdocserno</strong></summary>
+<summary><strong>0302 - parentdocserno</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** varchar(25)  
@@ -56,7 +56,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>03 - visitdt</strong></summary>
+<summary><strong>0303 - visitdt</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** date  
@@ -66,7 +66,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>04 - visittm</strong></summary>
+<summary><strong>0304 - visittm</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** varchar(20)  
@@ -76,7 +76,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>05 - TiedEnrollment</strong></summary>
+<summary><strong>0305 - TiedEnrollment</strong></summary>
 
 **Field Prompt:** Select Pathway Assignment
 **Data Type:** varchar(200)  
@@ -86,7 +86,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>06 - Pathway_Date</strong></summary>
+<summary><strong>0306 - Pathway_Date</strong></summary>
 
 **Field Prompt:** Pathway Date
 **Data Type:** date  
