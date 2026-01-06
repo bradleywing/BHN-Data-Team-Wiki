@@ -23,18 +23,18 @@ schema_version: 1
 
 | Field Order |         FC Field Prompt          |       FC Field Name       | Hidden |       Master Table        | Required | Reporting | System | Enabled | Analytical |
 |:-----------:|:--------------------------------:|:-------------------------:|:------:|:-------------------------:|:--------:|:---------:|:------:|:-------:|:----------:|
-|     01      |     [System Metadata Field]      |         docserno          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     02      |     [System Metadata Field]      |      parentdocserno       |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     03      |     [System Metadata Field]      |          visitdt          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     04      |     [System Metadata Field]      |          visittm          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|     05      |    Select Pathway Assignment     |      TiedEnrollment       |   No   |                           |   Yes    |    NA     |   No   |   Yes   |    Yes     |
-|     06      |           Pathway Date           |       Pathway_Date        |   No   |                           |   Yes    |    No     |   No   |   Yes   |    Yes     |
-|     07      |            Call Time             |    time_call_received     |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
-|     08      |         Referrer's Name          |       referrer_name       |   No   |                           |   Yes    |    No     |   No   |   Yes   |     No     |
-|     09      |         Referrer's Phone         |      referrer_phone       |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
-|     10      |         Referring Agency         |  epicc_referring_agency   |   No   | program_referral_sources  |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
-|     11      | Select Community Referral Source | community_referral_source |   No   | community_referral_source |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
-|     12      |         Family Or Friend         |     family_or_friend      |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
+|    0101     |     [System Metadata Field]      |         docserno          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0102     |     [System Metadata Field]      |      parentdocserno       |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0103     |     [System Metadata Field]      |          visitdt          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0104     |     [System Metadata Field]      |          visittm          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0105     |    Select Pathway Assignment     |      TiedEnrollment       |   No   |                           |   Yes    |    NA     |   No   |   Yes   |    Yes     |
+|    0106     |           Pathway Date           |       Pathway_Date        |   No   |                           |   Yes    |    No     |   No   |   Yes   |    Yes     |
+|    0107     |            Call Time             |    time_call_received     |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
+|    0108     |         Referrer's Name          |       referrer_name       |   No   |                           |   Yes    |    No     |   No   |   Yes   |     No     |
+|    0109     |         Referrer's Phone         |      referrer_phone       |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
+|    0110     |         Referring Agency         |  epicc_referring_agency   |   No   | program_referral_sources  |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
+|    0111     | Select Community Referral Source | community_referral_source |   No   | community_referral_source |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
+|    0112     |         Family Or Friend         |     family_or_friend      |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
 
 </details>
 
@@ -44,7 +44,7 @@ schema_version: 1
 <summary><strong>Click to expand Core Field Details</strong></summary>
 
 <details markdown="1">
-<summary><strong>01 - docserno</strong></summary>
+<summary><strong>0101 - docserno</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** varchar(25)  
@@ -54,7 +54,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>02 - parentdocserno</strong></summary>
+<summary><strong>0102 - parentdocserno</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** varchar(25)  
@@ -64,7 +64,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>03 - visitdt</strong></summary>
+<summary><strong>0103 - visitdt</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** date  
@@ -74,7 +74,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>04 - visittm</strong></summary>
+<summary><strong>0104 - visittm</strong></summary>
 
 **Field Prompt:** [System Metadata Field]
 **Data Type:** varchar(20)  
@@ -84,7 +84,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>05 - TiedEnrollment</strong></summary>
+<summary><strong>0105 - TiedEnrollment</strong></summary>
 
 **Field Prompt:** Select Pathway Assignment
 **Data Type:** varchar(200)  
@@ -94,7 +94,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>06 - Pathway_Date</strong></summary>
+<summary><strong>0106 - Pathway_Date</strong></summary>
 
 **Field Prompt:** Pathway Date
 **Data Type:** date  
@@ -104,7 +104,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>07 - time_call_received</strong></summary>
+<summary><strong>0107 - time_call_received</strong></summary>
 
 **Field Prompt:** Call Time
 **Data Type:** varhcar(75)  
@@ -114,7 +114,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>08 - referrer_name</strong></summary>
+<summary><strong>0108 - referrer_name</strong></summary>
 
 **Field Prompt:** Referrer's Name
 **Data Type:** text  
@@ -124,7 +124,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>09 - referrer_phone</strong></summary>
+<summary><strong>0109 - referrer_phone</strong></summary>
 
 **Field Prompt:** Referrer's Phone
 **Data Type:** text  
@@ -134,7 +134,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>10 - epicc_referring_agency</strong></summary>
+<summary><strong>0110 - epicc_referring_agency</strong></summary>
 
 **Field Prompt:** Referring Agency
 **Data Type:** varchar(75)  
@@ -174,7 +174,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>11 - community_referral_source</strong></summary>
+<summary><strong>0111 - community_referral_source</strong></summary>
 
 **Field Prompt:** Select Community Referral Source
 **Data Type:** varchar(75)  
@@ -232,7 +232,7 @@ schema_version: 1
 </details>
 
 <details markdown="1">
-<summary><strong>12 - family_or_friend</strong></summary>
+<summary><strong>0112 - family_or_friend</strong></summary>
 
 **Field Prompt:** Family Or Friend
 **Data Type:** varchar(75)  

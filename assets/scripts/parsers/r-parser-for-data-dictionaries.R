@@ -275,7 +275,7 @@ render_form_markdown <- function(
         )
     ) %>%
     select(
-      `Field Order` = field_order,
+      `Field Order` = sort,
       `FC Field Prompt` = fc_field_prompt,
       `FC Field Name` = fc_field_name,
       Hidden,
@@ -413,7 +413,7 @@ render_form_markdown <- function(
 
     glue(
 "<details markdown=\"1\">
-<summary><strong>{ff$field_order} - {ff$fc_field_name}</strong></summary>
+<summary><strong>{ff$sort} - {ff$fc_field_name}</strong></summary>
 
 **Field Prompt:** {ff$fc_field_prompt}
 {body}
@@ -448,7 +448,7 @@ render_form_markdown <- function(
         )
     ) %>%
     select(
-      `Field Order` = field_order,
+      `Field Order` = sort,
       `FC Field Name` = fc_field_name,
       `Parent Field` = ParentField,
       `Populated When` = PopulatedWhen,
