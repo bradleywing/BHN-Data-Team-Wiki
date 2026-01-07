@@ -1,7 +1,7 @@
 ---
 front-matter-title: Data Dictionary Standards
 author: Bradley Wing
-last_updated: 2025-09-23
+last_updated: 2026-01-06
 status: active
 program_scope: none
 programs:
@@ -37,7 +37,7 @@ A data dictionary serves as a comprehensive reference for database metadata for 
 - Provide shareable references for program leadership and external stakeholders
 - Enable future automation and validation of data logic
 
-While FAMCare's SQL Server database maintains an _active_ data dictionary (system tables that store object metadata), it is equally vital maintain _passive_ or manually curated data dictionaries for reference purposes. These provide:
+While FAMCare's SQL Server database maintains an _active_ data dictionary (system tables that store object metadata), it is equally vital that we maintain _passive_ or manually curated data dictionaries for reference purposes. These provide:
 
 - Human-readable definitions
 - Conditional logic documentation
@@ -51,62 +51,97 @@ These passive dictionaries are the authoritative reference for analysts, report 
 
 ## Required Elements
 
-Each data dictionary entry should include:
+All field‑level metadata used to generate form data dictionary pages is maintained in the `fields` sheet of the `FC_Data_Dictionaries` Excel file. Other sheets in the workbook (such as `forms_meta`, `forms_changelogs`, and various history tables) store complementary metadata, but the `fields` sheet is the canonical source for individual field definitions. This Excel file is the authoritative, contributor‑maintained source of truth for all field‑level metadata across programs and forms. The documentation automation reads directly from this file to generate the Core Fields matrix, Pivoted Fields matrix, and Core Field Details sections for each form.
 
-| Field                | Description                                                                                               |
-|----------------------|-----------------------------------------------------------------------------------------------------------|
-| `field_order`        | Composite key: two digits for form number, two for field order. Stored as text to preserve leading zeros. |
-| `fc_field_name`      | Field name in snake_case, aligned with R export conventions.                                              |
-| `data_type`          | Exact SQL Server data type, including length or precision (e.g., varchar(75), varchar(30), int, bit, date). This detail is critical for preventing form errors when new values exceed field constraints. This detail may be obtained from the back-end via SSMS or from the front-end via form validation using the forms editor.                                                            |
-| `question_type`      | Input type (e.g., radio, checkbox, text_single_line).                                                     |
-| `enabled_lov_values` | Allowed, active values, semicolon-delimited.                                                              |
-| `disabled_lov_values`| Disallowed, inactive values, semicolon-delimited.                                                         |
-| `master_table_name`  | Name of master table (if applicable).                                                                     |
-| `conditional_logic`  | Visibility or population rules (see Conditional logic standards).                                         |
-| `is_required_field`  | Whether the field is required.                                                                            |
-| `is_reporting_field` | Whether the field appears directly in reports.                                                            |
-| `is_analytical_field`| Whether the field is used in joins, filters, or logic.                                                    |
-| `audit_notes`        | Deprecated values, renames, and contributor-facing annotations                                            |
+The table below defines the required columns in the `fields` sheet. These elements form the minimum metadata necessary for automated documentation, reporting alignment, and long‑term governance. Additional columns may appear in the Core Fields or Pivoted Fields matrices, but the fields listed here represent the canonical schema that must be maintained in Excel.
+
+| Field                         | Description                                                                                                                         |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| `field_order`                 | Composite key: two digits for form number, two for field order. Stored as text to preserve leading zeros.                           |
+| `fc_field_prompt`             | The human‑readable question text or label displayed to users in the form UI.                                                        |
+| `fc_field_name`               | Field name in snake_case, aligned with R export conventions.                                                                        |
+| `view_field_name`             | The field name used in the SQL view for the stored code value. For master‑table fields, this corresponds to the code column.        |
+| `view_description_field_name` | The field name used in the SQL view for the human‑readable description associated with the code. Used only for master‑table fields. Otherwise, the value of `NA` is recorded. |
+| `variable_name`               | The exported variable name(s) used in R. For fields that produce two variables (e.g., `dropdown_master_table`), list both names separated by a slash (e.g., `client_status_code` / `client_status_desc`). |
+| `data_type`                   | Exact SQL Server data type, including length or precision (e.g., `varchar(75)`, `varchar(30)`, `int`, `bit`, `date`). This detail is critical for preventing form errors when new values exceed field constraints. This detail may be obtained from the back-end via SSMS or from the front-end via form validation using the forms editor. |
+| `question_type`               | Input type (e.g., radio, checkbox, text_single_line).                                                                               |
+| `enabled_lov_values`          | Allowed, active values, semicolon-delimited.                                                                                        |
+| `disabled_lov_values`         | Disallowed, inactive values, semicolon-delimited.                                                                                   |
+| `master_table_name`           | Name of master table (if applicable).                                                                                               |
+| `conditional_logic`           | Visibility or population rules (see Conditional logic standards).                                                                   |
+| `is_required_field`           | Whether the field is required.                                                                                                      |
+| `is_reporting_field`          | Whether the field appears directly in reports.                                                                                      |
+| `is_analytical_field`         | Whether the field is used in joins, filters, or logic.                                                                              |
+| `audit_notes`                 | Deprecated values, renames, and contributor-facing annotations                                                                      |
 
 This schema is normalized and script-friendly, enabling automated Markdown generation.
 
 ---
 
-## Core vs Pivoted Fields
+## Metadata Governance Principles
 
-**Core fields** are:
+The `FC_Data_Dictionaries` Excel file is the authoritative source of truth for all field‑level metadata across programs. Contributors maintain this file not only to support documentation, but to ensure long‑term consistency, auditability, and alignment across reporting, analytics, and form development. The following principles guide all contributions:
 
-- Directly saved to the database
-- Not generated via JavaScript
-- The authoritative fields for reporting and schema alignment
+- **Single Source of Truth**  
+  All field definitions, LOVs, conditional logic, and cross‑walk values must be maintained in the Excel file. Markdown files are generated artifacts, not hand‑edited documents.
+- **Normalization and Consistency**  
+  Values must follow the standards in this document (naming conventions, LOV formats, conditional logic syntax, reporting/analytical flags). Consistency across programs is essential for reliable automation and cross‑program reporting.
+- **Auditability**  
+  Any change to field definitions, LOVs, or logic must be accompanied by a corresponding entry in the `forms_changelogs` sheet. This ensures that all updates are traceable and reproducible.
+- **Contributor Accountability**  
+  Contributors are responsible for validating that metadata reflects the actual form logic, SQL view behavior, and reporting requirements. Discrepancies must be flagged and resolved before publishing.
 
-**Pivoted fields** are:
-
-- Derived from "check all that apply" inputs
-- Created by the JavaScript function `updateReportFields()`
-- Sored as `0;1` values
-- Never shown in the UI
-- Populated only when the parent field equals a specific value
-
-Pivoted fields must include:
-
-- is_pivot_field = 1
-- pivot_parent
-- conditional_logic of the form `Populated only when <parent_field> = 'code'`
-- enabled_lov_values = `0;1`
-
-Pivoted fields are documented in a dedicated table with columns:
-
-- Field Order
-- FC Field Name
-- Parent Field
-- Populated When
-- Values
-- Notes
-
-This replaces older conventions that included redundant columns such as `Hidden` or `Required`.
+These principles ensure that the metadata ecosystem remains durable, teachable, and automation‑friendly as programs evolve.
 
 ---
+
+## Contributor Guidance
+
+Contributors maintain the `FC_Data_Dictionaries` Excel file and ensure that all metadata is complete, accurate, and aligned with the standards in this document. The following practices support consistency, auditability, and automation:
+
+### File and Documentation Practices
+
+- Use **kebab-case** for Markdown filenames (e.g., `epicc-initial-contact.md`).
+- Include a brief comment header at the top of each Markdown file indicating its purpose and source.
+- Ensure each form’s landing page links to its generated Markdown file.
+
+### Metadata Maintenance
+
+- Update the `fields` sheet whenever a form changes, including new fields, renames, LOV updates, or logic changes.
+- Reference the **source file** when updating metadata to ensure alignment with the current form.
+- Follow the metadata schema exactly; deviations break automation and downstream reporting.
+
+### Quality and Consistency Checks
+
+- Flag discrepancies between form logic, SQL view behavior, and the metadata in Excel.
+- Ensure that LOVs, conditional logic, and reporting/analytical flags follow the standards in this document.
+- For master-table fields, include both the **code** and **description** variable names in the `variable_name` column, separated by a slash.
+
+### Changelog Responsibilities
+
+- Record all changes in the `forms_changelogs` sheet using the appropriate `change_scope` (`form` or `program`).
+- Ensure that changelog entries are clear, concise, and reflect the actual metadata updates.
+
+See [Documentation Standards]({{site.baseurl}}/documentation-standards/) for frontmatter schema and formatting conventions.
+
+---
+
+## Metadata Flow Diagram
+
+```md
+FC_Data_Dictionaries.xlsx
+   ├── fields sheet  ────────────────┐
+   ├── forms_meta sheet              │
+   └── forms_changelogs sheet        │
+                                     ▼
+                       r-parser-for-data-dictionaries.R
+                                     ▼
+                        Markdown files (one per form)
+                                     ▼
+                      Program index pages (auto-generated)
+                                     ▼
+                       Wiki site (docs/data-dictionaries/)
+```
 
 ## Conditional Logic Standards
 
@@ -177,6 +212,79 @@ This separation prevents ambiguity and supports future automation.
 
 ---
 
+## Core vs Pivoted Fields
+
+**Core fields** are:
+
+- Directly saved to the database
+- Not generated via JavaScript
+- The authoritative fields for reporting and schema alignment
+
+**Pivoted fields** are:
+
+- Derived from "check all that apply" inputs
+- Created by the JavaScript function `updateReportFields()`
+- Sored as `0;1` values
+- Never shown in the UI
+- Populated only when the parent field equals a specific value
+
+Pivoted fields must include:
+
+- is_pivot_field = 1
+- pivot_parent
+- conditional_logic of the form `Populated only when <parent_field> = 'code'`
+- enabled_lov_values = `0;1`
+
+---
+
+## Core Fields Matrix Columns
+
+The Core Fields matrix presents the most important metadata for each field at a glance. It is designed as a cross‑walk between database fields, view fields, and exported variables, and is optimized for analysts, developers, and external stakeholders who need to reconcile naming conventions across systems.
+
+The matrix includes the following columns:
+
+- **Field Order (`sort`)**  
+  The canonical composite key for the field, combining form order and field order. Stored as text to preserve leading zeros.
+- **FC Field Prompt**  
+  The human‑readable prompt displayed in the form.
+- **FC Field Name**  
+  The database column name used in the source table.
+- **View Field Name**  
+  The field name used in the SQL view for the code value.
+- **View Description Field Name**  
+  The field name used in the SQL view for the human‑readable description associated with the code.
+- **Variable Name(s)**  
+  The exported variable name(s) used in R and downstream reporting. For fields that produce two variables (e.g., `dropdown_master_table`), list both in the same cell, separated by a slash: `client_status_code / client_status_description`.
+- **Master Table**  
+The lookup table associated with the field, if applicable.
+- **Hidden / Required / Reporting / Analytical / System / Enabled**  
+Flags indicating field behavior and usage.
+
+---
+
+## Pivoted Fields Matrix Columns
+
+Pivoted fields represent the hidden, machine‑generated fields created from “check all that apply” inputs. These fields are never shown in the UI and are populated only when the parent field equals a specific value. Because they behave differently from core fields, they are documented in a dedicated Pivoted Fields matrix.
+
+The Pivoted Fields matrix includes the following columns:
+
+- **Field Order (`sort`)**
+  The canonical composite key for the pivoted field. This value aligns with the parent field’s `sort` value and ensures that pivoted fields sort correctly beneath their parent.
+- **FC Field Name**
+  The database column name for the pivoted field.
+- **Parent Field**
+  The `fc_field_name` of the field that generates this pivoted field. This identifies the originating “check all that apply” question.
+- **Populated When**
+  The condition under which the pivoted field is populated, typically of the form: Populated only when `<parent_field> = '<code>'`.
+- **Values**
+  The allowed values for the pivoted field. Pivoted fields always use `0;1` to represent unchecked/checked.
+- **Notes**
+  Contributor‑facing annotations, including renames, deprecated values, or clarifications.
+
+This matrix replaces older conventions that included redundant columns such as `Hidden` or `Required`. Pivoted fields are always hidden, always conditional, and always optional in the UI, so those attributes are implicit and do not need to be documented.
+
+---
+
 ## File-Level Metadata
 
 Each dictionary file should include YAML frontmatter with at the top of the file. Example:
@@ -199,21 +307,6 @@ schema_version: 1.0
 This metadata supports navigation, search, versioning, and contributor workflows.
 
 The content in the `forms_meta` table is used by the parsing script to create these YAML blocks automatically. The YAML frontmatter does not need to be manually edited.
-
----
-
-## Contributor Guidance
-
-- Propose updates via pull request
-- Use kebab-case for filenames (e.g., epicc-initial-contact.md)
-- Include comment headers to clarify file purpose and source
-- Reference form version and source file when documenting fields
-- Flag discrepancies between form logic and dictionary content
-- Include descriptions in parentheses when codes are joined from SQL-choice tables
-- Add link to the Markdown file on the landing page for data dictionaries: [index.md]({{site.baseurl}}/insert-data-dictionary-permalink/)
-- Follow the metadata schema exactly to ensure automation compatibility.
-
-See [Documentation Standards]({{site.baseurl}}/documentation-standards/) for frontmatter schema and formatting conventions.
 
 ---
 
@@ -451,6 +544,9 @@ This system keeps program‑level and form‑level governance cleanly separated 
   <summary><strong>2026</strong></summary>
 
 ### 2026
+
+- **2026-01-06**: Updates the Required Elements matrix. Revamps the entire `## Required Elements` section to more explicitly address guidance for the Excel file that is the source of the Markdown documentation in the wiki. Adds metadata governance principles. Rewrites `## Contributor Guidance` section to move it beyond a mere list. Adds a diagram to represent the workflow that produces the Markdown documentation via R script. Reorganizes sections to establish a more logical ordering from the abstract to field-level concerns and the specifics of changelogs.
+- **2026-01-05**: Updates throughout to streamline content. Expands on the reuqired elements matrix; provides more concrete guidance for maintaining core fields, pivoted fields, and conditional logic.Adds section on building index.md files. Revamps and expands changelog standards to cover form-scope and program-scope changelogs.
 
 </details>
 

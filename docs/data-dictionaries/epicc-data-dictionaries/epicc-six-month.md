@@ -19,14 +19,14 @@ schema_version: 1
 <details markdown="1">
 <summary><strong>Click to expand Core Fields</strong></summary>
 
-| Field Order |      FC Field Prompt      | FC Field Name  | Hidden | Master Table | Required | Reporting | System | Enabled | Analytical |
-|:-----------:|:-------------------------:|:--------------:|:------:|:------------:|:--------:|:---------:|:------:|:-------:|:----------:|
-|    0601     |  [System Metadata Field]  |    docserno    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0602     |  [System Metadata Field]  | parentdocserno |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0603     |  [System Metadata Field]  |    visitdt     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0604     |  [System Metadata Field]  |    visittm     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0605     | Select Pathway Assignment | TiedEnrollment |   No   |              |   Yes    |    NA     |   No   |   Yes   |    Yes     |
-|    0606     |       Pathway Date        |  Pathway_Date  |   No   |              |   Yes    |    No     |   No   |   Yes   |    Yes     |
+| Field Order |      FC Field Prompt      | FC Field Name  | View Field Name | View Description Field Name |    Variable Name     | Hidden | Master Table | Required | Reporting | System | Enabled | Analytical |
+|:-----------:|:-------------------------:|:--------------:|:---------------:|:---------------------------:|:--------------------:|:------:|:------------:|:--------:|:---------:|:------:|:-------:|:----------:|
+|    0601     |  [System Metadata Field]  |    docserno    |    docserno     |             NA              |    sixm_docserno     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0602     |  [System Metadata Field]  | parentdocserno | parent_docserno |             NA              | sixm_parent_docserno |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0603     |  [System Metadata Field]  |    visitdt     |   visit_date    |             NA              |   sixm_visit_date    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0604     |  [System Metadata Field]  |    visittm     |   visit_time    |             NA              |   sixm_visit_time    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0605     | Select Pathway Assignment | TiedEnrollment | tiedenrollment  |             NA              | sixm_tiedenrollment  |   No   |              |   Yes    |    NA     |   No   |   Yes   |    Yes     |
+|    0606     |       Pathway Date        |  Pathway_Date  |  pathway_date   |             NA              |  sixm_pathway_date   |   No   |              |   Yes    |    No     |   No   |   Yes   |    Yes     |
 
 </details>
 

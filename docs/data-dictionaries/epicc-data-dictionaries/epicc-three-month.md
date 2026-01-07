@@ -19,14 +19,14 @@ schema_version: 1
 <details markdown="1">
 <summary><strong>Click to expand Core Fields</strong></summary>
 
-| Field Order |      FC Field Prompt      | FC Field Name  | Hidden | Master Table | Required | Reporting | System | Enabled | Analytical |
-|:-----------:|:-------------------------:|:--------------:|:------:|:------------:|:--------:|:---------:|:------:|:-------:|:----------:|
-|    0501     |  [System Metadata Field]  |    docserno    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0502     |  [System Metadata Field]  | parentdocserno |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0503     |  [System Metadata Field]  |    visitdt     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0504     |  [System Metadata Field]  |    visittm     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0505     | Select Pathway Assignment | TiedEnrollment |   No   |              |   Yes    |    NA     |   No   |   Yes   |    Yes     |
-|    0506     |       Pathway Date        |  Pathway_Date  |   No   |              |   Yes    |    No     |   No   |   Yes   |    Yes     |
+| Field Order |      FC Field Prompt      | FC Field Name  | View Field Name | View Description Field Name |     Variable Name      | Hidden | Master Table | Required | Reporting | System | Enabled | Analytical |
+|:-----------:|:-------------------------:|:--------------:|:---------------:|:---------------------------:|:----------------------:|:------:|:------------:|:--------:|:---------:|:------:|:-------:|:----------:|
+|    0501     |  [System Metadata Field]  |    docserno    |    docserno     |             NA              |    threem_docserno     |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0502     |  [System Metadata Field]  | parentdocserno | parent_docserno |             NA              | threem_parent_docserno |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0503     |  [System Metadata Field]  |    visitdt     |   visit_date    |             NA              |   threem_visit_date    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0504     |  [System Metadata Field]  |    visittm     |   visit_time    |             NA              |   threem_visit_time    |  Yes   |              |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0505     | Select Pathway Assignment | TiedEnrollment | tiedenrollment  |             NA              | threem_tiedenrollment  |   No   |              |   Yes    |    NA     |   No   |   Yes   |    Yes     |
+|    0506     |       Pathway Date        |  Pathway_Date  |  pathway_date   |             NA              |  threem_pathway_date   |   No   |              |   Yes    |    No     |   No   |   Yes   |    Yes     |
 
 </details>
 
