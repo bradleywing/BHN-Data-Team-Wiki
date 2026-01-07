@@ -21,20 +21,20 @@ schema_version: 1
 <details markdown="1">
 <summary><strong>Click to expand Core Fields</strong></summary>
 
-| Field Order |         FC Field Prompt          |       FC Field Name       | Hidden |       Master Table        | Required | Reporting | System | Enabled | Analytical |
-|:-----------:|:--------------------------------:|:-------------------------:|:------:|:-------------------------:|:--------:|:---------:|:------:|:-------:|:----------:|
-|    0101     |     [System Metadata Field]      |         docserno          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0102     |     [System Metadata Field]      |      parentdocserno       |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0103     |     [System Metadata Field]      |          visitdt          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0104     |     [System Metadata Field]      |          visittm          |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
-|    0105     |    Select Pathway Assignment     |      TiedEnrollment       |   No   |                           |   Yes    |    NA     |   No   |   Yes   |    Yes     |
-|    0106     |           Pathway Date           |       Pathway_Date        |   No   |                           |   Yes    |    No     |   No   |   Yes   |    Yes     |
-|    0107     |            Call Time             |    time_call_received     |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
-|    0108     |         Referrer's Name          |       referrer_name       |   No   |                           |   Yes    |    No     |   No   |   Yes   |     No     |
-|    0109     |         Referrer's Phone         |      referrer_phone       |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
-|    0110     |         Referring Agency         |  epicc_referring_agency   |   No   | program_referral_sources  |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
-|    0111     | Select Community Referral Source | community_referral_source |   No   | community_referral_source |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
-|    0112     |         Family Or Friend         |     family_or_friend      |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
+| Field Order |         FC Field Prompt          |       FC Field Name       |        View Field Name         |      View Description Field Name      |                             Variable Name                              | Hidden |       Master Table        | Required | Reporting | System | Enabled | Analytical |
+|:-----------:|:--------------------------------:|:-------------------------:|:------------------------------:|:-------------------------------------:|:----------------------------------------------------------------------:|:------:|:-------------------------:|:--------:|:---------:|:------:|:-------:|:----------:|
+|    0101     |     [System Metadata Field]      |         docserno          |            docserno            |                  NA                   |                              ref_docserno                              |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0102     |     [System Metadata Field]      |      parentdocserno       |        parent_docserno         |                  NA                   |                          ref_parent_docserno                           |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0103     |     [System Metadata Field]      |          visitdt          |           visit_date           |                  NA                   |                             ref_visit_date                             |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0104     |     [System Metadata Field]      |          visittm          |           visit_time           |                  NA                   |                             ref_visit_time                             |  Yes   |                           |    NA    |    NA     |  Yes   |   Yes   |    Yes     |
+|    0105     |    Select Pathway Assignment     |      TiedEnrollment       |         tiedenrollment         |                  NA                   |                           ref_tiedenrollment                           |   No   |                           |   Yes    |    NA     |   No   |   Yes   |    Yes     |
+|    0106     |           Pathway Date           |       Pathway_Date        |          pathway_date          |                  NA                   |                            ref_pathway_date                            |   No   |                           |   Yes    |    No     |   No   |   Yes   |    Yes     |
+|    0107     |            Call Time             |    time_call_received     |       time_call_received       |                  NA                   |                                   NA                                   |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
+|    0108     |         Referrer's Name          |       referrer_name       |         referrer_name          |                  NA                   |                                   NA                                   |   No   |                           |   Yes    |    No     |   No   |   Yes   |     No     |
+|    0109     |         Referrer's Phone         |      referrer_phone       |         referrer_phone         |                  NA                   |                                   NA                                   |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
+|    0110     |         Referring Agency         |  epicc_referring_agency   |  epicc_referring_agency_code   |  epicc_referring_agency_description   |    epicc_referring_agency_code / epicc_referring_agency_description    |   No   | program_referral_sources  |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
+|    0111     | Select Community Referral Source | community_referral_source | community_referral_source_code | community_referral_source_description | community_referral_source_code / community_referral_source_description |   No   | community_referral_source |   Yes    |    Yes    |   No   |   Yes   |    Yes     |
+|    0112     |         Family Or Friend         |     family_or_friend      |        family_or_friend        |                  NA                   |                                   NA                                   |   No   |                           |    No    |    No     |   No   |   Yes   |     No     |
 
 </details>
 
@@ -139,7 +139,7 @@ schema_version: 1
 **Field Prompt:** Referring Agency
 **Data Type:** varchar(75)  
 **Question Type:** dropdown_master_table  
-**Variable Name:** NA
+**Variable Name:** epicc_referring_agency_code / epicc_referring_agency_description
 
 **Master Table:** program_referral_sources
 
@@ -179,7 +179,7 @@ schema_version: 1
 **Field Prompt:** Select Community Referral Source
 **Data Type:** varchar(75)  
 **Question Type:** dropdown_master_table  
-**Variable Name:** NA
+**Variable Name:** community_referral_source_code / community_referral_source_description
 
 **Master Table:** community_referral_source
 
