@@ -49,7 +49,7 @@ These passive dictionaries are the authoritative reference for analysts, report 
 
 ---
 
-## Required Elements
+## Required Field Elements
 
 All field‑level metadata used to generate form data dictionary pages is maintained in the `fields` sheet of the `FC_Data_Dictionaries` Excel file. Other sheets in the workbook (such as `forms_meta`, `forms_changelogs`, and various history tables) store complementary metadata, but the `fields` sheet is the canonical source for individual field definitions. This Excel file is the authoritative, contributor‑maintained source of truth for all field‑level metadata across programs and forms. The documentation automation reads directly from this file to generate the Core Fields matrix, Pivoted Fields matrix, and Core Field Details sections for each form.
 
@@ -123,6 +123,47 @@ Contributors maintain the `FC_Data_Dictionaries` Excel file and ensure that all 
 - Ensure that changelog entries are clear, concise, and reflect the actual metadata updates.
 
 See [Documentation Standards]({{site.baseurl}}/documentation-standards/) for frontmatter schema and formatting conventions.
+
+---
+
+## Changelog Schema (`forms_changelogs`)
+
+All form‑level and program‑level metadata changes must be recorded in the `forms_changelogs` sheet of the `FC_Data_Dictionaries` Excel file. This sheet is the authoritative record of how form metadata, SQL assets, and dictionary definitions evolve over time.
+
+Each row represents a single change event and must include the following fields:
+
+| Column              | Description                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| `program`           | Program identifier (matches `forms_meta`).                                  |
+| `form_id`           | Form identifier in snake_case.                                              |
+| `change_date`       | Date of the change in ISO format (`YYYY-MM-DD`).                            |
+| `change_detail`     | Clear, concise description of the change.                                   |
+| `change_scope`      | `form` or `program`, depending on the level of impact.                      |
+| `change_source`     | Origin of the change: `html_form`, `sql_view`, or `data_dictionary`.        |
+| `change_asset_id`   | Specific asset identifier (see below).                                      |
+
+### Asset Identification
+
+To support multi‑destination documentation and preserve provenance, each changelog entry must identify the specific asset where the change occurred:
+
+- **HTML forms** → use the base filename without extension  from `FAMCare-HTML-Form-Code`
+  - Example: `pwepiccic`
+- **SQL views** → use the kebab‑case filename from `FAMCare‑SQL‑Toolkit`  
+  - Example: `q-epicc-ic`
+- **Data dictionary changes** → use `data-dictionary`
+
+These identifiers allow the automation to route changes to the correct destinations (form documentation, SQL asset documentation, etc.) while maintaining clarity in the wiki output.
+
+### Relationship to Automation
+
+The `change_source` and `change_asset_id` fields in the `forms_changelogs` table in the Excel file allow the documentation automation to:
+
+- route SQL view changes to `FAMCare-SQL‑Toolkit` documentation  
+- route HTML form changes to `FAMCare-HTML‑Form‑Code` documentation  
+- route dictionary changes to the appropriate global or form‑level pages  
+- render grouped changelogs on form‑level pages without losing context  
+
+These fields are required for all changelog entries.
 
 ---
 
@@ -349,7 +390,7 @@ parent: BHN Program Data Dictionaries
 ---
 ```
 
-### Automation
+### Index Automation
 
 Index pages for the `data-dictionaries` folder are automatically generated and updated by the documentation scripts. Content-aware writes ensure that identical content does not produce Git diffs. Since the parsing script overwrites files each time it is run, the conditional logic in the script syntax ensures that only content changes will need to be committed to the repository. Contributors should not manually edit the index pages in the `data-dictionaries` folder because any manual changes made will be overwritten the next time the parsing script is run.
 
@@ -361,50 +402,57 @@ Changelogs provide a durable, contributor-friendly record of how data dictionari
 
 ### Changelog Structure
 
-The changelog entries on the `forms_changelogs` sheet cover changes to the changelogs documents themselves and form-level changes made as forms are created and maintained over their life cycle as data collection documents for the programs. Regardless of the type of change being documented, the structure of changelogs is the same. Each changelog consists of:
+Changelog entries are grouped and rendered in a consistent, automation‑friendly structure that preserves clarity when multiple assets contribute changes to a single form.
 
-- A top-level `## Changelog header`.
-- An outer `<details markdown="1">` that collapses the entire changelog.
-- Inner `<details markdown="1">` blocks, one per year.
-- Each inner block contains a `### YEAR` header and a bullet list of changes.
+Each changelog consists of:
 
-Example structure:
+- A top‑level `## Changelog` header  
+- An outer `<details markdown="1">` block that collapses the entire changelog  
+- Inner `<details markdown="1">` blocks, one per year  
+- Within each year, entries are grouped by **asset type**  
+- Each asset‑type group uses a unique header of the form:  
+  - `#### YYYY — SQL View Changes`  
+  - `#### YYYY — HTML Form Changes`  
+  - `#### YYYY — Data Dictionary Changes`  
+- Each group contains a bullet list of dated changes
+
+### Grouping Rules
+
+- Changes are grouped by **year**, newest year first  
+- Within each year, changes are grouped by **asset type**  
+- Within each asset type, changes are sorted by **change_date**, newest first  
+- SQL view changes include the `change_asset_id` in parentheses  
+- HTML form and dictionary changes omit the asset ID in the bullet text  
+- All dates use ISO format (`YYYY-MM-DD`)  
+- All descriptions use present tense  
+
+### Example Output
+
+```markdown
+**2024**
+
+**2024 - SQL View Changes**
+
+- **2024-03-21**: Updates join logic (q-epicc-ic).  
+
+**2024 - HTML Form Changes**
+
+- **2024-01-15**: Adds new field: `client_consent_date`.
+
+**2024 - Data Dictionary Changes**
+
+- **2024-01-05** Clarifies the definition of `status`.
+```
+
+### Forms With No Changelog Entries
+
+If no entries exist for a form, the generated Markdown includes:
 
 ```markdown
 ## Changelog
 
-<details markdown="1">  
-<summary><strong>View Changelog Details</strong></summary>
-
-<details markdown="1">  
-<summary><strong>2026</strong></summary>
-
-### 2026
-
-- **2026-01-02**: Description of change.
-
-</details>
-
-<details markdown="1">  
-<summary><strong>2025</strong></summary>
-
-### 2025
-
-- **2025-11-21**: Description of change.  
-- **2025-11-20**: Description of change.
-
-</details>
-
-</details>
+_No changes recorded._
 ```
-
-The rules are consistent:
-
-- Changes are grouped by year
-- The most recent year appears first
-- The newest change appears first
-- Changes are always recorded using present tense
-- The first bullet under each year is not indented
 
 ### Program-Level Changelog Standards
 
@@ -518,7 +566,7 @@ Example:
 |---------|-----------------------|-------------|-------------------------------|--------------|
 | epicc   | epicc_initial_contact | 2026‑01‑05  | Adds field: client_age        | form         |
 
-### Summary
+### Changelog Scoping Summary
 
 - `change_scope: form` - update the **form‑level** data dictionary page
 - `change_scope: program` - update the **program‑level** index page
@@ -526,6 +574,8 @@ Example:
 - Automation routes entries based on `change_scope`
 
 This system keeps program‑level and form‑level governance cleanly separated while using a unified metadata source.
+
+---
 
 ## Related Standards
 
