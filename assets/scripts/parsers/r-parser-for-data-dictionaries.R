@@ -473,70 +473,138 @@ render_form_markdown <- function(
   }
 
   # -------------------------------------------------------------------
-  # Changelog (year-grouped, nested <details>)
+  # Changelog (year-grouped, asset-type grouped, nested <details>)
   # -------------------------------------------------------------------
-
-  changelog_md <- ""
+  
   if (
     nrow(
       form_changes
-      ) > 0
-    ) {
-
+      ) > 0) {
+    
     form_changes <- form_changes %>%
-      arrange(
-        desc(
-          change_date # newest to oldest
-        )
-      ) %>% 
       mutate(
         year = format(
           as.Date(
             change_date
             ),
           "%Y"
+          ),
+        change_date = as.Date(
+          change_date
           )
-        )
-
+      )
+    
+    # Split by year
     changes_by_year <- split(
       form_changes,
       form_changes$year
       )
-
-    # reverse year order so newest year appears first
+    
+    # Order of groups within each year
+    source_order <- c(
+      "sql_view",
+      "html_form",
+      "data_dictionary"
+      )
+    
+    # Build year blocks (newest year first)
     year_blocks <- purrr::map_chr(
       rev(
         names(
           changes_by_year
-        )
-      ),
+          )
+        ),
       function(
-    yr
-    ) {
-      df <- changes_by_year[[yr]]
-
-      bullets <- paste0(
-        "- **",
-        df$change_date,
-        "**: ",
-        df$change_detail,
-        collapse = "\n"
-      )
-
-      glue(
+        yr
+        ) {
+        
+        df_year <- changes_by_year[[yr]]
+        
+        # Split by change_source
+        df_by_source <- split(
+          df_year,
+          df_year$change_source
+          )
+        
+        # Build subsections in the desired order
+        source_sections <- purrr::map_chr(
+          source_order[source_order %in% names(df_by_source)],
+          function(
+            src
+            ) {
+            
+            df_src <- df_by_source[[src]]
+            
+            # Human-friendly section headers
+            section_title <- dplyr::case_when(
+              src == "sql_view" ~ "SQL View Changes",
+              src == "html_form" ~ "HTML Form Changes",
+              src == "data_dictionary" ~ "Data Dictionary Changes",
+              .default = src
+            )
+            
+            # Build bullet list with dates preserved
+            bullets <- purrr::map_chr(
+              seq_len(
+                nrow(
+                  df_src
+                  )
+                ),
+              function(
+                i
+                ) {
+              row <- df_src[i, ]
+              
+              # Append asset ID only for SQL assets
+              asset_suffix <- if (
+                row$change_source == "sql_view"
+                ) {
+                paste0(
+                  " (",
+                  row$change_asset_id,
+                  ")"
+                  )
+              } else {
+                ""
+              }
+              
+              paste0(
+                "- **",
+                row$change_date,
+                "**: ",
+                row$change_detail,
+                asset_suffix
+              )
+            }
+            ) %>%
+              paste(
+                collapse = "\n"
+                )
+            
+            glue::glue(
+"#### {yr} - {section_title}\n\n{bullets}"
+              )
+          }
+        ) %>%
+          paste(
+            collapse = "\n\n"
+            )
+        
+        glue::glue(
 "<details markdown=\"1\">
-<summary><strong>{yr}</strong></summary>
+  <summary><strong>{yr}</strong></summary>
 
 ### {yr}
 
-{bullets}
+{source_sections}
 
 </details>"
-      )
-    }
-  )
-
-    changelog_md <- glue(
+        )
+      }
+    )
+    
+    # Wrap everything in the outer <details>
+    changelog_md <- glue::glue(
 "## Changelog
 
 <details markdown=\"1\">
@@ -546,10 +614,12 @@ render_form_markdown <- function(
 
 </details>"
     )
+    
   } else {
+    
     # Stub changelog for forms with no entries
     changelog_md <- glue(
-"## Chagnelog
+"## Changelog
 
 _No changes recorded._"
     )
